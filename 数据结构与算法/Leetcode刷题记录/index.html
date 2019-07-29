@@ -389,6 +389,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/数据结构与算法/Leetcode刷题记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/数据结构与算法/Leetcode刷题记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -677,7 +687,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/机器学习/深度学习/神经网络中的注意力机制总结及PyTorch实战/" rel="next" title="神经网络中的注意力机制总结及PyTorch实战">
+              <a href="/深度学习/神经网络中的注意力机制总结及PyTorch实战/" rel="next" title="神经网络中的注意力机制总结及PyTorch实战">
                 <i class="fa fa-chevron-left"></i> 神经网络中的注意力机制总结及PyTorch实战
               </a>
             
@@ -745,6 +755,9 @@ var jiathis_config={
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -796,7 +809,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -807,7 +820,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1099,6 +1112,28 @@ var jiathis_config={
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'joaeuuc4hsqudUUwx4gIvGF6-gzGzoHsz',
+        appKey: 'E9UJsJpw1omCHuS22PdSpKoh',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
