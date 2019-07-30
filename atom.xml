@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cdlwhm1217096231.github.io/"/>
-  <updated>2019-07-30T14:47:54.474Z</updated>
+  <updated>2019-07-30T14:54:10.151Z</updated>
   <id>https://cdlwhm1217096231.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法岗面试常见问题大集合</title>
+    <link href="https://cdlwhm1217096231.github.io/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%AE%97%E6%B3%95%E5%B2%97%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%A7%E9%9B%86%E5%90%88/"/>
+    <id>https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/</id>
+    <published>2019-07-30T14:51:47.000Z</published>
+    <updated>2019-07-30T14:54:10.151Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-参考博客"><a href="#1-参考博客" class="headerlink" title="1.参考博客"></a>1.参考博客</h4><ul><li><a href="https://www.nowcoder.com/ta/review-ml?query=&amp;asc=true&amp;order=&amp;page=1" target="_blank" rel="noopener">算法岗面试常见问题大集合</a></li><li><a href="http://www.huaxiaozhuan.com/" target="_blank" rel="noopener">算法工程师手册</a></li></ul><h4 id="2-模型过拟合的解决方法"><a href="#2-模型过拟合的解决方法" class="headerlink" title="2.模型过拟合的解决方法"></a>2.模型过拟合的解决方法</h4><ul><li>L1/L2正则化（原理是奥卡姆剃刀）、Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、shortcut-connect(使用残差网络Residual network)、数据增强(增加样本的数量)、early stopping、dropout</li></ul><h4 id="3-如何解决样本类别的不均衡问题？"><a href="#3-如何解决样本类别的不均衡问题？" class="headerlink" title="3.如何解决样本类别的不均衡问题？"></a>3.如何解决样本类别的不均衡问题？</h4><ul><li>a.过采样/上采样：增加类别少的样本数量实现样本数量的均衡。具体是通过复制类别上的样本构成多条数据。此方法的缺点是当样本的特征很少时，容易出现过拟合。需要对过采样方法进行改进，改进的方法是：在类别少的样本中加入噪声、干扰数据或通过一定的规则产生新合成的样本，如smote算法。</li><li>b.欠采样/下采样：减少类别多的样本数量，一般的方法是随机地去掉一些类别多的样本。</li><li>c.调整正负样本的惩罚权重：对类别少的样本赋予高的权重，对类别多的样本赋予低的权重。</li><li>d.通过集成学习的方法：每次生成训练集时，使用所有类别少的样本，同时从类别多的样本中随机抽取数据与类别少的样本合并起来，构成一个新的训练集。</li><li>e.使用特征选择：一般样本不均衡也会导致特征不均衡。但如果类别少的样本量具有一定的规模时，则意味着其特征的分布较为均匀，可以选择出具有显著特征配合参与解决样本不均衡的问题。</li></ul><h4 id="4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"><a href="#4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？" class="headerlink" title="4.在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"></a>4.在神经网络训练过程中，<strong>为什么会出现梯度消失的问题？如何防止</strong>？</h4><ul><li>原因：使用了不合适的激活函数，例如sigmoid函数。此时，当神经网络的层数很深时，利用链式求导法则计算梯度时，损失函数的梯度连乘，导致乘积会变得越来越小接近于0，从而神经网络无法学习到新的信息。</li><li>解决方法：<ul><li>预训练加微调</li><li>梯度剪切</li><li>权重正则化</li><li>使用不同的激活函数</li><li>使用Batch Normalization</li><li>使用残差网络ResNet</li><li>使用LSTM网络</li></ul></li></ul><h4 id="5-介绍一下TensorFlow中的计算图"><a href="#5-介绍一下TensorFlow中的计算图" class="headerlink" title="5.介绍一下TensorFlow中的计算图"></a>5.介绍一下TensorFlow中的计算图</h4><ul><li>TensorFlow是一个通过计算图的形式来表述计算的编程系统，计算图也叫作数据流图。可以把计算图看做是一种有向图，TensorFlow中的每个节点都是计算图上的一个张量Tensor，而节点之间的边描述了计算之间的依赖关系和数学运算。</li></ul><h4 id="6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"><a href="#6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。" class="headerlink" title="6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"></a>6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。</h4><ul><li>欧式距离最常见的是两个或多个点之间的距离表示法，又称为欧几里得距离。也就是通常所说的L2范数，公式如下。欧式距离的缺点是它将样本的不同属性之间的差别等同看待，这一点有时候不能满足实际要求。<script type="math/tex; mode=display">d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots+\left(x_{n}-y_{n}\right)^{2}}=\sqrt{\sum_{i=1}^{n}\left(x_{i}-y_{i}\right)^{2}}</script></li><li>曼哈顿距离，也就是欧式空间中的在直角坐标系上两个点所形成的线段对轴产生的投影的距离总和。也就是我们所说的L1距离。例如，坐标(x1,y1)的点P1与坐标(x2, y2)的点P2的曼哈顿距离计算公式为：<script type="math/tex; mode=display">\left|x_{1}-x_{2}\right|+\left|y_{1}-y_{2}\right|</script></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1-参考博客&quot;&gt;&lt;a href=&quot;#1-参考博客&quot; class=&quot;headerlink&quot; title=&quot;1.参考博客&quot;&gt;&lt;/a&gt;1.参考博客&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nowcoder.com/ta/review-ml?q
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://cdlwhm1217096231.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://cdlwhm1217096231.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="机器学习" scheme="https://cdlwhm1217096231.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统知识点总结</title>
@@ -377,13 +405,13 @@
       <category term="深度学习" scheme="https://cdlwhm1217096231.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="深度学习" scheme="https://cdlwhm1217096231.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
       <category term="人工智能" scheme="https://cdlwhm1217096231.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
       <category term="机器学习" scheme="https://cdlwhm1217096231.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="算法" scheme="https://cdlwhm1217096231.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="深度学习" scheme="https://cdlwhm1217096231.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
