@@ -463,22 +463,22 @@
 <li>当神经网络来处理大量的输入信息时，也可以借助人脑的注意力机制，只选择一些关键的信息输入进行处理，用来提高神经网络的效率。在目前的神经网络模型中，可以将max pooling和gating机制近似地看作是自下而上的基于显著性的注意力机制。此外，自上而下的聚焦式注意力也是一种有效的信息选择方法。例如：给定一篇很长的文章，然后就此文章的内容进行提问，提出的问题只和文章中某个段落中的一两个句子相关，其余都无关的。为了减小神经网络的计算代价，只需要把相关的片段挑选出来让后续的神经网络来处理，而不需要把所有文章内容都输入到神经网络中。</li>
 </ul>
 <h4 id="1-Attention机制基础知识"><a href="#1-Attention机制基础知识" class="headerlink" title="1.Attention机制基础知识"></a>1.Attention机制基础知识</h4><ul>
-<li>用$X=\left[\mathbf{x}_{1}, \cdots, \mathbf{x}_{N}\right]$表示N组输入信息，其中每个向量$\mathbf{x}_{i}, i \in[1, N]$都表示一组输入信息。为了节省计算资源，不需要将所有的信息都输入到神经网络中，只需要从X中选择一些和任务相关的信息。注意力机制的计算可以分为两步：<ul>
+<li>用$X=\left[\mathbf{x}<em>{1}, \cdots, \mathbf{x}</em>{N}\right]$表示N组输入信息，其中每个向量$\mathbf{x}_{i}, i \in[1, N]$都表示一组输入信息。为了节省计算资源，不需要将所有的信息都输入到神经网络中，只需要从X中选择一些和任务相关的信息。注意力机制的计算可以分为两步：<ul>
 <li>(1)在所有输入信息上计算注意力分布；</li>
 <li>(2)根据注意力分布来计算输入信息的加权平均</li>
 </ul>
 </li>
 <li>1.1 <strong>注意力分布</strong><ul>
-<li>为了从N个输入向量$\left[\mathbf{x}_{1}, \cdots, \mathbf{x}_{N}\right]$中选择出与某个特定任务相关的信息，需要引入一个和任务相关的表示，称为<strong>查询向量q</strong>，并通过一个打分函数来计算每个输入向量和查询向量之间的相关性。</li>
+<li>为了从N个输入向量$\left[\mathbf{x}<em>{1}, \cdots, \mathbf{x}</em>{N}\right]$中选择出与某个特定任务相关的信息，需要引入一个和任务相关的表示，称为<strong>查询向量q</strong>，并通过一个打分函数来计算每个输入向量和查询向量之间的相关性。</li>
 <li>给定一个和任务相关的查询向量q，用注意力变量$z \in[1, N]$来表示被选择信息的索引位置，即z=i表示选择了第i个输入向量。为了方便计算，下面首先介绍<strong>Soft Attention注意力机制</strong>。首先计算在给定q和X下，选择第i个输入向量的概率$\alpha_{i}$<script type="math/tex; mode=display">
-\begin{aligned} \alpha_{i} &=p(z=i | X, \mathbf{q}) \\ &=\operatorname{softmax}\left(s\left(\mathbf{x}_{i}, \mathbf{q}\right)\right) \\ &=\frac{\exp \left(s\left(\mathbf{x}_{i}, \mathbf{q}\right)\right)}{\sum_{j=1}^{N} \exp \left(s\left(\mathbf{x}_{j}, \mathbf{q}\right)\right)} \end{aligned}</script>其中$\alpha_{i}$称为注意力分布，$S\left(\mathbf{x}_{i}, \mathbf{q}\right)$是注意力打分函数，可以使用下面的几种方法来计算：<ul>
-<li>加性模型       $s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\mathbf{v}^{\mathrm{T}} \tanh \left(W \mathbf{x}_{i}+U \mathbf{q}\right)$</li>
-<li>点积模型  $s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\mathbf{x}_{i}^{\mathrm{T}} \mathbf{q}$</li>
-<li>缩放点积模型 $s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\frac{\mathbf{x}_{i}^{\mathrm{T}} \mathbf{q}}{\sqrt{d}}$</li>
-<li>双线性模型  $s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\mathbf{x}_{i}^{\mathrm{T}} W \mathbf{q}$</li>
+\begin{aligned} \alpha_{i} &=p(z=i | X, \mathbf{q}) \\ &=\operatorname{softmax}\left(s\left(\mathbf{x}_{i}, \mathbf{q}\right)\right) \\ &=\frac{\exp \left(s\left(\mathbf{x}_{i}, \mathbf{q}\right)\right)}{\sum_{j=1}^{N} \exp \left(s\left(\mathbf{x}_{j}, \mathbf{q}\right)\right)} \end{aligned}</script>其中$\alpha<em>{i}$称为注意力分布，$S\left(\mathbf{x}</em>{i}, \mathbf{q}\right)$是注意力打分函数，可以使用下面的几种方法来计算：<ul>
+<li>加性模型       $s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\mathbf{v}^{\mathrm{T}} \tanh \left(W \mathbf{x}</em>{i}+U \mathbf{q}\right)$</li>
+<li>点积模型  $s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\mathbf{x}</em>{i}^{\mathrm{T}} \mathbf{q}$</li>
+<li>缩放点积模型 $s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\frac{\mathbf{x}</em>{i}^{\mathrm{T}} \mathbf{q}}{\sqrt{d}}$</li>
+<li>双线性模型  $s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\mathbf{x}</em>{i}^{\mathrm{T}} W \mathbf{q}$</li>
 </ul>
 </li>
-<li>上式中W、U、v是可学习的参数，d是输入向量的维度。理论上，加性模型和点积模型的复杂度差不多，但是点积模型在实现上可以更好地利用矩阵乘积，从而计算效率更高。但当输入向量的维度d比较高，点积模型的值通常有较大的方差，从而导致softmax函数的梯度比较小。因此，缩放点积模型可以很好地解决这个问题。双线性模型可以看做是一种泛化的点积模型。假设 $s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\mathbf{x}_{i}^{\mathrm{T}} W \mathbf{q}$中$W=U^{\mathrm{T}} V$，则双线性模型可以写为$s\left(\mathbf{x}_{i}, \mathbf{q}\right)=\mathbf{x}_{i}^{\mathrm{T}} U^{\mathrm{T}} V \mathbf{q}=(U \mathbf{x})^{\mathrm{T}}(V \mathbf{q})$即分别对x和q进行线性变换后计算点积。相比点积模型，双线性模型在计算相似度时引入了非对称性。</li>
+<li>上式中W、U、v是可学习的参数，d是输入向量的维度。理论上，加性模型和点积模型的复杂度差不多，但是点积模型在实现上可以更好地利用矩阵乘积，从而计算效率更高。但当输入向量的维度d比较高，点积模型的值通常有较大的方差，从而导致softmax函数的梯度比较小。因此，缩放点积模型可以很好地解决这个问题。双线性模型可以看做是一种泛化的点积模型。假设 $s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\mathbf{x}</em>{i}^{\mathrm{T}} W \mathbf{q}$中$W=U^{\mathrm{T}} V$，则双线性模型可以写为$s\left(\mathbf{x}<em>{i}, \mathbf{q}\right)=\mathbf{x}</em>{i}^{\mathrm{T}} U^{\mathrm{T}} V \mathbf{q}=(U \mathbf{x})^{\mathrm{T}}(V \mathbf{q})$即分别对x和q进行线性变换后计算点积。相比点积模型，双线性模型在计算相似度时引入了非对称性。</li>
 </ul>
 </li>
 <li><strong>1.2 加权平均</strong><ul>
@@ -489,7 +489,7 @@
 </ul>
 <h4 id="2-其他类型的注意力机制"><a href="#2-其他类型的注意力机制" class="headerlink" title="2.其他类型的注意力机制"></a>2.其他类型的注意力机制</h4><ul>
 <li><strong>2.1 硬注意力机制</strong><ul>
-<li>上面的公式$\mathbb{E}_{z \sim p(z | X, \mathbf{q})}\left[\mathbf{x}_{z}\right]$提到的是软注意力机制，其选择的信息是所有输入向量在注意力分布下的期望。此外还有一种注意力是只关注到某一个输入向量，叫做<strong>硬注意力机制(Hard Attention Mechanism)</strong>。硬注意力机制有两种方法可以实现：<ul>
+<li>上面的公式$\mathbb{E}<em>{z \sim p(z | X, \mathbf{q})}\left[\mathbf{x}</em>{z}\right]$提到的是软注意力机制，其选择的信息是所有输入向量在注意力分布下的期望。此外还有一种注意力是只关注到某一个输入向量，叫做<strong>硬注意力机制(Hard Attention Mechanism)</strong>。硬注意力机制有两种方法可以实现：<ul>
 <li>(1)选择最高概率的一个输入向量，即<script type="math/tex; mode=display">
 \operatorname{att}(X, \mathbf{q})=\mathbf{x}_{j}</script>其中j为概率最大的输入向量的下标，即<script type="math/tex">\begin{array}{c}{j=\arg \max _{i=1}^{N} a_{i}}\end{array}</script></li>
 <li>(2)通过在注意力分布上随机采样的方式实现</li>
@@ -499,12 +499,12 @@
 </ul>
 </li>
 <li><strong>2.2 键值对注意力</strong><ul>
-<li>可以使用键值对格式来表示输入信息，其中键用来计算注意力分布$\alpha_{i}$，值用来计算聚合信息。用$(K, V)=\left[\left(\mathbf{k}_{1}, \mathbf{v}_{1}\right), \cdots,\left(\mathbf{k}_{N}, \mathbf{v}_{N}\right)\right]$来表示N组输入信息，给定任务相关的查询向量q时，注意力函数为：<script type="math/tex; mode=display">
+<li>可以使用键值对格式来表示输入信息，其中键用来计算注意力分布$\alpha<em>{i}$，值用来计算聚合信息。用$(K, V)=\left[\left(\mathbf{k}</em>{1}, \mathbf{v}<em>{1}\right), \cdots,\left(\mathbf{k}</em>{N}, \mathbf{v}_{N}\right)\right]$来表示N组输入信息，给定任务相关的查询向量q时，注意力函数为：<script type="math/tex; mode=display">
 \begin{aligned} \operatorname{att}((K, V), \mathbf{q}) &=\sum_{i=1}^{N} \alpha_{i} \mathbf{v}_{i} \\ &=\sum_{i=1}^{N} \frac{\exp \left(s\left(\mathbf{k}_{i}, \mathbf{q}\right)\right)}{\sum_{j} \exp \left(s\left(\mathbf{k}_{j}, \mathbf{q}\right)\right)} \mathbf{v}_{i} \end{aligned}</script>其中$s\left(\mathbf{k}_{i}, \mathbf{q}\right)$是打分函数，1.2节的图中给出了键值对注意力机制的示意图。当K=V时，键值对模式等于普通模式的注意力机制。</li>
 </ul>
 </li>
 <li><strong>2.3 多头注意力</strong><ul>
-<li>多头注意力(Multi-head Attention)是利用多个查询 $Q=\left[\mathbf{q}_{1}, \cdots, \mathbf{q}_{M}\right]$来平行计算从输入信息中选取多组信息。每个注意 力关注输入信息的不同部分。<script type="math/tex; mode=display">
+<li>多头注意力(Multi-head Attention)是利用多个查询 $Q=\left[\mathbf{q}<em>{1}, \cdots, \mathbf{q}</em>{M}\right]$来平行计算从输入信息中选取多组信息。每个注意 力关注输入信息的不同部分。<script type="math/tex; mode=display">
 \operatorname{att}((K, V), Q)=\operatorname{att}\left((K, V), \mathbf{q}_{1}\right) \oplus \cdots \oplus \operatorname{att}\left((K, V), \mathbf{q}_{M}\right)</script>其中⊕表示向量拼接。</li>
 </ul>
 </li>
@@ -512,11 +512,11 @@
 <li>当使用神经网络来处理一个变化长度的向量序列时，通过可以使用卷积网络或循环网络进行编码来得到一个相同长度的输出向量序列，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/13407176-0bf4dfb1fbcf218a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基于卷积神经网络和循环神经网络的变长序列编码"></li>
 <li>基于卷积或循环网络的序列编码都是可以看做是一种局部的编码方式，只建模了输入信息的局部依赖关系。虽然循环网络理论上可以建立长距离依赖关系，但是由于信息传递的容量以及梯度消失问题，实际上也只能建立短距离依赖关系。</li>
 <li>如果要建立输入序列之间的长距离依赖关系，可以使用以下两种方法：一种方法是增加网络的层数，通过一个深层网络来获取远距离的信息交互；另一种方法是使用全连接网络。全连接网络是一种非常直接的建模远距离依赖的模型，但是无法处理变长的输入序列。不同的输入长度，其连接权重的大小也是不同的。这时，就可以利用注意力机制来“动态”地生成不同连接的权重，这就是<strong>自注意力模型（Self-Attention Model）</strong>。</li>
-<li>假设输入序列为$X=\left[\mathbf{x}_{1}, \cdots, \mathbf{x}_{N}\right] \in \mathbb{R}^{d_{1} \times N}$，输出序列为$H=\left[\mathbf{h}_{1}, \cdots, \mathbf{h}_{N}\right] \in \mathbb{R}^{d_{2} \times N}$，则可以通过线性变换得到三组向量序列：<script type="math/tex; mode=display">
-\begin{aligned} Q &=W_{Q} X \in \mathbb{R}^{d_{3} \times N} \\ K &=W_{K} X \in \mathbb{R}^{d_{3} \times N} \\ V &=W_{V} X \in \mathbb{R}^{d_{2} \times N} \end{aligned}</script>其中，Q、K、V分别为查询向量序列，键向量序列、值向量序列，$W_{Q} \in \mathbb{R}^{d_{3} \times d_{1}}$、$W_{K} \in \mathbb{R}^{d_{3} \times d_{1}}$、$W_{V} \in \mathbb{R}^{d_{2} \times d_{1}}$分别表示可学习的参数矩阵。根据$\operatorname{att}((K, V), \mathbf{q})=\sum_{i=1}^{N} \alpha_{i} \mathbf{v}_{i}$，可以得到输出向量$\mathbf{h}_{i}$：<br>$\mathbf{h}_{i}=\operatorname{att}\left((K, V), \mathbf{q}_{i}\right)=\sum_{j=1}^{N} \alpha_{i j} \mathbf{v}_{j}=\sum_{j=1}^{N} \operatorname{softmax}\left(s\left(\mathbf{k}_{j}, \mathbf{q}_{i}\right)\right) \mathbf{v}_{j}$<br>其中，$i, j \in[1, N]$为输出和输入向量序列的位置，连接权重$\alpha_{i j}$由注意力机制动态生成。<br>如果使用缩放点积来作为注意力打分函数，输出向量序列可以写为：<script type="math/tex; mode=display">
+<li>假设输入序列为$X=\left[\mathbf{x}<em>{1}, \cdots, \mathbf{x}</em>{N}\right] \in \mathbb{R}^{d<em>{1} \times N}$，输出序列为$H=\left[\mathbf{h}</em>{1}, \cdots, \mathbf{h}<em>{N}\right] \in \mathbb{R}^{d</em>{2} \times N}$，则可以通过线性变换得到三组向量序列：<script type="math/tex; mode=display">
+\begin{aligned} Q &=W_{Q} X \in \mathbb{R}^{d_{3} \times N} \\ K &=W_{K} X \in \mathbb{R}^{d_{3} \times N} \\ V &=W_{V} X \in \mathbb{R}^{d_{2} \times N} \end{aligned}</script>其中，Q、K、V分别为查询向量序列，键向量序列、值向量序列，$W<em>{Q} \in \mathbb{R}^{d</em>{3} \times d<em>{1}}$、$W</em>{K} \in \mathbb{R}^{d<em>{3} \times d</em>{1}}$、$W<em>{V} \in \mathbb{R}^{d</em>{2} \times d<em>{1}}$分别表示可学习的参数矩阵。根据$\operatorname{att}((K, V), \mathbf{q})=\sum</em>{i=1}^{N} \alpha<em>{i} \mathbf{v}</em>{i}$，可以得到输出向量$\mathbf{h}<em>{i}$：<br>$\mathbf{h}</em>{i}=\operatorname{att}\left((K, V), \mathbf{q}<em>{i}\right)=\sum</em>{j=1}^{N} \alpha<em>{i j} \mathbf{v}</em>{j}=\sum<em>{j=1}^{N} \operatorname{softmax}\left(s\left(\mathbf{k}</em>{j}, \mathbf{q}<em>{i}\right)\right) \mathbf{v}</em>{j}$<br>其中，$i, j \in[1, N]$为输出和输入向量序列的位置，连接权重$\alpha_{i j}$由注意力机制动态生成。<br>如果使用缩放点积来作为注意力打分函数，输出向量序列可以写为：<script type="math/tex; mode=display">
 H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</script>其中softmax函数为按列进行归一化的函数。</li>
 <li>下图给出了全连接模型和自注意力模型的对比，其中实线表示可学习的权重，虚线表示动态生成的权重。由于自注意力模型的权重是动态生成的，因此可以处理变长的信息序列。<br><img src="https://upload-images.jianshu.io/upload_images/13407176-510d0c5391bc8ed5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="全连接模型与自注意力模型"></li>
-<li>自注意力模型可以作为神经网络中的一层来使用，既可以用来替换卷积层和循环层，也可以和它们一起交替使用(例如输入向量X可以是卷积层或循环层的输出)。自注意模型计算的权重$\alpha_{i j}$只依赖于$\mathbf{q}_{i}$和$\mathbf{k}_{j}$的相关性，从而忽略了输入信息的位置信息。因此，在单独使用时，自注意模型一般需要加入位置编码信息来进行修正。</li>
+<li>自注意力模型可以作为神经网络中的一层来使用，既可以用来替换卷积层和循环层，也可以和它们一起交替使用(例如输入向量X可以是卷积层或循环层的输出)。自注意模型计算的权重$\alpha<em>{i j}$只依赖于$\mathbf{q}</em>{i}$和$\mathbf{k}_{j}$的相关性，从而忽略了输入信息的位置信息。因此，在单独使用时，自注意模型一般需要加入位置编码信息来进行修正。</li>
 </ul>
 </li>
 </ul>
@@ -629,24 +629,6 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
       </div>
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    Curry_Coder
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://cdlwhm1217096231.github.io/深度学习/神经网络中的注意力机制总结及PyTorch实战/" title="神经网络中的注意力机制总结及PyTorch实战">https://cdlwhm1217096231.github.io/深度学习/神经网络中的注意力机制总结及PyTorch实战/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
     
 
 
@@ -965,7 +947,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.8k</span>
+    <span title="Site words total count">37.7k</span>
   
 </div>
 
@@ -976,6 +958,36 @@ var jiathis_config={
 
 
 
+
+
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,06,07,12,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }
+  siteTime();
+</script>
 
 |  本页点击 <span id="busuanzi_value_page_pv"></span> 次
   |  本站总点击 <span id="busuanzi_value_site_pv"></span> 次
@@ -1514,6 +1526,6 @@ var jiathis_config={
   <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
   <!--卖萌-->
   <script type="text/javascript" src="/js/src/dytitle.js"></script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
 

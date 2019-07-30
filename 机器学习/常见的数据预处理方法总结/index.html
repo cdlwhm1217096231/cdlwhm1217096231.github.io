@@ -452,13 +452,13 @@
       
         <h4 id="0-概述"><a href="#0-概述" class="headerlink" title="0.概述"></a>0.概述</h4><ul>
 <li>一般而言，样本的原始特征中的每一维特征由于来源以及度量单位不同，其特征取值的分布范围往往差异很大。当我们计算不同样本之间的欧氏距离时，取值范围大的特征会起到主导作用。这样，对于基于相似度比较的机器学习方法（比如最近邻分类器KNN），必须先对样本进行预处理，将各个维度的特征归一化到同一个取值区间，并且消除不同特征之间的相关性，才能获得比较理想的结果。虽然神经网络可以通过参数的调整来适应不同特征的取值范围，但是会导致训练效率比较低。</li>
-<li>假设一个只有一层的网络 $y=\tanh \left(w_{1} x_{1}+w_{2} x_{2}+b\right)$，其中$x_{1} \in[0,10]$，$x_{2} \in[0,1]$。因为tanh函数的导数在区间 [−2, 2]上是敏感的，其余地方的导数接近于 0。因此，如果 $w_{1} x_{1}+w_{2} x_{2}+b$过大或过小，都会导致梯度过小，难以训练。为了提高训练效率，我们需要使$w_{1} x_{1}+w_{2} x_{2}+b$在 [−2, 2]区间，我们需要将w1设得小一点，比如在 [−0.1,0.1]之间。可以想象，如果数据维数很多时，我们很难这样精心去选择每一个参数。因此，如果每一个特征的取值范围都在相似的区间，比如 [0, 1]或者 [−1, 1]，我们就不太需要区别对待每一个参数，减少人工干预。</li>
+<li>假设一个只有一层的网络 $y=\tanh \left(w<em>{1} x</em>{1}+w<em>{2} x</em>{2}+b\right)$，其中$x<em>{1} \in[0,10]$，$x</em>{2} \in[0,1]$。因为tanh函数的导数在区间 [−2, 2]上是敏感的，其余地方的导数接近于 0。因此，如果 $w<em>{1} x</em>{1}+w<em>{2} x</em>{2}+b$过大或过小，都会导致梯度过小，难以训练。为了提高训练效率，我们需要使$w<em>{1} x</em>{1}+w<em>{2} x</em>{2}+b$在 [−2, 2]区间，我们需要将w1设得小一点，比如在 [−0.1,0.1]之间。可以想象，如果数据维数很多时，我们很难这样精心去选择每一个参数。因此，如果每一个特征的取值范围都在相似的区间，比如 [0, 1]或者 [−1, 1]，我们就不太需要区别对待每一个参数，减少人工干预。</li>
 <li>当不同输入特征的取值范围差异比较大时，梯度下降法的效率也会受到影响。下图给出了数据归一化对梯度的影响。其中，图a为未归一化数据的等高线图。取值范围不同会造成在大多数位置上的梯度方向并不是最优的搜索方向。当使用梯度下降法寻求最优解时，会导致需要很多次迭代才能收敛。如果我们把数据归一化为取值范围相同，如图b所示，大部分位置的梯度方向近似于最优搜索方向。这样，在梯度下降求解时，每一步梯度的方向都基本指向最小值，训练效率会大大提高。<br>  <img src="https://upload-images.jianshu.io/upload_images/13407176-8d338f7c89713b24?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据归一化对梯度的影响"></li>
 </ul>
 <h4 id="1-常用的归一化方法"><a href="#1-常用的归一化方法" class="headerlink" title="1.常用的归一化方法"></a>1.常用的归一化方法</h4><ul>
-<li><strong>1.1 缩放归一化</strong>：通过缩放将每一个特征的取值范围归一到 [0, 1]或 [−1, 1]之间。假设有 N 个样本$\left\{\mathbf{x}^{(n)}\right\}_{n=1}^{N}$，对每一维特征x，<script type="math/tex; mode=display">
+<li><strong>1.1 缩放归一化</strong>：通过缩放将每一个特征的取值范围归一到 [0, 1]或 [−1, 1]之间。假设有 N 个样本$\left{\mathbf{x}^{(n)}\right}_{n=1}^{N}$，对每一维特征x，<script type="math/tex; mode=display">
 \hat{x}^{(n)}=\frac{x^{(n)}-\min _{n}\left(x^{(n)}\right)}{\max _{n}\left(x^{(n)}\right)-\min _{n}\left(x^{(n)}\right)}</script>其中，min(x)和max(x)分别是特征x在所有样本上的最小值和最大值。</li>
-<li><strong>1.2 标准归一化</strong>：将每一个维特征都处理为符合标准正态分布（均值为 0，标准差为 1）。假设有 N 个样本$\left\{\mathbf{x}^{(n)}\right\}_{n=1}^{N}$，对每一维特征x，先计算它的均值和标准差：<script type="math/tex; mode=display">
+<li><strong>1.2 标准归一化</strong>：将每一个维特征都处理为符合标准正态分布（均值为 0，标准差为 1）。假设有 N 个样本$\left{\mathbf{x}^{(n)}\right}_{n=1}^{N}$，对每一维特征x，先计算它的均值和标准差：<script type="math/tex; mode=display">
 \begin{aligned} \mu &=\frac{1}{N} \sum_{n=1}^{N} x^{(n)} \\ \sigma^{2} &=\frac{1}{N} \sum_{n=1}^{N}\left(x^{(n)}-\mu\right)^{2} \end{aligned}</script>然后，将特征$x^{(n)}$减去均值，并除以标准差，得到新的特征$\hat{x}^{(n)}$。<script type="math/tex; mode=display">
 \hat{x}^{(n)}=\frac{x^{(n)}-\mu}{\sigma}</script>这里$\sigma$不能为0，如果标准差为0，则说明这一维度的特征没有任务的区分性，可以直接删除。<strong>在标准归一化之后，每一维特征都服从标准正态分布。</strong></li>
 <li><strong>1.3 白化</strong>：是一种重要的预处理方法，用来降低输入数据特征之间的冗余性。输入数据经过白化处理后，特征之间相关性较低，并且所有特征具有相同的方差。白化的一个主要实现方式是使用主成分分析PCA方法去除掉各个成分之间的相关性。<br>  <img src="https://upload-images.jianshu.io/upload_images/13407176-ef01f35e035469f9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="标准归一化与PCA白化对比"></li>
@@ -559,24 +559,6 @@
       </div>
     
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    Curry_Coder
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://cdlwhm1217096231.github.io/机器学习/常见的数据预处理方法总结/" title="常见的数据预处理方法总结">https://cdlwhm1217096231.github.io/机器学习/常见的数据预处理方法总结/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
     
 
 
@@ -895,7 +877,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.8k</span>
+    <span title="Site words total count">37.7k</span>
   
 </div>
 
@@ -906,6 +888,36 @@ var jiathis_config={
 
 
 
+
+
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,06,07,12,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }
+  siteTime();
+</script>
 
 |  本页点击 <span id="busuanzi_value_page_pv"></span> 次
   |  本站总点击 <span id="busuanzi_value_site_pv"></span> 次
@@ -1444,6 +1456,6 @@ var jiathis_config={
   <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
   <!--卖萌-->
   <script type="text/javascript" src="/js/src/dytitle.js"></script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
 

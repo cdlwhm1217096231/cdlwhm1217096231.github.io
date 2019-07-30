@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="深度学习,人工智能,机器学习,算法,">
+  <meta name="keywords" content="人工智能,机器学习,算法,深度学习,">
 
 
 
@@ -82,7 +82,7 @@
 
 
 <meta name="description" content="0.概述 深层神经网络存在的问题(从当前层的输入的分布来分析)：在深层神经网络中，中间层的输入是上一层神经网络的输出。因此，之前的层的神经网络参数的变化会导致当前层输入的分布发生较大的差异。在使用随机梯度下降法来训练神经网络时，每次参数更新都会导致网络中每层的输入分布发生变化。越是深层的神经网络，其输入的分布会改变的越明显。 解决方法(归一化操作)：从机器学习角度来看，如果某层的输入分布发生了变化">
-<meta name="keywords" content="深度学习,人工智能,机器学习,算法">
+<meta name="keywords" content="人工智能,机器学习,算法,深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神经网络中的批量归一化Batch Normalization(BN)原理总结">
 <meta property="og:url" content="https://cdlwhm1217096231.github.io/深度学习/神经网络中的批量归一化Batch-Normalization-BN-原理总结/index.html">
@@ -465,10 +465,10 @@
 \hat{\mathbf{z}}^{(l)}=\frac{\mathbf{z}^{(l)}-\mathbb{E}\left[\mathbf{z}^{(l)}\right]}{\sqrt{\operatorname{var}\left(\mathbf{z}^{(l)}\right)+\epsilon}}</script>其中，$\mathbb{E}\left[\mathbf{z}^{(l)}\right]$和$\operatorname{var}\left(\mathbf{z}^{(l)}\right)$是当前参数下，$\mathbf{z}^{(l)}$的每一维度在整个训练集上的期望和方差。因为目前主要的训练方法是基于Mini-Batch的随机梯度下降算法，所以准确地计算$\mathbf{z}^{(l)}$的期望和方差是不可行的。因此，$\mathbf{z}^{(l)}$的期望和方差通常用当前小批量Mini-Batch样本集的均值和方差近似估计。</li>
 <li>给定一个包含K个样本的小批量样本集合，第l层神经元的净输入$\mathbf{z}^{(1,l)}$，….，$\mathbf{z}^{(K,l)}$的均值和方差为：<script type="math/tex; mode=display">
 \begin{aligned} \mu_{\mathcal{B}} &=\frac{1}{K} \sum_{k=1}^{\mathrm{N}} \mathbf{z}^{(k, l)} \\ \sigma_{\mathcal{B}}^{2} &=\frac{1}{K} \sum_{k=1}^{K}\left(\mathbf{z}^{(k, l)}-\mu_{\mathcal{B}}\right) \odot\left(\mathbf{z}^{(k, l)}-\mu_{\mathcal{B}}\right) \end{aligned}</script></li>
-<li>对净输入$\mathbf{z}^{(l)}$的标准归一化会使得其取值集中到0附近，如果使用sigmoid激活函数时，这个取值区间刚好是接近线性变换区间，从而减弱了神经网络非线性变换的性质。<strong>因此，为了使归一化操作不对网络的表示能力造成负面影响，可以通过一个附加的缩放和平移变换改变取值区间</strong>。<br>$\hat{\mathbf{z}}^{(l)}=\frac{\mathbf{z}^{(l)}-\mu_{\mathcal{B}}}{\sqrt{\sigma_{\mathcal{B}}^{2}+\epsilon}} \odot \gamma+\beta\triangleq \mathrm{BN}_{\gamma, \beta}\left(\mathbf{z}^{(l)}\right)$<br>其中，$\gamma$、$\beta$分别表示缩放和平移的参数向量。<strong>从最保守的角度考虑，可以通过标准归一化的逆变换来使得归一化的变量可以被还原为原来的值</strong>。即：当$\gamma=\sqrt{\sigma_{\mathcal{B}}^{2}}$，$\beta=\mu_{\mathcal{B}}$时，$\hat{\mathbf{z}}^{(l)}=\mathbf{z}^{(l)}$。</li>
+<li>对净输入$\mathbf{z}^{(l)}$的标准归一化会使得其取值集中到0附近，如果使用sigmoid激活函数时，这个取值区间刚好是接近线性变换区间，从而减弱了神经网络非线性变换的性质。<strong>因此，为了使归一化操作不对网络的表示能力造成负面影响，可以通过一个附加的缩放和平移变换改变取值区间</strong>。<br>$\hat{\mathbf{z}}^{(l)}=\frac{\mathbf{z}^{(l)}-\mu<em>{\mathcal{B}}}{\sqrt{\sigma</em>{\mathcal{B}}^{2}+\epsilon}} \odot \gamma+\beta\triangleq \mathrm{BN}<em>{\gamma, \beta}\left(\mathbf{z}^{(l)}\right)$<br>其中，$\gamma$、$\beta$分别表示缩放和平移的参数向量。<strong>从最保守的角度考虑，可以通过标准归一化的逆变换来使得归一化的变量可以被还原为原来的值</strong>。即：当$\gamma=\sqrt{\sigma</em>{\mathcal{B}}^{2}}$，$\beta=\mu_{\mathcal{B}}$时，$\hat{\mathbf{z}}^{(l)}=\mathbf{z}^{(l)}$。</li>
 <li>批量归一化操作可以看作是一个特殊的神经网络层，<strong>该层是加在每一层非线性激活函数之前</strong>，即：<script type="math/tex; mode=display">
 \mathbf{a}^{(l)}=f\left(\mathbf{B} \mathbf{N}_{\gamma, \beta}\left(\mathbf{z}^{(l)}\right)\right)=f\left(\mathbf{B} \mathbf{N}_{\gamma, \beta}\left(W \mathbf{a}^{(l-1)}\right)\right)</script>其中，因为批量归一化本身具有平移变换，因此非线性变换$W \mathbf{a}^{(l-1)}$就不再需要偏置参数b。</li>
-<li><strong>注意</strong>：每次小批量样本的$\mu_{\mathcal{B}}$和$\sigma_{\mathcal{B}}^{2}$是净输入$\mathbf{z}^{(l)}$的函数，而不是常量。因此，在计算参数梯度时，需要考虑$\mu_{\mathcal{B}}$和$\sigma_{\mathcal{B}}^{2}$的影响。当训练完成时，用整个数据集上的均值$\mu$和方差$\sigma^{2}$来分别替代每次小批量样本的$\mu_{\mathcal{B}}$和$\sigma_{\mathcal{B}}^{2}$。在实际中，$\mu_{\mathcal{B}}$和$\sigma_{\mathcal{B}}^{2}$也可以使用移动平均来计算。</li>
+<li><strong>注意</strong>：每次小批量样本的$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$是净输入$\mathbf{z}^{(l)}$的函数，而不是常量。因此，在计算参数梯度时，需要考虑$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$的影响。当训练完成时，用整个数据集上的均值$\mu$和方差$\sigma^{2}$来分别替代每次小批量样本的$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$。在实际中，$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$也可以使用移动平均来计算。</li>
 </ul>
 </li>
 </ul>
@@ -569,24 +569,6 @@
     
 
     
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    Curry_Coder
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://cdlwhm1217096231.github.io/深度学习/神经网络中的批量归一化Batch-Normalization-BN-原理总结/" title="神经网络中的批量归一化Batch Normalization(BN)原理总结">https://cdlwhm1217096231.github.io/深度学习/神经网络中的批量归一化Batch-Normalization-BN-原理总结/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
 
 
 
@@ -596,13 +578,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
-          
             <a href="/tags/人工智能/" rel="tag"><i class="fa fa-tag"></i> 人工智能</a>
           
             <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
           
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
           
         </div>
       
@@ -906,7 +888,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.8k</span>
+    <span title="Site words total count">37.7k</span>
   
 </div>
 
@@ -917,6 +899,36 @@ var jiathis_config={
 
 
 
+
+
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,06,07,12,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }
+  siteTime();
+</script>
 
 |  本页点击 <span id="busuanzi_value_page_pv"></span> 次
   |  本站总点击 <span id="busuanzi_value_site_pv"></span> 次
@@ -1455,6 +1467,6 @@ var jiathis_config={
   <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
   <!--卖萌-->
   <script type="text/javascript" src="/js/src/dytitle.js"></script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
 
