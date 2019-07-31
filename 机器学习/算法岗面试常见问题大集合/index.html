@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="深度学习,机器学习,">
+  <meta name="keywords" content="机器学习,深度学习,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理是奥卡姆剃刀）、Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、shortcut-connect(使用残差网络Residual network)、数据增强(增加样本的数量)、early stop">
-<meta name="keywords" content="深度学习,机器学习">
+<meta name="description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
+<meta name="keywords" content="机器学习,深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法岗面试常见问题大集合">
 <meta property="og:url" content="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/index.html">
 <meta property="og:site_name" content="Curry_Coder的空间">
-<meta property="og:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理是奥卡姆剃刀）、Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、shortcut-connect(使用残差网络Residual network)、数据增强(增加样本的数量)、early stop">
+<meta property="og:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-30T14:54:10.151Z">
+<meta property="og:updated_time" content="2019-07-31T05:17:40.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法岗面试常见问题大集合">
-<meta name="twitter:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理是奥卡姆剃刀）、Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、shortcut-connect(使用残差网络Residual network)、数据增强(增加样本的数量)、early stop">
+<meta name="twitter:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
 
 
 
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-30T22:54:10+08:00">
-                2019-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T13:17:40+08:00">
+                2019-07-31
               </time>
             
           </span>
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  994
+                  2.5k
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  9
                 </span>
               
             </div>
@@ -452,7 +452,12 @@
 <li><a href="http://www.huaxiaozhuan.com/" target="_blank" rel="noopener">算法工程师手册</a></li>
 </ul>
 <h4 id="2-模型过拟合的解决方法"><a href="#2-模型过拟合的解决方法" class="headerlink" title="2.模型过拟合的解决方法"></a>2.模型过拟合的解决方法</h4><ul>
-<li>L1/L2正则化（原理是奥卡姆剃刀）、Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、shortcut-connect(使用残差网络Residual network)、数据增强(增加样本的数量)、early stopping、dropout</li>
+<li>L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。</li>
+<li>Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、</li>
+<li>shortcut-connect(使用残差网络Residual network)、</li>
+<li>数据增强(增加样本的数量)、</li>
+<li>early stopping</li>
+<li>Dropout：在训练过程中，让神经元以超参数p的概率被激活(也就是说1-p的概率被设置为0)，类似于bagging算法</li>
 </ul>
 <h4 id="3-如何解决样本类别的不均衡问题？"><a href="#3-如何解决样本类别的不均衡问题？" class="headerlink" title="3.如何解决样本类别的不均衡问题？"></a>3.如何解决样本类别的不均衡问题？</h4><ul>
 <li>a.过采样/上采样：增加类别少的样本数量实现样本数量的均衡。具体是通过复制类别上的样本构成多条数据。此方法的缺点是当样本的特征很少时，容易出现过拟合。需要对过采样方法进行改进，改进的方法是：在类别少的样本中加入噪声、干扰数据或通过一定的规则产生新合成的样本，如smote算法。</li>
@@ -483,7 +488,55 @@ d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots
 <li>曼哈顿距离，也就是欧式空间中的在直角坐标系上两个点所形成的线段对轴产生的投影的距离总和。也就是我们所说的L1距离。例如，坐标(x1,y1)的点P1与坐标(x2, y2)的点P2的曼哈顿距离计算公式为：<script type="math/tex; mode=display">
 \left|x_{1}-x_{2}\right|+\left|y_{1}-y_{2}\right|</script></li>
 </ul>
-
+<h4 id="7-参数模型与非参数模型"><a href="#7-参数模型与非参数模型" class="headerlink" title="7.参数模型与非参数模型"></a>7.参数模型与非参数模型</h4><ul>
+<li>参数模型：根据预先设计的规则，例如方差损失最小，进行学习，参数模型例子：回归（线性回归、逻辑回归）模型；最好可以看一下或者直接进行一下相关的推导；根据规则，拥有少部分数据就可以；</li>
+<li>非参数模型：不需要事先假设规则，直接挖掘潜在数据中的规则；非参数模型例子：KNN，决策树，挖掘数据潜在的特征，所以比较灵活；</li>
+</ul>
+<h4 id="8-生成模型与判别模型"><a href="#8-生成模型与判别模型" class="headerlink" title="8.生成模型与判别模型"></a>8.生成模型与判别模型</h4><ul>
+<li>生成模型：根据数据学习联合概率分布P(x,y)，从而计算出条件概率分布P(y|x)作为预测的模型。常用于含有隐变量的模型，例如HMM，朴素贝叶斯算法</li>
+<li>判别模型：根据数据直接学习条件概率分布P(x|y)或者决策函数Y=f(X)作为预测模型。例如：逻辑回归、RF、SVM、神经网络、感知机、KNN、CRF等</li>
+<li>两者的对比：<ul>
+<li>使用生成式方法得到的模型，可以还原出模型的联合概率分布，而判别模型不可以；</li>
+<li>生成式方法得到的模型收敛速度更快。当样本数增加时，生成式方法得到的模型能更快的收敛到真实模型；</li>
+<li>存在隐变量时，只能使用生成模型；</li>
+<li>使用判别式方法学习得到的模型，直接面对预测，学习的准确率通常更高，可以简化学习问题。<h4 id="9-LR和SVM的联系和区别？"><a href="#9-LR和SVM的联系和区别？" class="headerlink" title="9.LR和SVM的联系和区别？"></a>9.LR和SVM的联系和区别？</h4></li>
+</ul>
+</li>
+<li>联系：<ul>
+<li>LR和SVM都可以处理分类问题，且一般都用于处理线性二分类问题</li>
+<li>两个方法都可以增加不同的正则化项，如L1、L2正则化项</li>
+</ul>
+</li>
+<li>区别：<ul>
+<li>LR是参数模型，SVM是非参数模型</li>
+<li>从损失函数来看，LR使用的是交叉熵损失函数，SVM使用的hinge损失函数，这两个损失函数的目的都是增加对分类影响较大的样本点的权重，减小与分类关系比较小的数据点的权重。</li>
+<li>SVM的处理方法只考虑支持向量，也就是只考虑和分类最相关的少数样本点来学习分类器。而逻辑回归通过非线性映射，大大减小了离分离超平面远的样本点权重，相对提升了与分类最相关的样本点的权重。</li>
+<li>LR模型相对来说简单好理解，一般用于大规模的线性分类。SVM的理解和优化比较复杂，在处理复制非线性分类时，使用核技巧来计算优势明显。</li>
+<li>LR能做的SVM也能做，但可能准确率是上有问题，但SVM能做的LR做不了。</li>
+</ul>
+</li>
+</ul>
+<h4 id="11-神经网络中参数量parameters和FLOPs计算"><a href="#11-神经网络中参数量parameters和FLOPs计算" class="headerlink" title="11.神经网络中参数量parameters和FLOPs计算"></a>11.神经网络中参数量parameters和FLOPs计算</h4><ul>
+<li>CNN中的parameters分为两种：W和b，<strong>对于某一个卷积层，它的parameters的个数为</strong>:<script type="math/tex; mode=display">
+\left(K_{h} * K_{w} * C_{i n}\right) * C_{o u t}+C_{o u t}</script>其中，$K<em>{h}$是卷积核的高度，$K</em>{w}$是卷积核的宽度,$C<em>{in}$是输入的通道数，$C</em>{out}$是输出的通道数</li>
+<li><strong>对于某个全连接层</strong>，如果输入的数据有$N<em>{in}$个节点，输出的数据有$N</em>{out}$个节点，它的参数个数为：<br>$N<em>{i n} * N</em>{o u t}+N_{o u t}$</li>
+<li>FLOPs：<strong>全称是floating point operations per second，指的是每秒浮点运算次数，即用来衡量硬件的计算性能</strong></li>
+<li><strong>对于某个卷积层</strong>,它的FLOPs数量是：<br>$\left[\left(K<em>{h} * K</em>{w} <em> C_{i n}\right) </em> C<em>{o u t}+C</em>{o u t}\right] <em>(H </em> W)=n u m<em>{-} \operatorname{params} <em>(H </em> W)$<br>其中，$num</em>{params}$表示该层参数的数量，H是输出图像的高，W是输入图片的宽</li>
+<li><strong>例题1：假设你的输入是一个300×300的彩色（RGB）图像，而你没有使用卷积神经网络。 如果第一个隐藏层有100个神经元，每个神经元与输入层进行全连接，那么这个隐藏层有多少个参数（包括偏置参数）</strong>？</li>
+<li>A1：因为输入的节点数量是300*300*3,输出的节点数量是100。然后加上偏置项b，因为隐藏层有100个节点，每个节点都有一个偏置，所以b=100。利用上面计算全连接网络的公式，故3*300*300*100+100</li>
+<li><strong>例题2：假设你的输入是300×300彩色（RGB）图像，并且你使用卷积层和100个过滤器，每个过滤器都是5×5的大小，请问这个隐藏层有多少个参数（包括偏置参数）</strong>？</li>
+<li>A2：首先，参数和输入的图片大小是没有关系的，无论你给的图像像素有多大，参数值都是不变的，在这个题中，参数值只与过滤器有关。单个过滤器的大小是5*5,由于输入的是RGB图像，所以输入通道数目是3。因此一个过滤器的组成是5*5*3,每一过滤器只有一个偏置项b,因此一个过滤器所拥有的参数是5*5*3+1=76，一共用了100个过滤器，所以隐藏层含有76*100=7600个参数。其实，也就是上面的公式计算CNN的参数量。</li>
+</ul>
+<h4 id="10-SVM中常见的几种核函数"><a href="#10-SVM中常见的几种核函数" class="headerlink" title="10.SVM中常见的几种核函数"></a>10.SVM中常见的几种核函数</h4><ul>
+<li>线性核函数：内积公式<script type="math/tex; mode=display">
+\kappa\left(x_{1}, x_{2}\right)=\left\langle x_{1}, x_{2}\right\rangle</script></li>
+<li>多项式核函数<script type="math/tex; mode=display">
+K(x, z)=(x \cdot z+1)^{p}</script></li>
+<li>高斯核函数<script type="math/tex; mode=display">
+K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
+<li>字符串核函数：详见李航统计学习方法</li>
+</ul>
+<h4 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h4>
       
     </div>
     
@@ -506,7 +559,7 @@ d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots
   <p><span>本文标题:</span>算法岗面试常见问题大集合</p>
   <p><span>文章作者:</span>Curry_Coder</p>
   <p><span>发布时间:</span>2019年07月30日 - 22:51:47</p>
-  <p><span>最后更新:</span>2019年07月30日 - 22:54:10</p>
+  <p><span>最后更新:</span>2019年07月31日 - 13:17:40</p>
   <p><span>原始链接:</span><a href="/机器学习/算法岗面试常见问题大集合/" title="算法岗面试常见问题大集合">https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/" aria-label="复制成功！"></i></span>
   </p>
@@ -586,9 +639,9 @@ d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots
       
         <div class="post-tags">
           
-            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
-          
             <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
           
         </div>
       
@@ -847,7 +900,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-参考博客"><span class="nav-number">1.</span> <span class="nav-text">1.参考博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模型过拟合的解决方法"><span class="nav-number">2.</span> <span class="nav-text">2.模型过拟合的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何解决样本类别的不均衡问题？"><span class="nav-number">3.</span> <span class="nav-text">3.如何解决样本类别的不均衡问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"><span class="nav-number">4.</span> <span class="nav-text">4.在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-介绍一下TensorFlow中的计算图"><span class="nav-number">5.</span> <span class="nav-text">5.介绍一下TensorFlow中的计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"><span class="nav-number">6.</span> <span class="nav-text">6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-参考博客"><span class="nav-number">1.</span> <span class="nav-text">1.参考博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模型过拟合的解决方法"><span class="nav-number">2.</span> <span class="nav-text">2.模型过拟合的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何解决样本类别的不均衡问题？"><span class="nav-number">3.</span> <span class="nav-text">3.如何解决样本类别的不均衡问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"><span class="nav-number">4.</span> <span class="nav-text">4.在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-介绍一下TensorFlow中的计算图"><span class="nav-number">5.</span> <span class="nav-text">5.介绍一下TensorFlow中的计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"><span class="nav-number">6.</span> <span class="nav-text">6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-参数模型与非参数模型"><span class="nav-number">7.</span> <span class="nav-text">7.参数模型与非参数模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-生成模型与判别模型"><span class="nav-number">8.</span> <span class="nav-text">8.生成模型与判别模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-LR和SVM的联系和区别？"><span class="nav-number">9.</span> <span class="nav-text">9.LR和SVM的联系和区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-神经网络中参数量parameters和FLOPs计算"><span class="nav-number">10.</span> <span class="nav-text">11.神经网络中参数量parameters和FLOPs计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-SVM中常见的几种核函数"><span class="nav-number">11.</span> <span class="nav-text">10.SVM中常见的几种核函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11"><span class="nav-number">12.</span> <span class="nav-text">11.</span></a></li></ol></div>
             
 
           </div>
@@ -888,7 +941,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.3k</span>
+    <span title="Site words total count">43.8k</span>
   
 </div>
 
