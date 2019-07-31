@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,深度学习,">
+  <meta name="keywords" content="深度学习,机器学习,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
-<meta name="keywords" content="机器学习,深度学习">
+<meta name="keywords" content="深度学习,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法岗面试常见问题大集合">
 <meta property="og:url" content="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/index.html">
 <meta property="og:site_name" content="Curry_Coder的空间">
 <meta property="og:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T05:17:40.677Z">
+<meta property="og:updated_time" content="2019-07-31T05:32:49.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法岗面试常见问题大集合">
 <meta name="twitter:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
@@ -346,7 +346,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T13:17:40+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T13:32:49+08:00">
                 2019-07-31
               </time>
             
@@ -453,9 +453,9 @@
 </ul>
 <h4 id="2-模型过拟合的解决方法"><a href="#2-模型过拟合的解决方法" class="headerlink" title="2.模型过拟合的解决方法"></a>2.模型过拟合的解决方法</h4><ul>
 <li>L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。</li>
-<li>Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）、</li>
-<li>shortcut-connect(使用残差网络Residual network)、</li>
-<li>数据增强(增加样本的数量)、</li>
+<li>Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均值为0，方差为1，即通过特征归一化，加速模型的训练）</li>
+<li>shortcut-connect(使用残差网络Residual network)</li>
+<li>数据增强(增加样本的数量)</li>
 <li>early stopping</li>
 <li>Dropout：在训练过程中，让神经元以超参数p的概率被激活(也就是说1-p的概率被设置为0)，类似于bagging算法</li>
 </ul>
@@ -519,9 +519,11 @@ d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots
 <h4 id="11-神经网络中参数量parameters和FLOPs计算"><a href="#11-神经网络中参数量parameters和FLOPs计算" class="headerlink" title="11.神经网络中参数量parameters和FLOPs计算"></a>11.神经网络中参数量parameters和FLOPs计算</h4><ul>
 <li>CNN中的parameters分为两种：W和b，<strong>对于某一个卷积层，它的parameters的个数为</strong>:<script type="math/tex; mode=display">
 \left(K_{h} * K_{w} * C_{i n}\right) * C_{o u t}+C_{o u t}</script>其中，$K<em>{h}$是卷积核的高度，$K</em>{w}$是卷积核的宽度,$C<em>{in}$是输入的通道数，$C</em>{out}$是输出的通道数</li>
-<li><strong>对于某个全连接层</strong>，如果输入的数据有$N<em>{in}$个节点，输出的数据有$N</em>{out}$个节点，它的参数个数为：<br>$N<em>{i n} * N</em>{o u t}+N_{o u t}$</li>
+<li><strong>对于某个全连接层</strong>，如果输入的数据有$N<em>{in}$个节点，输出的数据有$N</em>{out}$个节点，它的参数个数为：<script type="math/tex; mode=display">
+N_{i n} * N_{o u t}+N_{o u t}</script></li>
 <li>FLOPs：<strong>全称是floating point operations per second，指的是每秒浮点运算次数，即用来衡量硬件的计算性能</strong></li>
-<li><strong>对于某个卷积层</strong>,它的FLOPs数量是：<br>$\left[\left(K<em>{h} * K</em>{w} <em> C_{i n}\right) </em> C<em>{o u t}+C</em>{o u t}\right] <em>(H </em> W)=n u m<em>{-} \operatorname{params} <em>(H </em> W)$<br>其中，$num</em>{params}$表示该层参数的数量，H是输出图像的高，W是输入图片的宽</li>
+<li><strong>对于某个卷积层</strong>,它的FLOPs数量是：<script type="math/tex; mode=display">
+\left[\left(K_{h} * K_{w} * C_{i n}\right) * C_{o u t}+C_{o u t}\right] *(H * W)=n u m_{-} \text { params } *(H * W)</script>其中，$num_{params}$表示该层参数的数量，H是输出图片的高，W是输出图片的宽</li>
 <li><strong>例题1：假设你的输入是一个300×300的彩色（RGB）图像，而你没有使用卷积神经网络。 如果第一个隐藏层有100个神经元，每个神经元与输入层进行全连接，那么这个隐藏层有多少个参数（包括偏置参数）</strong>？</li>
 <li>A1：因为输入的节点数量是300*300*3,输出的节点数量是100。然后加上偏置项b，因为隐藏层有100个节点，每个节点都有一个偏置，所以b=100。利用上面计算全连接网络的公式，故3*300*300*100+100</li>
 <li><strong>例题2：假设你的输入是300×300彩色（RGB）图像，并且你使用卷积层和100个过滤器，每个过滤器都是5×5的大小，请问这个隐藏层有多少个参数（包括偏置参数）</strong>？</li>
@@ -559,7 +561,7 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
   <p><span>本文标题:</span>算法岗面试常见问题大集合</p>
   <p><span>文章作者:</span>Curry_Coder</p>
   <p><span>发布时间:</span>2019年07月30日 - 22:51:47</p>
-  <p><span>最后更新:</span>2019年07月31日 - 13:17:40</p>
+  <p><span>最后更新:</span>2019年07月31日 - 13:32:49</p>
   <p><span>原始链接:</span><a href="/机器学习/算法岗面试常见问题大集合/" title="算法岗面试常见问题大集合">https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/" aria-label="复制成功！"></i></span>
   </p>
@@ -639,9 +641,9 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
-          
             <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
           
         </div>
       
