@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,深度学习,">
+  <meta name="keywords" content="深度学习,机器学习,">
 
 
 
@@ -82,17 +82,19 @@
 
 
 <meta name="description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
-<meta name="keywords" content="机器学习,深度学习">
+<meta name="keywords" content="深度学习,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法岗面试常见问题大集合">
 <meta property="og:url" content="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/index.html">
 <meta property="og:site_name" content="Curry_Coder的空间">
 <meta property="og:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T05:36:43.917Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-d93a5b732347ea1a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-07-31T09:32:01.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法岗面试常见问题大集合">
 <meta name="twitter:description" content="1.参考博客 算法岗面试常见问题大集合 算法工程师手册  2.模型过拟合的解决方法 L1/L2正则化（原理奥卡姆剃刀）:L2正则化也叫作权重衰减，目标函数中增加所有权重w参数的平方之和，迫使所有w可能趋向0但不为0；L1正则化在损失函数中加入所有权重参数w的绝对值之和，迫使更多的w为0，使特征变得稀疏。 Batch Normalization（对神经网络中下一层的输入进行归一化处理，使得输入量的均">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13407176-d93a5b732347ea1a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -346,7 +348,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T13:36:43+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T17:32:01+08:00">
                 2019-07-31
               </time>
             
@@ -410,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  7k
                 </span>
               
 
@@ -426,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  25
                 </span>
               
             </div>
@@ -493,7 +495,7 @@ d(x, y) :=\sqrt{\left(x_{1}-y_{1}\right)^{2}+\left(x_{2}-y_{2}\right)^{2}+\cdots
 <li>非参数模型：不需要事先假设规则，直接挖掘潜在数据中的规则；非参数模型例子：KNN，决策树，挖掘数据潜在的特征，所以比较灵活；</li>
 </ul>
 <h4 id="8-生成模型与判别模型"><a href="#8-生成模型与判别模型" class="headerlink" title="8.生成模型与判别模型"></a>8.生成模型与判别模型</h4><ul>
-<li>生成模型：根据数据学习联合概率分布P(x,y)，从而计算出条件概率分布P(y|x)作为预测的模型。常用于含有隐变量的模型，例如HMM，朴素贝叶斯算法</li>
+<li>生成模型：根据数据学习联合概率分布P(x,y)，从而计算出条件概率分布P(y|x)作为预测的模型。常用于含有隐变量的模型，例如HMM，朴素贝叶斯算法、高斯混合模型GMM、文档主题生成模型LDA、限制玻尔兹曼机等</li>
 <li>判别模型：根据数据直接学习条件概率分布P(x|y)或者决策函数Y=f(X)作为预测模型。例如：逻辑回归、RF、SVM、神经网络、感知机、KNN、CRF等</li>
 <li>两者的对比：<ul>
 <li>使用生成式方法得到的模型，可以还原出模型的联合概率分布，而判别模型不可以；</li>
@@ -540,7 +542,121 @@ K(x, z)=(x \cdot z+1)^{p}</script></li>
 K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
 <li>字符串核函数：详见李航统计学习方法</li>
 </ul>
-<h4 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h4>
+<h4 id="12-逻辑回归与线性回归的联系与区别"><a href="#12-逻辑回归与线性回归的联系与区别" class="headerlink" title="12.逻辑回归与线性回归的联系与区别"></a>12.逻辑回归与线性回归的联系与区别</h4><ul>
+<li>联系：逻辑回归和线性回归首先都是广义的线性回归；逻辑回归的模型本质上是一个对数线性回归模型，逻辑回归都是以线性回归为理论支持的。但线性回归模型无法做到sigmoid的非线性形式，sigmoid可以轻松处理0/1分类问题。</li>
+<li>区别：<ul>
+<li>线性模型的优化目标函数是最小二乘，而逻辑回归则是似然函数</li>
+<li>线性回归在整个实数域范围内进行预测，敏感度一致；而分类范围，需要在[0,1]。逻辑回归就是一种减小预测范围，将预测值限定为[0,1]间的一种回归模型，因而对于这类问题来说，逻辑回归的鲁棒性比线性回归的要好。</li>
+</ul>
+</li>
+</ul>
+<h4 id="13-XGBoost为什么要用泰勒公式展开，优势在哪"><a href="#13-XGBoost为什么要用泰勒公式展开，优势在哪" class="headerlink" title="13.XGBoost为什么要用泰勒公式展开，优势在哪?"></a>13.XGBoost为什么要用泰勒公式展开，优势在哪?</h4><ul>
+<li>XGBoost使用了一阶和二阶偏导, 二阶导数有利于梯度下降的更快更准。使用泰勒展开取得二阶倒数形式, 可以在不选定损失函数具体形式的情况下用于算法优化分析.本质上也就把损失函数的选取和模型算法优化和参数选择分开了，这种去耦合增加了XGBoost的适用性。</li>
+</ul>
+<h4 id="14-XGBoost如何寻找最优特征？是有放回还是无放回？"><a href="#14-XGBoost如何寻找最优特征？是有放回还是无放回？" class="headerlink" title="14.XGBoost如何寻找最优特征？是有放回还是无放回？"></a>14.XGBoost如何寻找最优特征？是有放回还是无放回？</h4><ul>
+<li>XGBoost在训练过程中给各个特征的增益评分，最大增益的特征会被选出来作为分裂的依据，从而记忆了每个特征对在模型训练时的重要性。XGBoost属于boosting的集成学习方法，样本是无放回的，因此每轮计算样本不重复。XGBoost支持子采样，即每轮计算不使用全部样本，以减少过拟合。</li>
+</ul>
+<h4 id="15-决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？"><a href="#15-决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？" class="headerlink" title="15.决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？"></a>15.决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？</h4><ul>
+<li>bagging与boosting的区别：<ul>
+<li>bagging方法有放回的采样相同数量样本训练学习器，然后再一起投票。学习器之间不存在强的依赖关系，学习器可以并行训练生成。集成方式一般为投票法。随机森林属于Bagging的代表，放回抽样，每个学习器随机选择部分特征去优化。</li>
+<li>Boosting方法使用全部样本，依次训练每个学习器，迭代集成。学习器之间不存在强依赖关系，学习器可并行训练生成，集成方式为加权和；Adaboost属于Boosting，采用指数损失函数代替原本分类任务中的0-1损失函数；GBDT属于Boosting的优秀代表，对函数残差近似值进行梯度下降，用CRAT树作为基本的学习器，集成模型为回归模型。XGBoost属于Boosting的集大成者，对函数残差近似值进行梯度下降，迭代时利用二阶梯度信息，集成模型可用于分类也可以用于回归。</li>
+</ul>
+</li>
+<li>决策树的学习过程：从根开始建立树，也就是如何选择特征进行分裂。ID3算法使用信息增益、C4.5使用信息增益比、CART树采用基尼系数计算最优分类点，XGBoost使用二阶泰勒展开系数计算最优分裂点。</li>
+</ul>
+<h4 id="16-GBDT与XGBoost的对比，XGBoost的优点"><a href="#16-GBDT与XGBoost的对比，XGBoost的优点" class="headerlink" title="16.GBDT与XGBoost的对比，XGBoost的优点"></a>16.GBDT与XGBoost的对比，XGBoost的优点</h4><ul>
+<li>损失函数用泰勒展开二项逼近，而不是像GBDT中用的就是一阶导数</li>
+<li>对树的结构进行了正则化约束，防止模型过于复杂，降低了过拟合的可能性</li>
+<li>节点的分裂方式不同，GBDT使用的是基尼系数，XGBoost使用的是经过优化推导后的算法(穷举法选择最佳的分裂节点、通过加权分位数方法近似选择最佳的分裂节点、针对稀疏特征的分裂点选择法)</li>
+</ul>
+<h4 id="17-L1和L2范数的区别"><a href="#17-L1和L2范数的区别" class="headerlink" title="17.L1和L2范数的区别"></a>17.L1和L2范数的区别</h4><ul>
+<li>L1 norm:向量中各个元素绝对值之和，也称为稀疏规则算子，L1范数可以使权重稀疏，方便特征提取；L1正则化先验服从拉普拉斯分布</li>
+<li>L2 norm:向量中各个元素平方和的1/2次方，又称为Frobenius范数，L2范数可以防止过拟合，提升模型的泛化能力；L2正则化先验服从高斯分布</li>
+</ul>
+<h4 id="18-阐述Adaboost算法的流程，并写出权重更新的公式"><a href="#18-阐述Adaboost算法的流程，并写出权重更新的公式" class="headerlink" title="18.阐述Adaboost算法的流程，并写出权重更新的公式"></a>18.阐述Adaboost算法的流程，并写出权重更新的公式</h4><ul>
+<li><a href="https://www.jianshu.com/p/aae31290189e" target="_blank" rel="noopener">详细原理</a></li>
+</ul>
+<h4 id="19-LSTM的结构推导，为什么比普通的RNN好？"><a href="#19-LSTM的结构推导，为什么比普通的RNN好？" class="headerlink" title="19.LSTM的结构推导，为什么比普通的RNN好？"></a>19.LSTM的结构推导，为什么比普通的RNN好？</h4><ul>
+<li><a href="https://www.jianshu.com/p/7c429d049b09" target="_blank" rel="noopener">详细原理</a></li>
+</ul>
+<h4 id="20-为什么朴素贝叶斯算法如此朴素？"><a href="#20-为什么朴素贝叶斯算法如此朴素？" class="headerlink" title="20.为什么朴素贝叶斯算法如此朴素？"></a>20.为什么朴素贝叶斯算法如此朴素？</h4><ul>
+<li>因为它假设所有的特征在数据集中的作用都是同样重要的，而且相互独立的。这个假设在现实中基本上是不存在的，但特征相关性很小的实际情况还很多，岁月这个模型还可以工作的很好。</li>
+</ul>
+<h4 id="21-EM算法原理说明"><a href="#21-EM算法原理说明" class="headerlink" title="21.EM算法原理说明"></a>21.EM算法原理说明</h4><ul>
+<li>有时候样本的产生和隐含变量有关(隐变量是不能观察的)，而求模型的参数时一般都采用极大似然估计，由于含有隐变量，所以对似然函数的参数求导数是求不出来的，这时候用EM算法来求模型的参数，典型的用法是用在GMM和HMM中。步骤如下：<ul>
+<li>E步：选择一组参数，求出在此参数下隐变量的条件概率值<script type="math/tex; mode=display">
+  Q_{i}\left(z^{(i)}\right) :=p\left(z^{(i)} | x^{(i)} ; \theta\right)</script></li>
+<li>M步：结合E步求出的隐变量的条件概率值，求出似然函数的下界函数(即某个期望函数)最大值。<script type="math/tex; mode=display">
+  \theta :=\arg \max _{\theta} \sum_{i} \sum_{z^{(i)}} Q_{i}\left(z^{(i)}\right) \log \frac{p\left(x^{(i)}, z^{(i)} ; \theta\right)}{Q_{i}\left(z^{(i)}\right)}</script></li>
+<li>重复进行上面的两步，直至收敛为止。</li>
+</ul>
+</li>
+<li>M步中下界函数的推导过程：<script type="math/tex; mode=display">
+\begin{aligned} \sum_{i} \log p\left(x^{(i)} ; \theta\right) &=\sum_{i} \log \sum_{z^{(i)}} p\left(x^{(i)}, z^{(i)} ; \theta\right) \\ &=\sum_{i} \log \sum_{z^{(i)}} Q_{i}\left(z^{(i)}\right) \frac{p\left(x^{(i)}, z^{(i)} ; \theta\right)}{Q_{i}\left(z^{(i)}\right)} \\ & \geq \sum_{i} \sum_{z^{(i)}} Q_{i}\left(z^{(i)}\right) \log \frac{p\left(x^{(i)}, z^{(i)} ; \theta\right)}{Q_{i}\left(z^{(i)}\right)} \end{aligned}</script></li>
+</ul>
+<h4 id="22-GMM算法原理说明"><a href="#22-GMM算法原理说明" class="headerlink" title="22.GMM算法原理说明"></a>22.GMM算法原理说明</h4><ul>
+<li>EM算法的常用例子是高斯混合模型GMM，每个样本都有可能由K个高斯模型产生，只不过每个高斯模型的产生概率不同，因此每个样本都有对应的高斯分布(K个模型中的一个)，此时的隐变量就是每个样本对应的某个高斯分布。<ul>
+<li>GMM算法的E步(计算每个样本对应每个高斯模型的概率)<script type="math/tex; mode=display">
+  w_{j}^{(i)} :=p\left(z^{(i)}=j | x^{(i)} ; \phi, \mu, \Sigma\right)</script>具体的计算公式为：<script type="math/tex; mode=display">
+  p\left(z^{(i)}=j | x^{(i)} ; \phi, \mu, \Sigma\right)=\frac{p\left(x^{(i)} | z^{(i)}=j ; \mu, \Sigma\right) p\left(z^{(i)}=j ; \phi\right)}{\sum_{l=1}^{k} p\left(x^{(i)} | z^{(i)}=l ; \mu, \Sigma\right) p\left(z^{(i)}=l ; \phi\right)}</script></li>
+<li>M步计算公式(计算每个高斯模型的权重，均值，方差3个参数)：<script type="math/tex; mode=display">
+  \begin{aligned} \phi_{j} & :=\frac{1}{m} \sum_{i=1}^{m} w_{j}^{(i)} \\ \mu_{j} & :=\frac{\sum_{i=1}^{m} w_{j}^{(i)} x^{(i)}}{\sum_{i=1}^{m} w_{j}^{(i)}} \\ \Sigma_{j} & :=\frac{\sum_{i=1}^{m} w_{j}^{(i)}\left(x^{(i)}-\mu_{j}\right)\left(x^{(i)}-\mu_{j}\right)^{T}}{\sum_{i=1}^{m} w_{j}^{(i)}} \end{aligned}</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="23-KNN算法中K是如何选择的"><a href="#23-KNN算法中K是如何选择的" class="headerlink" title="23.KNN算法中K是如何选择的?"></a>23.KNN算法中K是如何选择的?</h4><ul>
+<li>如果选择较小的K值，就相当于用较小的邻域中的训练实例进行预测，“学习”近似误差会减小，只有与输入实例较近或相似的训练实例才会对预测结果起作用，与此同时带来的问题是“学习”的估计误差会增大。换句话说，K值的减小就意味着整体模型变得复杂，容易发生过拟合；</li>
+<li>如果选择较大的K值，就相当于用较大领域中的训练实例进行预测，其优点是可以减少学习的估计误差，但缺点是学习的近似误差会增大。这时候，与输入实例较远（不相似的）训练实例也会对预测器作用，使预测发生错误，且K值的增大就意味着整体的模型变得简单。</li>
+<li>K=N，此时无论输入实例是什么，都只是简单的预测它属于在训练实例中最多的累，模型过于简单，忽略了训练实例中大量有用信息。</li>
+<li>实际中，使用交叉验证的方法选择最优的K的取值。</li>
+</ul>
+<h4 id="24-机器学习中，为什么经常需要对数据进行归一化？"><a href="#24-机器学习中，为什么经常需要对数据进行归一化？" class="headerlink" title="24.机器学习中，为什么经常需要对数据进行归一化？"></a>24.机器学习中，为什么经常需要对数据进行归一化？</h4><ul>
+<li>归一化能提高梯度下降算法求解的速度</li>
+<li>归一化有可能提高精度</li>
+</ul>
+<h4 id="25-神经网络中的批量归一化Batch-Normalization-BN-原理"><a href="#25-神经网络中的批量归一化Batch-Normalization-BN-原理" class="headerlink" title="25.神经网络中的批量归一化Batch Normalization(BN)原理"></a>25.神经网络中的批量归一化Batch Normalization(BN)原理</h4><h5 id="0-概述"><a href="#0-概述" class="headerlink" title="0.概述"></a>0.概述</h5><ul>
+<li><strong>深层神经网络存在的问题(从当前层的输入的分布来分析)</strong>：在深层神经网络中，中间层的输入是上一层神经网络的输出。因此，之前的层的神经网络参数的变化会导致当前层输入的分布发生较大的差异。在使用随机梯度下降法来训练神经网络时，每次参数更新都会导致网络中每层的输入分布发生变化。越是深层的神经网络，其输入的分布会改变的越明显。</li>
+<li><strong>解决方法(归一化操作)</strong>：从机器学习角度来看，如果某层的输入分布发生了变化，那么其参数需要重新学习，这种现象称为<strong>内部协变量偏移</strong>。为了解决内部协变量偏移问题，就要使得每一层神经网络输入的分布在训练过程中要保持一致。最简单的方法是<strong>对每一层神经网络都进行归一化操作，使其分布保持稳定</strong>。</li>
+</ul>
+<h5 id="1-批量归一化"><a href="#1-批量归一化" class="headerlink" title="1.批量归一化"></a>1.批量归一化</h5><ul>
+<li><strong>协变量偏移介绍</strong><ul>
+<li>在传统机器学习中，一个常见的问题是协变量偏移。协变量是一个统计学概念，是可能影响预测结果的统计变量。在机器学习中，协变量可以看作是<strong>输入</strong>。一般的机器学习算法都要求输入在训练集和测试集上的分布式相似的。如果不满足这个假设，在训练集上学习到的模型在测试集上的表现会比较差，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/13407176-d93a5b732347ea1a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="协变量偏移"></li>
+</ul>
+</li>
+<li><strong>BN原理介绍</strong><ul>
+<li>批量归一化方法是一种有效的逐层归一化的方法，可以对神经网络中任意的中间层进行归一化操作。对一个深层神经网络来说，令第l层的净输入为$\mathbf{z}^{(l)}$， 经过激活函数后的输出是$\mathbf{a}^{(l)}$，即<script type="math/tex; mode=display">
+\mathbf{a}^{(l)}=f\left(\mathbf{z}^{(l)}\right)=f\left(W \mathbf{a}^{(l-1)}+\mathbf{b}\right)</script>其中，$f(\cdot)$是激活函数，W和b是权重和偏置参数。</li>
+<li>为了减少内部协变量偏移问题，就要使得净输入$\mathbf{z}^{(l)}$的分布一致，比如都归一化到标准正态分布。虽然归一化操作可以应用在输入$\mathbf{a}^{(l-1)}$上，但其分布性质不如$\mathbf{z}^{(l)}$稳定。因此，<strong>在实践中归一化操作一般应用在仿射变换之后，在下一次激活函数之前</strong>。利用数据预处理方法对$\mathbf{z}^{(l)}$进行归一化，相当于每一层都进行一次数据预处理，从而加速收敛速度。但是，逐层归一化需要在中间层进行操作，要求效率比较高，因此复杂度比较高的白话方法就不太合适。为了提高归一化效率，一般使用标准归一化，将净输入$\mathbf{z}^{(l)}$的每一维都归一到标准正态分布。<script type="math/tex; mode=display">
+\hat{\mathbf{z}}^{(l)}=\frac{\mathbf{z}^{(l)}-\mathbb{E}\left[\mathbf{z}^{(l)}\right]}{\sqrt{\operatorname{var}\left(\mathbf{z}^{(l)}\right)+\epsilon}}</script>其中，$\mathbb{E}\left[\mathbf{z}^{(l)}\right]$和$\operatorname{var}\left(\mathbf{z}^{(l)}\right)$是当前参数下，$\mathbf{z}^{(l)}$的每一维度在整个训练集上的期望和方差。因为目前主要的训练方法是基于Mini-Batch的随机梯度下降算法，所以准确地计算$\mathbf{z}^{(l)}$的期望和方差是不可行的。因此，$\mathbf{z}^{(l)}$的期望和方差通常用当前小批量Mini-Batch样本集的均值和方差近似估计。</li>
+<li>给定一个包含K个样本的小批量样本集合，第l层神经元的净输入$\mathbf{z}^{(1,l)}$，….，$\mathbf{z}^{(K,l)}$的均值和方差为：<script type="math/tex; mode=display">
+\begin{aligned} \mu_{\mathcal{B}} &=\frac{1}{K} \sum_{k=1}^{\mathrm{N}} \mathbf{z}^{(k, l)} \\ \sigma_{\mathcal{B}}^{2} &=\frac{1}{K} \sum_{k=1}^{K}\left(\mathbf{z}^{(k, l)}-\mu_{\mathcal{B}}\right) \odot\left(\mathbf{z}^{(k, l)}-\mu_{\mathcal{B}}\right) \end{aligned}</script></li>
+<li>对净输入$\mathbf{z}^{(l)}$的标准归一化会使得其取值集中到0附近，如果使用sigmoid激活函数时，这个取值区间刚好是接近线性变换区间，从而减弱了神经网络非线性变换的性质。<strong>因此，为了使归一化操作不对网络的表示能力造成负面影响，可以通过一个附加的缩放和平移变换改变取值区间</strong>。<br>$\hat{\mathbf{z}}^{(l)}=\frac{\mathbf{z}^{(l)}-\mu<em>{\mathcal{B}}}{\sqrt{\sigma</em>{\mathcal{B}}^{2}+\epsilon}} \odot \gamma+\beta\triangleq \mathrm{BN}<em>{\gamma, \beta}\left(\mathbf{z}^{(l)}\right)$<br>其中，$\gamma$、$\beta$分别表示缩放和平移的参数向量。<strong>从最保守的角度考虑，可以通过标准归一化的逆变换来使得归一化的变量可以被还原为原来的值</strong>。即：当$\gamma=\sqrt{\sigma</em>{\mathcal{B}}^{2}}$，$\beta=\mu_{\mathcal{B}}$时，$\hat{\mathbf{z}}^{(l)}=\mathbf{z}^{(l)}$。</li>
+<li>批量归一化操作可以看作是一个特殊的神经网络层，<strong>该层是加在每一层非线性激活函数之前</strong>，即：<script type="math/tex; mode=display">
+\mathbf{a}^{(l)}=f\left(\mathbf{B} \mathbf{N}_{\gamma, \beta}\left(\mathbf{z}^{(l)}\right)\right)=f\left(\mathbf{B} \mathbf{N}_{\gamma, \beta}\left(W \mathbf{a}^{(l-1)}\right)\right)</script>其中，因为批量归一化本身具有平移变换，因此非线性变换$W \mathbf{a}^{(l-1)}$就不再需要偏置参数b。</li>
+<li><strong>注意</strong>：每次小批量样本的$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$是净输入$\mathbf{z}^{(l)}$的函数，而不是常量。因此，在计算参数梯度时，需要考虑$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$的影响。当训练完成时，用整个数据集上的均值$\mu$和方差$\sigma^{2}$来分别替代每次小批量样本的$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$。在实际中，$\mu<em>{\mathcal{B}}$和$\sigma</em>{\mathcal{B}}^{2}$也可以使用移动平均来计算。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-参考资料"><a href="#2-参考资料" class="headerlink" title="2.参考资料"></a>2.参考资料</h5><ul>
+<li><a href="https://nndl.github.io/" target="_blank" rel="noopener">邱锡鹏：《神经网络与深度学习》</a></li>
+</ul>
+<h4 id="26-哪些机器学习算法不需要进行归一化操作？"><a href="#26-哪些机器学习算法不需要进行归一化操作？" class="headerlink" title="26.哪些机器学习算法不需要进行归一化操作？"></a>26.哪些机器学习算法不需要进行归一化操作？</h4><ul>
+<li>概率模型不需要做归一化操作，因为它们不关心变量的值，而关心的是变量分布和变量之间的条件概率，如决策树。但是，像Adaboost、SVM、LR、KNN、Kmeans等最优化问题就需要归一化。</li>
+</ul>
+<h4 id="27-为什么树形结构不需要归一化？"><a href="#27-为什么树形结构不需要归一化？" class="headerlink" title="27.为什么树形结构不需要归一化？"></a>27.为什么树形结构不需要归一化？</h4><ul>
+<li>数值缩放，不影响分裂点位置。因为第一步都是按照特征值进行排序的，排序的顺序不变，那么所属的分支以及分裂点就不会变。对于线性模型，比如说LR，假设有两个特征，一个是(0,1)的，一个是(0,10000)的，这样运用梯度下降时候，损失等高线是一个椭圆的形状，这样想迭代到最优点，就需要很多次迭代，但是如果进行了归一化，那么等高线就是圆形的，那么SGD就会往原点迭代，需要的迭代次数较少。另外，注意树模型是不能进行梯度下降的，因为树模型是阶跃的，阶跃点是不可导的，并且求导没意义，所以树模型（回归树）寻找最优点是通过寻找最优分裂点完成的。</li>
+</ul>
+<h4 id="28-一个完整机器学习项目的流程"><a href="#28-一个完整机器学习项目的流程" class="headerlink" title="28.一个完整机器学习项目的流程"></a>28.一个完整机器学习项目的流程</h4><ul>
+<li>抽象成数学问题、获取数据、特征预处理与特征选择、训练模型与调优、模型诊断、模型融合、上线运行</li>
+</ul>
+<h4 id="29-条件随机场CRF模型相对于HMM模型-隐马尔科夫模型-和MEMM模型-最大熵隐马尔科夫模型-的优势。"><a href="#29-条件随机场CRF模型相对于HMM模型-隐马尔科夫模型-和MEMM模型-最大熵隐马尔科夫模型-的优势。" class="headerlink" title="29.条件随机场CRF模型相对于HMM模型(隐马尔科夫模型)和MEMM模型(最大熵隐马尔科夫模型)的优势。"></a>29.条件随机场CRF模型相对于HMM模型(隐马尔科夫模型)和MEMM模型(最大熵隐马尔科夫模型)的优势。</h4><ul>
+<li>HMM模型中一个最大的缺点即其输出独立性假设，由于输出独立性假设的缺点导致HMM模型不能考虑上下文的特征，限制了特征的选择。</li>
+<li>MEMM模型则解决了HMM模型的最大的缺点，可以任意选择特征，但是由于其每一个节点都要进行归一化，所以只能找到局部最优值。同时，也带来了标记偏见的问题即凡是在训练语料库中未出现的情况都被忽略掉了。CRF模型很好的解决了这个问题，它并不在每一节点进行归一化，而是所有特征进行全局归一化，因此可以求出全局的最优值。</li>
+</ul>
+<h4 id="30-什么是熵？"><a href="#30-什么是熵？" class="headerlink" title="30.什么是熵？"></a>30.什么是熵？</h4><ul>
+<li>熵的定义：离散随机事件的出现概率。一个系统越是有序，信息熵就越低。信息熵可以被认为是系统有序化程度的一个度量。</li>
+</ul>
+<h4 id="31-BP反向传播算法推导及python实现"><a href="#31-BP反向传播算法推导及python实现" class="headerlink" title="31.BP反向传播算法推导及python实现"></a>31.BP反向传播算法推导及python实现</h4>
       
     </div>
     
@@ -563,7 +679,7 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
   <p><span>本文标题:</span>算法岗面试常见问题大集合</p>
   <p><span>文章作者:</span>Curry_Coder</p>
   <p><span>发布时间:</span>2019年07月30日 - 22:51:47</p>
-  <p><span>最后更新:</span>2019年07月31日 - 13:36:43</p>
+  <p><span>最后更新:</span>2019年07月31日 - 17:32:01</p>
   <p><span>原始链接:</span><a href="/机器学习/算法岗面试常见问题大集合/" title="算法岗面试常见问题大集合">https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/机器学习/算法岗面试常见问题大集合/" aria-label="复制成功！"></i></span>
   </p>
@@ -643,9 +759,9 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
-          
             <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
           
         </div>
       
@@ -904,7 +1020,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-参考博客"><span class="nav-number">1.</span> <span class="nav-text">1.参考博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模型过拟合的解决方法"><span class="nav-number">2.</span> <span class="nav-text">2.模型过拟合的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何解决样本类别的不均衡问题？"><span class="nav-number">3.</span> <span class="nav-text">3.如何解决样本类别的不均衡问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"><span class="nav-number">4.</span> <span class="nav-text">4.在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-介绍一下TensorFlow中的计算图"><span class="nav-number">5.</span> <span class="nav-text">5.介绍一下TensorFlow中的计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"><span class="nav-number">6.</span> <span class="nav-text">6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-参数模型与非参数模型"><span class="nav-number">7.</span> <span class="nav-text">7.参数模型与非参数模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-生成模型与判别模型"><span class="nav-number">8.</span> <span class="nav-text">8.生成模型与判别模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-LR和SVM的联系和区别？"><span class="nav-number">9.</span> <span class="nav-text">9.LR和SVM的联系和区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-神经网络中参数量parameters和FLOPs计算"><span class="nav-number">10.</span> <span class="nav-text">10.神经网络中参数量parameters和FLOPs计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-SVM中常见的几种核函数"><span class="nav-number">11.</span> <span class="nav-text">11.SVM中常见的几种核函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12"><span class="nav-number">12.</span> <span class="nav-text">12.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-参考博客"><span class="nav-number">1.</span> <span class="nav-text">1.参考博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模型过拟合的解决方法"><span class="nav-number">2.</span> <span class="nav-text">2.模型过拟合的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何解决样本类别的不均衡问题？"><span class="nav-number">3.</span> <span class="nav-text">3.如何解决样本类别的不均衡问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？"><span class="nav-number">4.</span> <span class="nav-text">4.在神经网络训练过程中，为什么会出现梯度消失的问题？如何防止？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-介绍一下TensorFlow中的计算图"><span class="nav-number">5.</span> <span class="nav-text">5.介绍一下TensorFlow中的计算图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。"><span class="nav-number">6.</span> <span class="nav-text">6.K-Means或KNN中，通常使用欧式距离来表示最近的数据点之间的距离，有时候也使用曼哈度距离，对比两者的区别。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-参数模型与非参数模型"><span class="nav-number">7.</span> <span class="nav-text">7.参数模型与非参数模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-生成模型与判别模型"><span class="nav-number">8.</span> <span class="nav-text">8.生成模型与判别模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-LR和SVM的联系和区别？"><span class="nav-number">9.</span> <span class="nav-text">9.LR和SVM的联系和区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-神经网络中参数量parameters和FLOPs计算"><span class="nav-number">10.</span> <span class="nav-text">10.神经网络中参数量parameters和FLOPs计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-SVM中常见的几种核函数"><span class="nav-number">11.</span> <span class="nav-text">11.SVM中常见的几种核函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-逻辑回归与线性回归的联系与区别"><span class="nav-number">12.</span> <span class="nav-text">12.逻辑回归与线性回归的联系与区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-XGBoost为什么要用泰勒公式展开，优势在哪"><span class="nav-number">13.</span> <span class="nav-text">13.XGBoost为什么要用泰勒公式展开，优势在哪?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-XGBoost如何寻找最优特征？是有放回还是无放回？"><span class="nav-number">14.</span> <span class="nav-text">14.XGBoost如何寻找最优特征？是有放回还是无放回？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？"><span class="nav-number">15.</span> <span class="nav-text">15.决策树、随机森林RF、Boosting、Adaboost、GBDT、XGBoost的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-GBDT与XGBoost的对比，XGBoost的优点"><span class="nav-number">16.</span> <span class="nav-text">16.GBDT与XGBoost的对比，XGBoost的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-L1和L2范数的区别"><span class="nav-number">17.</span> <span class="nav-text">17.L1和L2范数的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-阐述Adaboost算法的流程，并写出权重更新的公式"><span class="nav-number">18.</span> <span class="nav-text">18.阐述Adaboost算法的流程，并写出权重更新的公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-LSTM的结构推导，为什么比普通的RNN好？"><span class="nav-number">19.</span> <span class="nav-text">19.LSTM的结构推导，为什么比普通的RNN好？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-为什么朴素贝叶斯算法如此朴素？"><span class="nav-number">20.</span> <span class="nav-text">20.为什么朴素贝叶斯算法如此朴素？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-EM算法原理说明"><span class="nav-number">21.</span> <span class="nav-text">21.EM算法原理说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-GMM算法原理说明"><span class="nav-number">22.</span> <span class="nav-text">22.GMM算法原理说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-KNN算法中K是如何选择的"><span class="nav-number">23.</span> <span class="nav-text">23.KNN算法中K是如何选择的?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-机器学习中，为什么经常需要对数据进行归一化？"><span class="nav-number">24.</span> <span class="nav-text">24.机器学习中，为什么经常需要对数据进行归一化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-神经网络中的批量归一化Batch-Normalization-BN-原理"><span class="nav-number">25.</span> <span class="nav-text">25.神经网络中的批量归一化Batch Normalization(BN)原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#0-概述"><span class="nav-number">25.1.</span> <span class="nav-text">0.概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-批量归一化"><span class="nav-number">25.2.</span> <span class="nav-text">1.批量归一化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-参考资料"><span class="nav-number">25.3.</span> <span class="nav-text">2.参考资料</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-哪些机器学习算法不需要进行归一化操作？"><span class="nav-number">26.</span> <span class="nav-text">26.哪些机器学习算法不需要进行归一化操作？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-为什么树形结构不需要归一化？"><span class="nav-number">27.</span> <span class="nav-text">27.为什么树形结构不需要归一化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-一个完整机器学习项目的流程"><span class="nav-number">28.</span> <span class="nav-text">28.一个完整机器学习项目的流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29-条件随机场CRF模型相对于HMM模型-隐马尔科夫模型-和MEMM模型-最大熵隐马尔科夫模型-的优势。"><span class="nav-number">29.</span> <span class="nav-text">29.条件随机场CRF模型相对于HMM模型(隐马尔科夫模型)和MEMM模型(最大熵隐马尔科夫模型)的优势。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-什么是熵？"><span class="nav-number">30.</span> <span class="nav-text">30.什么是熵？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-BP反向传播算法推导及python实现"><span class="nav-number">31.</span> <span class="nav-text">31.BP反向传播算法推导及python实现</span></a></li></ol></div>
             
 
           </div>
@@ -945,7 +1061,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.8k</span>
+    <span title="Site words total count">49.4k</span>
   
 </div>
 
