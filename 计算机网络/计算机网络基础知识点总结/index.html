@@ -107,7 +107,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-7c3eb002a1527b14?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-9997deb1e8e31655?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-96c25506dffe9b6f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-07-30T14:49:04.087Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-757ce91f7440a227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-95ab02be1704aa0f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13407176-163d146352f644df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-01T09:06:43.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络基础知识点总结">
 <meta name="twitter:description" content="0.互联网的组成 边缘部分：所有连接在互联网上的主机（主机指的是所有与网络直接相连的计算机）组成，用户可以直接使用，用来进行主机之间的通信和资源共享。 核心部分：大量的网络与连接这些网络所使用的路由器构成，为边缘部分提供服务。 边缘部分总结 边缘部分主要使用核心部分所提供的服务，使得许多主机之间能够互相通信并进行交换或共享信息。计算机之间的通信指的是主机A上的一个进程与主机B上的另一个进程之间进行">
@@ -365,8 +368,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-30T22:49:04+08:00">
-                2019-07-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-01T17:06:43+08:00">
+                2019-08-01
               </time>
             
           </span>
@@ -429,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.4k
+                  20.6k
                 </span>
               
 
@@ -445,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  26
+                  73
                 </span>
               
             </div>
@@ -487,10 +490,10 @@
 </li>
 </ul>
 </li>
-<li>物理层：实现网络互连的主要设备有<strong>中继器和HUB(集线器)</strong></li>
-<li>数据链路层：实现网络互联的主要设备有<strong>二层交换机和网桥</strong></li>
-<li>网络层：实现网络互连的主要设备有<strong>三层交换机和路由器</strong></li>
-<li>传输层（包括传输层）以上：实现网络互连的设备有<strong>网关</strong></li>
+<li>物理层：实现网络互连的主要设备有<strong>中继器和HUB(集线器)</strong>。中继器的主要功能是对接收到的信号进行再生整形放大以扩大网络的传输距离；集线器在此基础上将所有的节点集中在以它为中心的节点中，可组成星型拓扑结构。</li>
+<li>数据链路层：实现网络互联的主要设备有<strong>二层交换机和网桥</strong>。交换机是一种基于MAC识别，能完成封装转发数据包功能的网络设备。它可以“学习”MAC地址，并把其存放在内部地址表中，当一个数据帧的目的地址在MAC地址表中有映射时，它被转发到连接目的节点的端口而不是所有端口。  交换机将局域网分为多个冲突域，每个冲突域都是有独立的宽带，因此大大提高了局域网的带宽。网桥是数据链路层互联的设备，在网络互联中可起到数据接收、地址过滤与数据转发的作用，可用来实现多个不同网络系统之间的数据交换。</li>
+<li>网络层：实现网络互连的主要设备有<strong>三层交换机和路由器</strong>。路由器用于连接多个逻辑上分开的网络，具有判断网络地址和选择IP路径的功能，它能在多网络互联环境中，建立灵活的连接，可用完全不同的数据分组和介质访问方法连接各种子网。</li>
+<li>传输层（包括传输层）以上：实现网络互连的设备有<strong>网关</strong>。网关在网络层以上实现网络互连，用于两个高层协议不同的网络互连。与网桥只是简单地传达信息不同，网关对收到的信息要重新打包，以适应目的系统的需求。</li>
 </ul>
 <h3 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h3><p><img src="https://upload-images.jianshu.io/upload_images/13407176-7fe56a6a91c93d29?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在这里插入图片描述"></p>
 <ul>
@@ -806,8 +809,388 @@
 </li>
 </ul>
 <h3 id="10-DNS-域名解析协议"><a href="#10-DNS-域名解析协议" class="headerlink" title="10.DNS(域名解析协议)"></a>10.DNS(域名解析协议)</h3><ul>
+<li>域名的来由：我们可以通过IP地址去访问网站，但是对大多数用户来说，访问每个网站都需要记住一串数字是不现实的，所以用户可以通过域名来访问网站。域名，其实是具有一定含义的字符组合。<strong>域名系统是因特网上作为域名和IP地址相互映射的一个分布式数据库，能让用户更方便使用互联网</strong>。</li>
 <li>DNS劫持：指用户访问一个被标记的地址时，DNS服务器故意将此地址指向一个错误的IP地址的行为。范例：收到各种推送广告等网站</li>
 <li>DNS污染：指的是用户访问一个地址，国内的服务器(非DNS)监控到用户访问的已经被标记地址时，服务器伪装成DNS服务器向用户发回错误的地址的行为。比如不能访问Google、YouTube等。</li>
+<li>域名表达式为，在地址表达式中，最右边的是最高层次的域名，最左边的是主机名，域与域之间用圆点隔开；</li>
+<li>域名解析：通过主机最终得到该主机名对应的IP地址；</li>
+</ul>
+<h3 id="11-Http协议格式"><a href="#11-Http协议格式" class="headerlink" title="11.Http协议格式"></a>11.Http协议格式</h3><ul>
+<li>HTTP请求报文与响应报文格式<ul>
+<li>请求报文包含三部分：<ul>
+<li>请求行：包含请求方法、URI、HTTP版本信息</li>
+<li>请求首部字段</li>
+<li>请求内容实体</li>
+</ul>
+</li>
+<li>响应报文包含三部分：<ul>
+<li>状态行：包含HTTP版本、状态码、状态码的原因短语</li>
+<li>响应首部字段</li>
+<li>响应内容实体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP（超文本传输协议）是一个基于请求与响应模式的、无状态的、应用层的协议，常基于TCP的连接方式，HTTP1.1版本中给出一种持续连接的机制，绝大多数的Web开发，都是构建在HTTP协议之上的Web应用。</li>
+<li>常用的HTTP方法有哪些？<ul>
+<li>GET：用于请求访问已经被URI（统一资源标识符）识别的资源，可以通过URL传参给服务器。</li>
+<li>POST：用于传输信息给服务器，主要功能与GET方法类似，但一般推荐使用POST方式。</li>
+<li>PUT：传输文件，报文主体中包含文件内容，保存到对应URI位置。</li>
+<li>HEAD：获得报文首部，与GET方法类似，只是不返回报文主体，一般用于验证URI是否有效。</li>
+<li>DELETE：删除文件，与PUT方法相反，删除对应URI位置的文件。</li>
+<li>OPTIONS：查询相应URI支持的HTTP方法。</li>
+</ul>
+</li>
+<li>GET方法与POST方法的区别<ul>
+<li>get重点在从服务器上获取资源，post重点在向服务器发送数据；</li>
+<li>get传输数据是通过URL请求，以field（字段）= value的形式，置于URL后，并用”?”连接，多个请求数据间用”&amp;”连接，如<a href="http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；post传输数据通过Http的post机制，将字段与对应值封存在请求实体中发送给服务器，这个过程对用户是不可见的；" target="_blank" rel="noopener">http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；post传输数据通过Http的post机制，将字段与对应值封存在请求实体中发送给服务器，这个过程对用户是不可见的；</a></li>
+<li>get传输的数据量小，因为受URL长度限制，但效率较高；Post可以传输大量数据，所以上传文件时只能用Post方式；</li>
+<li>get是不安全的，因为URL是可见的，可能会泄露私密信息，如密码等；post较get安全性较高；</li>
+<li>get方式只能支持ASCII字符，向服务器传的中文字符可能会乱码。post支持标准字符集，可以正确传递中文字符。</li>
+</ul>
+</li>
+<li>HTTP1.1版本新特性<ul>
+<li>默认持久连接节省通信量，只要客户端服务端任意一端没有明确提出断开TCP连接，就一直保持连接，可以发送多次HTTP请求</li>
+<li>管线化，客户端可以同时发出多个HTTP请求，而不用一个个等待响应</li>
+<li>断点续传原理</li>
+</ul>
+</li>
+<li>常见HTTP首部字段<ul>
+<li>通用首部字段（请求报文与响应报文都会使用的首部字段）<ul>
+<li>Date：创建报文时间</li>
+<li>Connection：连接的管理</li>
+<li>Cache-Control：缓存的控制</li>
+<li>Transfer-Encoding：报文主体的传输编码方式</li>
+</ul>
+</li>
+<li>请求首部字段（请求报文会使用的首部字段）<ul>
+<li>Host：请求资源所在服务器</li>
+<li>Accept：可处理的媒体类型</li>
+<li>Accept-Charset：可接收的字符集</li>
+<li>Accept-Encoding：可接受的内容编码</li>
+<li>Accept-Language：可接受的自然语言</li>
+</ul>
+</li>
+<li>响应首部字段（响应报文会使用的首部字段）<ul>
+<li>Accept-Ranges：可接受的字节范围</li>
+<li>Location：令客户端重新定向到的</li>
+<li>URI Server：HTTP服务器的安装信息</li>
+</ul>
+</li>
+<li>实体首部字段（请求报文与响应报文的的实体部分使用的首部字段）<ul>
+<li>Allow：资源可支持的HTTP方法</li>
+<li>Content-Type：实体主类的类型</li>
+<li>Content-Encoding：实体主体适用的编码方式</li>
+<li>Content-Language：实体主体的自然语言</li>
+<li>Content-Length：实体主体的的字节数</li>
+<li>Content-Range：实体主体的位置范围，一般用于发出部分请求时使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP的缺点与HTTPS<ul>
+<li>通信使用明文不加密，内容可能被窃听</li>
+<li>不验证通信方身份，可能遭到伪装</li>
+<li>无法验证报文完整性，可能被篡改</li>
+<li>HTTPS就是HTTP加上加密处理（一般是SSL安全通信线路）+认证+完整性保护    </li>
+</ul>
+</li>
+</ul>
+<h3 id="12-当你输入一个网址-点击一个链接，发生了什么？（以www-baidu-com为例）"><a href="#12-当你输入一个网址-点击一个链接，发生了什么？（以www-baidu-com为例）" class="headerlink" title="12.当你输入一个网址/点击一个链接，发生了什么？（以www.baidu.com为例）"></a>12.当你输入一个网址/点击一个链接，发生了什么？（以www.baidu.com为例）</h3><ul>
+<li>1.点击网址后，应用层的DNS协议会将网址解析为IP地址；<ul>
+<li>DNS查找过程：浏览器会检查缓存中有没有这个域名对应的解析过的IP地址，如果缓存中有，这个解析过程就将结束。如果用户的浏览器缓存中没有，浏览器会查找操作系统缓存（hosts文件）中是否有这个域名对应的DNS解析结果。若还没有，此时会发送一个数据包给DNS服务器，DNS服务器找到后将解析所得IP地址返回给用户。</li>
+</ul>
+</li>
+<li>2.在应用层，浏览器会给web服务器发送一个HTTP请求；<ul>
+<li>请求头为：GET <a href="http://www.baidu.com/HTTP/1.1" target="_blank" rel="noopener">http://www.baidu.com/HTTP/1.1</a></li>
+</ul>
+</li>
+<li>3.在传输层，（上层的传输数据流分段）HTTP数据包会嵌入在TCP报文段中；<ul>
+<li>TCP报文段需要设置端口，接收方（百度）的HTTP端口默认是80，本机的端口是一个1024-65535之间的随机整数，这里假设为1025，这样TCP报文段由TCP首部（包含发送方和接收方的端口信息）+ HTTP数据包组。</li>
+</ul>
+</li>
+<li>4.在网络层中，TCP报文段再嵌入IP数据包中；<ul>
+<li>IP数据包需要知道双方的IP地址，本机IP地址假定为192.168.1.5，接受方IP地址为220.181.111.147（百度），这样IP数据包由IP头部（IP地址信息）+TCP报文段组成。</li>
+</ul>
+</li>
+<li>5.在网络接口层，IP数据包嵌入到数据帧（以太网数据包）中在网络上传送；<ul>
+<li>数据帧中包含源MAC地址和目的MAC地址（通过ARP地址解析协议得到的）。这样数据帧由头部（MAC地址）+IP数据包组成。</li>
+</ul>
+</li>
+<li>6.数据包经过多个网关的转发到达百度服务器，请求对应端口的服务；<ul>
+<li>服务接收到发送过来的以太网数据包开始解析请求信息，从以太网数据包中提取IP数据包—&gt;TCP报文段—&gt;HTTP数据包，并组装为有效数据交与对应线程池中分配的线程进行处理，在这个过程中，生成相应request、response。</li>
+</ul>
+</li>
+<li>7.请求处理完成之后，服务器发回一个HTTP响应；<ul>
+<li>请求处理程序会阅读请求及它的参数和cookies。它会读取也可能更新一些数据，并将数据存储在服务器上。处理完毕后，数据通过response对象给客户输出信息，输出信息也需要拼接HTTP协议头部分，关闭后断开连接。断开后，服务器端自动注销request、response对象，并将释放对应线程的使用标识（一般一个请求单独由一个线程处理，部分特殊情况有一个线程处理多个请求的情况）。响应头为：HTTP/1.1200 OK</li>
+</ul>
+</li>
+<li>8.浏览器以同样的过程读取到HTTP响应的内容（HTTP响应数据包），然后浏览器对接收到的HTML页面进行解析，把网页显示出来呈现给用户。<ul>
+<li>客户端接收到返回数据，去掉对应头信息，形成也可以被浏览器认识的页面HTML字符串信息，交与浏览器翻译为对应页面规则信息展示为页面内容。</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-计算机的OSI和TCP-IP网络模型"><a href="#13-计算机的OSI和TCP-IP网络模型" class="headerlink" title="13.计算机的OSI和TCP/IP网络模型"></a>13.计算机的OSI和TCP/IP网络模型</h3><ul>
+<li>1.计算机的网络模型分为两种OSI模型和TCP/IP模型，它们的对应关系如下：<br><img src="https://upload-images.jianshu.io/upload_images/13407176-757ce91f7440a227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图1"></li>
+<li><p>2.针对OSI模型，每一层都有各自的功能。</p>
+<ul>
+<li>应用层<ul>
+<li>应用层是OSI模型中最靠近用户的一层，负责为用户的应用程序提供网络服务 。包括为相互通信的应用程序或进程之间建立连接，进行同步建立关于错误纠正和控制同时还包含大量的应用协议，例如远程登录（talent）、简单的邮件传输协议（SMTP）、简单的网络管理协议（SNMP），超文本传输协议（HTTP）。所有能超声网络流量的程序都在应用层。</li>
+</ul>
+</li>
+<li>表示层<ul>
+<li>表示层负责在不同的数据格式之间进行转换操作，以实现不同的计算机系统间的信息交换。还负责数据的加密，在传输的过程中进行保护，在发送端加密，在接收端解密，使用加密秘钥来对数据进行加密和解密。</li>
+</ul>
+</li>
+<li><p>会话层</p>
+<ul>
+<li>会话层的主要功能是在两个节点间建立连接、维护、释放面向用户的连接，并对会话进行管理和控制，保证会话数据可靠传输，在会话的过程中决定到底使用全双工还是使用半双工模式传输。</li>
+</ul>
+</li>
+<li><p>传输层</p>
+<ul>
+<li>传输层是OSI模型中唯一负责端到端节点数据传输和控制的层，传输层是在OSI模型中起承上启下的作用，它下面的三层主要主要面向网络通信，以确保信息准确有效的传输，上面的三层树妖面向主机用户，为用户提供各种服务。 传输层为了向会话层提供可靠的端到端传输服务，也使用差错控制和流量控制等机制。4层的协议有传输控制协议（TCP），用户数据报协议（UDP），顺序包交换协议（SPX）。</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>负责选择最佳的路径，规划IP(Internet Protocol)地址。</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>数据帧的开始和结束，同时提供透明传输，差错校验。</li>
+</ul>
+</li>
+<li>物理层<ul>
+<li>是OSI模型的最底层，它面向原始的比特流的传输，同时规范了接口标准。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.针对TCP/IP模型，每一层都有各自的功能。<ul>
+<li>物理层：对应OSI模型的低两层，物理层和数据链路层；常用协议：Ethernet、FDDI、令牌环</li>
+<li>网络层：对应OSI模型的网络层；常用协议：IP、ARP、RAR、ICMP</li>
+<li>传输层：对应OSI模型的传输层；常用协议：TCP、UDP</li>
+<li>应用层：对应OSI模型的高三层，会话层、表示层、应用层；常用协议：DNS、HTTP、SMTP、POP、TELNET、FTP</li>
+</ul>
+</li>
+</ul>
+<h3 id="14-TCP-FTP-简析"><a href="#14-TCP-FTP-简析" class="headerlink" title="14.TCP/FTP 简析"></a>14.TCP/FTP 简析</h3><ul>
+<li>1.TCP/FTP简析</li>
+<li>TCP/IP是个协议组，可分为三个层次：网络层、传输层和应用层：<ul>
+<li>网络层：IP协议、ICMP协议、ARP协议、RARP协议和BOOTP协议</li>
+<li>传输层：TCP协议与UDP协议</li>
+<li>应用层：FTP、HTTP、TELNET、SMTP、DNS等协议</li>
+</ul>
+</li>
+<li>2.TCP连接的三次握手<ul>
+<li>第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认； </li>
+<li>第二次握手：服务端接收到客户端的请求后，给出一个确认ACK(ack=j+1),同时自己也发送出一个SYN包(syn=k),此时服务器进入SYN_RECV状态。</li>
+<li>第三次握手：客户端接收到服务端的SYN+ACK包后，向服务器发出一个确认ACK(ack=k+1)，此包发送完毕，客户端和服务端进入ESTABLIST状态，完成三次握手。</li>
+</ul>
+</li>
+<li>3.FTP</li>
+<li>文件传输协议（File Transfer Protocol, FTP）是TCP/IP网络上两台计算机传送文件的协议，FTP是在TCP/IP网络和INTERNET上最早使用的协议之一，它属于网络协议组的应用层。FTP客户机可以给服务器发出命令来下载文件，上载文件，创建或改变服务器上的目录。</li>
+</ul>
+<h3 id="15-IP地址与子网掩码"><a href="#15-IP地址与子网掩码" class="headerlink" title="15.IP地址与子网掩码"></a>15.IP地址与子网掩码</h3><ul>
+<li>1.IP地址：Internet上每台主机都必须有一个唯一的地址以区别于其他主机，这个地址就是Internet地址，也称作IP地址；IPv4（第四版本的IP协议）是构成现今互联网技术的基石协议；</li>
+<li>2.IP地址的构成：IP地址由32位二进制构成，共约40亿个，由网络地址和主机地址构成；一个IP地址分为四段：a.b.c.d ，段与段之间用原点分开。IP地址表示方法：二进制形式和点分十进制形式；</li>
+<li>3.IP地址的分类：5类(A类地址，B类地址，C类地址，D类地址，E类地址)</li>
+<li>IP地址的分类是根据第一段（a字段，前8位）的取值范围来划分的；<ul>
+<li>A类地址：以0开头，前8位为网络地址，后24位为主机地址。A类地址第一段a字段的取值范围1~126。每一个A类地址中可以容纳的主机的数目约为1600万。地址范围：1.0.0.0~126.255.255.255</li>
+<li>B类地址：以10开头，前16位为网络地址，后16位为主机地址。B类地址第一段a字段取值范围为128~191。每一个B类地址中可以容纳主机数目约为65000。地址范围：128.0.0.0~191.255.255.255</li>
+<li>C类地址：以110开头，前24位为网络地址，后8位为主机地址。C类地址第一段a字段的取值范围是192~223。每一个C类地址可容纳主机的数目约为254。地址范围：192.0.0.0~223.255.255.255</li>
+</ul>
+</li>
+<li>4.IPv6（第六版IP协议）：一个IP地址由128位二进制组成，采用冒分16进制。</li>
+<li>5.特殊的IP地址：   <ul>
+<li>a.专用IP地址：三类网络号，这些地址不会被Internet分配因此也不能被路由。<ul>
+<li>A类：1.0.0.0~10.255.255.255  （长度相当于1个A类IP地址）</li>
+<li>B类：172.16.0.0~172.31.255.255  （长度相当于16个连续的B类IP地址）</li>
+<li>C类：192.168.0.0~192.168.255.255  （长度相当于256个连续的C类IP地址）</li>
+</ul>
+</li>
+<li>b. 特殊IP地址：<ul>
+<li>0.0.0.0  是全零网络代表默认网络，帮助路由器发送路由表中无法查询的包。如果设置了全零网络路由，路由器中无法查询的包都会被送到全零网络的路由中去；</li>
+<li>127.0.0.1  称作回送地址，属于环回地址，IP从127.0.0.0到127.255.255.255都将环回到本地主机中；</li>
+<li>255.255.255.255  限制广播地址，对本机来说，这个地址指本网段内（同一广播域）所有主机；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>6.子网掩码</li>
+<li>子网掩码：是一个32位二进制的值，可以将IP地址分离出网络地址和主机地址，采用点分十进制的形式。子网掩码不能单独存在它必须结合IP地址一起使用。</li>
+<li>子网掩码由1和0组成，且1和0分别连续。<strong>子网掩码的长度也是32位。左边是网络位，用二进制数字1表示，1的数目等于网络位的长度；右边是主机位用2进制数字0表示，0的数目等于主机位的长度；这样做的目的是为了让掩码与IP地址做与运算时用0遮住原主机数，而不改变网络段的数字；而且很容易通过0的位数确定子网的主机数；</strong>将32位IP地址与32位的子网掩码各位进制进行 ‘与’ 运算，得到的是该IP地址的网络地址；</li>
+<li>方法：<strong>子网掩码可以判断两台计算机是否属于同一网段，将计算机10进制的IP地址和子网掩码转换为2进制的形式，然后进行‘与’运算，如果网络地址是相同的，那么两台计算机就属于同一网段；</strong></li>
+<li>子网掩码可分为缺省子网掩码和自定义子网掩码：<ul>
+<li>a.缺省（默认）子网掩码：即为划分子网，对应的网络号都是1，主机号位都是0；<ul>
+<li>A类网络缺省（默认）子网掩码：255.0.0.0</li>
+<li>B类网络缺省（默认）子网掩码：255.255.0.0</li>
+<li>C类网络缺省（默认）子网掩码：255.255.255.0</li>
+</ul>
+</li>
+<li>b.自定义子网掩码是将一个网络划分为几个子网，需要每一段使用不同的网络号或者子网号，实际上我们可以认为是将主机号分为两个部分：子网号和子网主机号。形式如下：<ul>
+<li>未做子网划分的IP地址：网络号+主机号</li>
+<li>做子网划分的IP地址：网络号+子网号+子网主机号。也就是说，IP地址在子网划分后，以前的主机号一部分给了子网号，剩下的是子网主机号；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>子网掩码通常有两种格式的表示方式：<ul>
+<li>点分十进制格式，如：255.255.255.128</li>
+<li>IP地址后面加上‘/’符号以及1-32位的数字，其中1-32的数字表示子网掩码中网络标识位的长度；例如：192.168.1.1/24的子网掩码也可以表示为255.255.255.0</li>
+</ul>
+</li>
+</ul>
+<h3 id="16-路由器"><a href="#16-路由器" class="headerlink" title="16.路由器"></a>16.路由器</h3><ul>
+<li>路由器：属于网络层，是连接因特网中的各局域网、广域网的设备，它会根据信道的情况自动选择和设定路由，以最佳路径，按照前后顺序发送信号。连接不同的网络，所谓不同的网络就是网络地址不同；路由器工作在IP协议网络层，用于实现子网之间转发数据，路由器一般包含多个网络接口，包括局域网和广域网接口，每个网络接口连接不同的网络；路由器记录着每个网络端口连接的网络信息；路由器中还包含路由表：记录了去往不同的网络地址应该送往的端口号；</li>
+<li>作用：为每个数据帧寻找最佳的传输路径，并将其有效的传送到目的站点，在路由器中通过路由表保存着各种传输路径的相关数据，供路由选择时使用。</li>
+<li>路由表：保存各种传输路径的相关数据，供路由选择时使用；路由表中保存着子网的标志信息、网上路由器的个数和下一个路由器的名字等内容；</li>
+<li>静态路由表：由系统管理员事先设定好的路由表；</li>
+<li>动态路由表：路由器根据网络系统的运行情况动态调整的路由表；</li>
+<li>工作流程：数据包送到路由器后，通过数据包首部的目的主机IP地址和子网掩码计算出网络地址，即目的主机所在的网络，查找当前路由器的路由表，选择端口进行转发;下一台IP路由器收到数据包后继续转发，直到目的地；<strong>路由转发策略称为路由选择；</strong></li>
+<li>路由器和交换机之间的主要区别是：交换机发生在OSI参考模型的第二层（数据链路层），而路由器发生在第三层（网络层）。路由器是不同网络之间相互连接的枢纽，路由器构成了Internet的骨架；路由器具有判断网路地址，选择IP路径的功能；</li>
+</ul>
+<h3 id="17-MAC地址-物理地址、硬件地址-的概念和作用"><a href="#17-MAC地址-物理地址、硬件地址-的概念和作用" class="headerlink" title="17.MAC地址(物理地址、硬件地址)的概念和作用"></a>17.MAC地址(物理地址、硬件地址)的概念和作用</h3><ul>
+<li>概念：MAC地址就是在媒体接入层上使用的地址，也叫物理地址、硬件地址或链路地址，其被固化在适配器的ROM中。可见，MAC地址实际上就是适配器地址或适配器标识符。当某台计算机使用某块适配器后，适配器上的标识符就成为该计算机的MAC地址。MAC地址长度为6字节（48比特），由IEEE的注册管理结构RA进行管理分配。</li>
+<li>作用：MAC地址是计算机的唯一标识，在数据链路层中，交换机通过识别MAC地址进行数据包的传输。</li>
+</ul>
+<h3 id="18-路由表中的内容"><a href="#18-路由表中的内容" class="headerlink" title="18.路由表中的内容"></a>18.路由表中的内容</h3><ul>
+<li>Network Destination：目标网段；Netmask：子网掩码，IP地址与子网掩码按位与，可以得出该IP地址的网络号，IP地址与子网掩码取反后按位与，可以得出该IP地址的主机号。Interface：达到该目标网段的本地路由器的出口IP；Gateway：网关IP，下一跳路由器的入口IP，通常情况下，interface和gateway是同一网段的。Metric：跳数，该条路由记录的质量，一般情况下，如果有多条到达相同目的地的路由记录，路由器会采用metric值小的那条路由。</li>
+</ul>
+<h3 id="19-分组转发算法流程"><a href="#19-分组转发算法流程" class="headerlink" title="19.分组转发算法流程"></a>19.分组转发算法流程</h3><ul>
+<li>1.从数据报的首部提取目的主机的IP地址D，得出目的网络地址N（子网掩码和IP地址做与运算可得出网络地址）。</li>
+<li>2.若N就是于此路由器直接相连的某个网络地址，则进行直接交付，不需要在经过其他路由器，直接把数据报交付给目的主机（这里包括把目的IP地址D转换为具体的MAC地址（ARP协议），把数据报封装成MAC帧，在发送此帧）；否则就是间接交付。</li>
+<li>3.若路由表中有目的地址为D的特定主机路由，则把数据报传送给路由表中所指明的下一跳路由器。</li>
+<li>4.若路由表中有达到网络N的路由，则把数据报传送给路由表中所指明的下一跳路由器。</li>
+<li>5.若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器。</li>
+<li>6.报告转发分组出错。</li>
+</ul>
+<h3 id="20-TFTP与FTP的区别"><a href="#20-TFTP与FTP的区别" class="headerlink" title="20.TFTP与FTP的区别"></a>20.TFTP与FTP的区别</h3><ul>
+<li>FTP（File Transfer Protocol，文件传输协议）协议在TCP/IP协议族中属于应用层协议，<strong>用于在远端服务器和本地客户端之间传输文件，使用TCP端口20和21进行传输</strong>。端口20用于传输数据，端口21用于传输控制消息。</li>
+<li>TFTP（Trivial File Transfer Protocol，简单文件传输协议）也是用于在远端服务器和本地主机之间传输文件的，相对于FTP，TFTP没有复杂的交互存取接口和认证控制，适用于客户端和服务器之间不需要复杂交互的环境。</li>
+<li>TFTP协议的运行基于UDP协议，使用UDP端口69进行数据传输。</li>
+<li>区别：<ul>
+<li>基于的传输协议不一样：FTP是基于TCP TFTP是基于UDP </li>
+<li>端口号不一样：FTP是用21.20 TFTP是69</li>
+<li>速度和安全方面：FTP在速度方面没有TFTP快但是FTP安全好</li>
+</ul>
+</li>
+</ul>
+<h3 id="21-MTU的概念，什么是路径MTU？-MTU发现机制，TraceRoute"><a href="#21-MTU的概念，什么是路径MTU？-MTU发现机制，TraceRoute" class="headerlink" title="21.MTU的概念，什么是路径MTU？ MTU发现机制，TraceRoute"></a>21.MTU的概念，什么是路径MTU？ MTU发现机制，TraceRoute</h3><ul>
+<li>MTU：即Maximum Transmission Unit 最大传输单元。它是指一种通信协议的某一层上面所能通过的最大数据包大小（以字节为单位）。</li>
+<li>路径MTU：路径MTU是指一条因特网传输路径中，从源地址到目的地址所经过的“路径”上的所有IP跳的最大传输单元的最小值。或者从另外一个角度来看，就是无需进行分片处理就能穿过这条“路径”的最大传输单元的最大值。</li>
+<li>路径MTU的发现方法：这是确定两个IP主机之间路径最大传输单元的技术，其目的就是为了避免IP分片。首先源地址将数据报的DF位置位，在逐渐增大发送的数据报的大小——路径上任何需要将分组进行分片的设备都会将这种数据报丢弃并返回“数据报过大“的ICMP响应到源地址——这样源主机就”学习“到了无需分片就能通过这条路径的最大的最大传输单元。</li>
+<li>Traceroute:用来侦测主机到目的主机之间所经路由情况的重要工具。原理如下：它受到目的主机的IP后，首先给目的主机发送一个TTL=1的UDP数据包（每次送出的为3个40字节的包，包括源地址，目的地址和包发出的时间标签），而经过的第一个路由器收到这个数据包以后，就自动把TTL减1，而TTL变为0以后，路由器就把这个包给抛弃了，并同时产生 一个主机不可达的ICMP数据报给主机。主机收到这个数据报以后再发一个TTL=2的UDP数据报给目的主机，然后刺激第二个路由器给主机发ICMP数据报。如此往复直到到达目的主机。这样，traceroute就拿到了所有的路由器ip。Traceroute提取发送 ICMP TTL到期消息设备的IP地址并作域名解析。每次 ，Traceroute都打印出一系列数据,包括所经过的路由设备的域名及 IP地址,三个包每次来回所花时间。</li>
+</ul>
+<h3 id="22-ICMP协议"><a href="#22-ICMP协议" class="headerlink" title="22.ICMP协议"></a>22.ICMP协议</h3><ul>
+<li>概念：ICMP的全称是 Internet Control Message Protocol ，它是一种“错误侦测与回报机制”，不传输用户数据，其目的就是让我们能够检测网路的连线状况。ICMP数据包由一个8字节长的包头，其中前四个字节是固定格式，包括8位类型字段、8位代码字段个16位校验和；后4个字节根据ICMP类型的不同而取不同的值；</li>
+<li>作用：<ul>
+<li>侦测远端主机是否存在</li>
+<li>建立及维护路由资料</li>
+<li>重导数据传送路径</li>
+<li>数据流量控制</li>
+</ul>
+</li>
+<li>Internet 控制报文协议，负责发送消息，报告错误；属于TCP/IP协议族；主要用在主机和路由器之间，ICMP提供移动的出错报告信息，但是他的功能是报告问题而不是纠正问题，他将出错的报文返回发送方，纠正问题的功能由发送方完成；发送方根据ICMP提供的错误类型来确定如何才能更好的重新发送失败的数据包；</li>
+<li>应用：Ping命令其实就是ICMP协议的工作过程；Tracert命令，跟踪路由的命令也是基于ICMP协议的；</li>
+</ul>
+<h3 id="23-组播和广播的概念，IGMP的用途"><a href="#23-组播和广播的概念，IGMP的用途" class="headerlink" title="23.组播和广播的概念，IGMP的用途"></a>23.组播和广播的概念，IGMP的用途</h3><ul>
+<li>组播：主机之间的通讯模式，也就是加入了同一个组的主机可以接收到此组内的所有数据，网络中的交换机和路由器只向有需求者复制并转发其所需数据。主机可以向路由器请求加入或退出某个组，网络中的路由器和交换机有选择的复制并传输数据，即只将组内数据传输给那些加入组的主机。这样既能一次将数据传输给多个有需要（加入组）的主机，又能保证不影响其他不需要（未加入组）的主机的其他通讯。</li>
+<li>广播： 是指在IP子网内广播数据包，所有在子网内部的主机都将收到这些数据包。广播意味着网络向子网每一个主机都投递一份数据包，不论这些主机是否乐于接收该数据包。所以广播的使用范围非常小，只在本地子网内有效，通过路由器和网络设备控制广播传输。组播协议与现在广泛使用的单播协议的不同之处在于，一个主机用单播协议向n个主机发送相同的数据时，发送主机需要分别向n个主机发送，共发送n次。一个主机用组播协议向n个主机发送相同的数据时，只要发送1次，其数据由网络中的路由器和交换机逐级进行复制并发送给各个接收方，这样既节省服务器资源也节省网络主干的带宽资源。</li>
+<li>IGMP（Internet Group Management Protocol）的用途<ul>
+<li>它用来在ip主机和与其直接相邻的组播路由器之间建立、维护组播组成员关系。组播路由器不需要保存所有主机的成员关系，它只是通过IGMP协议了解每个接口连接的网段上是否存在某个组播组的组成员，而主机只需要保存自己加入了哪些组播组。简而言之，IGMP协议是让连接在本地局域网上的组播路由器知道本局域网上是否有主机上的某个进程参加或退出了某个组播组。</li>
+</ul>
+</li>
+<li>环回地址/广播地址<ul>
+<li>环回地址：127.0.0.1，通常被称为本地回环地址(Loop back address)，不属于任何一个有类别地址类。它代表设备的本地虚拟接口，所以默认被看作是永远不会宕掉的接口。</li>
+<li>作用：<ul>
+<li>a.一是测试本机的网络配置，能PING通127.0.0.1说明本机的网卡和IP协议安装都没有问题；</li>
+<li>b.某些SERVER/CLIENT的应用程序在运行时需调用服务器上的资源，一般要指定SERVER的IP地址，但当该程序要在同一台机器上运行而没有别的SERVER时就可以把SERVER的资源装在本机，SERVER的IP地址设为127.0.0.1同样也可以运行。</li>
+</ul>
+</li>
+<li><strong>广播地址</strong>：是专门用于同时向网络中所有工作站进行发送的一个地址。<strong>在使用TCP/IP协议的网络中，主机标识段host ID为全1的IP地址为广播地址，广播的分组传送给host ID段所涉及的所有计算机</strong>。例如，对于10.1.1.0 （255.255.255.0 ）网段，其广播地址为10.1.1.255（255 即为2 进制的11111111 ），当发出一个目的地址为10.1.1.255 的分组（封包）时，它将被分发给该网段上的所有计算机。</li>
+</ul>
+</li>
+</ul>
+<h3 id="24-DNS的概念，用途，DNS查询的实现算法"><a href="#24-DNS的概念，用途，DNS查询的实现算法" class="headerlink" title="24.DNS的概念，用途，DNS查询的实现算法"></a>24.DNS的概念，用途，DNS查询的实现算法</h3><ul>
+<li>DNS用途：DNS是由解析器以及域名服务器组成的。域名服务器是指保存有该网络中所有主机的域名和对应IP地址，并具有将域名转换为IP地址功能的服务器。DNS使用TCP与UDP端口号都是53，主要使用UDP，服务器之间备份使用TCP。</li>
+<li>域名到IP地址的解析过程的要点如下：<ul>
+<li>a.当某一个应用进程需要主机名解析为IP地址时，该应用进程就调用解析程序，并成为DNS的一个客户，把待解析的域名放在DNS请求报文中，以UDP用户数据报方式发给本地域名服务器。</li>
+<li>b.本地域名服务器在查找域名后，把对应的IP地址放在回答报文中返回。应用进程获得目的主机的IP地址后即可进行通信。</li>
+<li>c.若本地域名服务器不能回答该请求，则此域名服务器就暂时成为DNS中的另一个客户，并向其他域名服务器发出查询请求。这种过程直至找到能够回答该请求的域名服务器为止。</li>
+</ul>
+</li>
+<li>DNS查询算法<ul>
+<li><strong>主机向本地域名服务器的查询一般都是采用递归查询</strong>，即如果主机所询问的本地域名服务器不知道被查询域名的IP地址，那么本地域名服务器就以DNS客户的身份，向其他根域名服务器继续发出查询请求报文，而不是让该主机自己进行下一步的查询。 因此，递归查询返回的查询结果或是所要查询的IP地址，或是报错。</li>
+<li><strong>本地域名服务器向根服务器的查询通常采用迭代查询</strong>，即当根域名服务器收到本地域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的IP地址，要么告诉本地域名服务器“下一次应向哪个域名服务器进行查询”。然后让本地域名服务器进行后续的查询。根域名服务器通常把自己知道的顶级域名服务器的IP地址告诉本地域名服务器，让本地域名服务器再向顶级域名服务器查询。顶级域名服务器在收到本地域名服务器的查询请求后，要么给出所要查询的IP地址，要么告诉本地域名服务器下一步应当向哪一个权限域名服务器进行查询。本地域名服务器就这样进行迭代查询。</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-TCP的流量控制"><a href="#25-TCP的流量控制" class="headerlink" title="25.TCP的流量控制"></a>25.TCP的流量控制</h3><ul>
+<li>1.利用滑动窗口实现流量控制<ul>
+<li>如果发送方把数据发送得过快，接收方可能会来不及接收，这就会造成数据的丢失。所谓流量控制就是让发送方的发送速率不要太快，要让接收方来得及接收。利用滑动窗口机制可以很方便地在TCP连接上实现对发送方的流量控制。设A向B发送数据，在连接建立时，B告诉了A：“我的接收窗口是 rwnd = 400 ”(这里的 rwnd 表示 receiver window) 。因此，发送方的发送窗口不能超过接收方给出的接收窗口的数值。请注意，TCP的窗口单位是字节，不是报文段。TCP连接建立时的窗口协商过程在图中没有显示出来。再设每一个报文段为100字节长，而数据报文段序号的初始值设为1。大写ACK表示首部中的确认位ACK，小写ack表示确认字段的值ack。<br> <img src="https://upload-images.jianshu.io/upload_images/13407176-95ab02be1704aa0f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="流量控制.jpg"></li>
+<li>从图中可以看出，B进行了三次流量控制。第一次把窗口减少到rwnd=300 ，第二次又减到了rwnd=100 ，最后减到rwnd=0 ，即不允许发送方再发送数据了。这种使发送方暂停发送的状态将持续到主机B重新发出一个新的窗口值为止。B向A发送的三个报文段都设置了ACK=1 ，只有在ACK=1时确认号字段才有意义。TCP为每一个连接设有一个持续计时器(persistence timer)。只要TCP连接的一方收到对方的零窗口通知，就启动持续计时器。若持续计时器设置的时间到期，就发送一个零窗口控测报文段（携1字节的数据），那么收到这个报文段的一方就重新设置持续计时器。</li>
+</ul>
+</li>
+<li>2.必须考虑传输速率</li>
+<li>可以用不同的机制来控制TCP报文段的发送时机。如：<ul>
+<li>a.TCP维持一个变量，它等于最大报文段长度MSS。只要缓存中存放的数据达到MSS字节时，就组装成一个TCP报文段发送出去。</li>
+<li>b.由发送方的应用进程指明要求发送报文段，即TCP支持的推送( push )操作。</li>
+<li>c.发送方的一个计时器期限到了，这时就把已有的缓存数据装入报文段(但长度不能超过MSS)发送出去。</li>
+</ul>
+</li>
+<li>3.Nagle算法</li>
+<li>若发送应用进程把要发送的数据逐个字节地送到TCP的发送缓存，则发送方就把第一个数据字节先发送出去，把后面到达的数据字节都缓存起来。当发送方接收对第一个数据字符的确认后，再把发送缓存中的所有数据组装成一个报文段再发送出去，同时继续对随后到达的数据进行缓存。只有在收到对前一个报文段的确认后才继续发送下一个报文段。当数据到达较快而网络速率较慢时，用这样的方法可明显地减少所用的网络带宽。Nagle算法还规定：当到达的数据已达到 发送窗口大小的一半或已达到报文段的最大长度时，就立即发送一个报文段。</li>
+<li>4.糊涂窗口综合证：TCP接收方的缓存已满，而交互式的应用进程一次只从接收缓存中读取1字节（这样就使接收缓存空间仅腾出1字节），然后向发送方发送确认，并把窗口设置为1个字节（但发送的数据报为40字节的的话）。接收，发送方又发来1个字节的数据（发送方的IP数据报是41字节）。接收方发回确认，仍然将窗口设置为1个字节。这样，网络的效率很低。要解决这个问题，可让接收方等待一段时间，使得或者接收缓存已有足够空间容纳一个最长的报文段，或者等到接收方缓存已有一半空闲的空间。只要出现这两种情况，接收方就发回确认报文，并向发送方通知当前的窗口大小。此外，发送方也不要发送太小的报文段，而是把数据报积累成足够大的报文段，或达到接收方缓存的空间的一半大小。<h3 id="26-TCP拥塞控制"><a href="#26-TCP拥塞控制" class="headerlink" title="26.TCP拥塞控制"></a>26.TCP拥塞控制</h3></li>
+<li>1.拥塞：拥塞：即对资源的需求超过了可用的资源。若网络中许多资源同时供应不足，网络的性能就要明显变坏，整个网络的吞吐量随之负荷的增大而下降。拥塞控制：防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不致过载。拥塞控制所要做的都有一个前提：网络能够承受现有的网络负荷。拥塞控制是一个全局性的过程，涉及到所有的主机、路由器，以及与降低网络传输性能有关的所有因素。流量控制：指点对点通信量的控制，是端到端正的问题。流量控制所要做的就是抑制发送端发送数据的速率，以便使接收端来得及接收。拥塞控制代价：需要获得网络内部流量分布的信息。在实施拥塞控制之前，还需要在结点之间交换信息和各种命令，以便选择控制的策略和实施控制。这样就产生了额外的开销。拥塞控制还需要将一些资源分配给各个用户单独使用，使得网络资源不能更好地实现共享。</li>
+<li>2.几种拥塞控制方法<ul>
+<li>慢开始( slow-start )、拥塞避免( congestion avoidance )、快重传( fast retransmit )和快恢复( fast recovery )。</li>
+</ul>
+</li>
+<li>3.慢开始和拥塞避免</li>
+<li>发送方维持一个拥塞窗口 cwnd ( congestion window )的状态变量。拥塞窗口的大小取决于网络的拥塞程度，并且动态地在变化。发送方让自己的发送窗口等于拥塞。发送方控制拥塞窗口的原则是：只要网络没有出现拥塞，拥塞窗口就再增大一些，以便把更多的分组发送出去。但只要网络出现拥塞，拥塞窗口就减小一些，以减少注入到网络中的分组数。</li>
+<li><strong>慢开始算法</strong>：当主机开始发送数据时，如果立即所大量数据字节注入到网络，那么就有可能引起网络拥塞，因为现在并不清楚网络的负荷情况。因此，较好的方法是先探测一下，即由小到大逐渐增大发送窗口，也就是说，由小到大逐渐增大拥塞窗口数值。通常在刚刚开始发送报文段时，先把拥塞窗口 cwnd 设置为一个最大报文段MSS的数值。而在每收到一个对新的报文段的确认后，把拥塞窗口增加至多一个MSS的数值。用这样的方法逐步增大发送方的拥塞窗口cwnd ，可以使分组注入到网络的速率更加合理。每经过一个传输轮次，拥塞窗口 cwnd 就加倍。一个传输轮次所经历的时间其实就是往返时间RTT。不过“传输轮次”更加强调：把拥塞窗口cwnd所允许发送的报文段都连续发送出去，并收到了对已发送的最后一个字节的确认。另外，慢开始的“慢”并不是指cwnd的增长速率慢，而是指在TCP开始发送报文段时先设置cwnd=1，使得发送方在开始时只发送一个报文段（目的是试探一下网络的拥塞情况），然后再逐渐增大cwnd。为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh状态变量（如何设置ssthresh）。慢开始门限ssthresh的用法如下：<ul>
+<li>当 cwnd &lt; ssthresh 时，使用上述的慢开始算法。</li>
+<li>当 cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。</li>
+<li>当 cwnd = ssthresh 时，既可使用慢开始算法，也可使用拥塞控制避免算法。</li>
+</ul>
+</li>
+<li><strong>拥塞避免算法</strong>：让拥塞窗口cwnd缓慢地增大，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍。这样拥塞窗口cwnd按线性规律缓慢增长，比慢开始算法的拥塞窗口增长速率缓慢得多。无论在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞（其根据就是没有收到确认），就要把慢开始门限ssthresh设置为出现拥塞时的发送方窗口值的一半（但不能小于2）。然后把拥塞窗口cwnd重新设置为1，执行慢开始算法。这样做的目的就是要迅速减少主机发送到网络中的分组数，使得发生拥塞的路由器有足够时间把队列中积压的分组处理完毕。如下图，用具体数值说明了上述拥塞控制的过程。现在发送窗口的大小和拥塞窗口一样大。<br>  <img src="https://upload-images.jianshu.io/upload_images/13407176-163d146352f644df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP拥塞窗口cwnd在拥塞控制时的变化情况"><ul>
+<li>a.当TCP连接进行初始化时，把拥塞窗口cwnd置为1。前面已说过，为了便于理解，图中的窗口单位不使用字节而使用报文段的个数。慢开始门限的初始值设置为16个报文段，即 cwnd = 16 。</li>
+<li>b.在执行慢开始算法时，拥塞窗口 cwnd 的初始值为1。以后发送方每收到一个对新报文段的确认ACK，就把拥塞窗口值另1，然后开始下一轮的传输（图中横坐标为传输轮次）。因此拥塞窗口cwnd随着传输轮次按指数规律增长。 当拥塞窗口cwnd增长到慢开始门限值ssthresh时（即当cwnd=16时），就改为执行拥塞控制算法，拥塞窗口按线性规律增长。</li>
+<li>c.假定拥塞窗口的数值增长到24时，网络出现超时（这很可能就是网络发生拥塞了）。更新后的ssthresh值变为12（即变为出现超时时的拥塞窗口数值24的一半），拥塞窗口再重新设置为1，并执行慢开始算法。 当cwnd=ssthresh=12时改为执行拥塞避免算法，拥塞窗口按线性规律增长，每经过一个往返时间增加一个MSS的大小。强调：“拥塞避免”并非指完全能够避免了拥塞。利用以上的措施要完全避免网络拥塞还是不可能的。“拥塞避免”是说在拥塞避免阶段将拥塞窗口控制为按线性规律增长，使网络比较不容易出现拥塞。</li>
+</ul>
+</li>
+<li>4.快重传和快恢复</li>
+<li><strong>快重传</strong>：如果发送方设置的超时计时器时限已到但还没有收到确认，那么很可能是网络出现了拥塞，致使报文段在网络中的某处被丢弃。这时，TCP马上把拥塞窗口 cwnd 减小到1，并执行慢开始算法，同时把慢开始门限值ssthresh减半。这是不使用快重传的情况。快重传算法首先要求接收方每收到一个失序的报文段后就立即发出重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时才进行捎带确认。接收方收到了M1和M2后都分别发出了确认。现在假定接收方没有收到M3但接着收到了M4。显然，接收方不能确认M4，因为M4是收到的失序报文段。根据可靠传输原理，接收方可以什么都不做，也可以在适当时机发送一次对M2的确认。但按照快重传算法的规定，接收方应及时发送对M2的重复确认，这样做可以让发送方及早知道报文段M3没有到达接收方。发送方接着发送了M5和M6。接收方收到这两个报文后，也还要再次发出对M2的重复确认。这样，发送方共收到了接收方的四个对M2的确认，其中后三个都是重复确认。快重传算法还规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段M3，而不必继续等待M3设置的重传计时器到期。由于发送方尽早重传未被确认的报文段，因此采用快重传后可以使整个网络吞吐量提高约20%。</li>
+<li><strong>快恢复</strong>：<ul>
+<li>a.当发送方连续收到三个重复确认，就执行“乘法减小”算法，把慢开始门限ssthresh减半。这是为了预防网络发生拥塞。请注意：接下去不执行慢开始算法。</li>
+<li>b.由于发送方现在认为网络很可能没有发生拥塞，因此与慢开始不同之处是现在不执行慢开始算法（即拥塞窗口cwnd现在不设置为1），而是把cwnd值设置为慢开始门限ssthresh减半后的数值，然后开始执行拥塞避免算法（“加法增大”），使拥塞窗口缓慢地线性增大。</li>
+</ul>
+</li>
+<li>5.停止等待协议和滑动窗口协议</li>
+<li><strong>停止等待协议</strong>：是tcp保证传输可靠的重要途径，”停止等待”就是指发送完一个分组就停止发送，等待对方的确认，只有对方确认过，才发送下一个分组.</li>
+<li><strong>滑动窗口协议</strong>：之所以叫滑动窗口协议，是因为窗口是不断向前走的，该协议允许发送方在停止并等待确认前发送多个数据分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输，还可以控制流量的问题。滑动窗口协议中，允许发送方发送多个分组（当有多个分组可用时）而不需等待确认，但它受限于在流水线 中为未确认的分组数不能超过某个最大允许数N。滑动窗口协议是TCP使用的一种流量控制方法，此协议能够加速数据的传输。 只有在接收窗口向前滑动时（与此同时也发送了确认），发送窗口才有可能向前滑动。收发两端的窗口按照以上规律不断地向前滑动，因此这种协议称为滑动窗口协议。当发送窗口和接收窗口的大小都等于1时，就是停止等待协议。<h3 id="27-TIME-WAIT状态及存在原因"><a href="#27-TIME-WAIT状态及存在原因" class="headerlink" title="27.TIME_WAIT状态及存在原因"></a>27.TIME_WAIT状态及存在原因</h3></li>
+<li>客户端与服务器端建立TCP/IP连接后关闭SOCKET后，服务器端连接的端口状态为TIME_WAIT；</li>
+<li>主动关闭的Socket端会进入TIME_WAIT状态，并且持续2MSL时间长度，MSL就是maximum segment lifetime(最大分节生命期）；这是一个IP数据包能在互联网上生存的最长时间，超过这个时间将在网络中消失。MSL在RFC 1122上建议是2分钟，而源自berkeley的TCP实现传统上使用30秒，因而，TIME_WAIT状态一般维持在1-4分钟。</li>
+<li>主动关闭的一方在发送最后一个ack后就会进入TIME_WAIT状态停留2MSL（max segment lifetime）时间这个是TCP/IP必不可少的，也就是“解决”不了的。</li>
+<li>TIME_WAIT状态存在的理由：<ul>
+<li>a.防止上一次连接中的包，迷路后重新出现，影响新连接（经过2MSL，上一次连接中所有的重复包都会消失）</li>
+<li>b.可靠的关闭TCP连接:在进行关闭连接四路握手协议时，最后的ACK是由主动关闭端发出的，如果这个最终的ACK丢失，服务器将重发最终的FIN，因此客户端必须维护状态信息允 许它重发最终的ACK。<br>如果不维持这个状态信息，那么客户端将响应RST分节，服务器将此分节解释成一个错误（在java中会抛出connection reset的SocketException)。因而，要实现TCP全双工连接的正常终止，必须处理终止序列四个分节中任何一个分节的丢失情况，主动关闭 的客户端必须维持状态信息进入TIME_WAIT状态。</li>
+</ul>
+</li>
+</ul>
+<h3 id="28-Http2-0和Http1-0区别"><a href="#28-Http2-0和Http1-0区别" class="headerlink" title="28.Http2.0和Http1.0区别"></a>28.Http2.0和Http1.0区别</h3><ul>
+<li>Http2.0采用二进制格式非文本格式；</li>
+<li>Http2.0是完全多路复用的，非有序并阻塞的只需要一个连接即可实现并行；</li>
+<li>使用报头压缩，降低了开销；</li>
+<li>Http2.0让服务器可以将响应主动推送到客户端缓存中。</li>
+</ul>
+<h3 id="29-SMTP和POP3协议的区别"><a href="#29-SMTP和POP3协议的区别" class="headerlink" title="29.SMTP和POP3协议的区别"></a>29.SMTP和POP3协议的区别</h3><ul>
+<li>SMTP用来发生邮件的，端口号25；POP3用来接收邮件的，端口号110，使用TCP协议。</li>
+</ul>
+<h3 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h3><ul>
+<li><a href="https://www.cnblogs.com/Allen-rg/category/1011622.html" target="_blank" rel="noopener">参考博客</a></li>
 </ul>
 
       
@@ -832,7 +1215,7 @@
   <p><span>本文标题:</span>计算机网络基础知识点总结</p>
   <p><span>文章作者:</span>Curry_Coder</p>
   <p><span>发布时间:</span>2019年07月29日 - 19:37:29</p>
-  <p><span>最后更新:</span>2019年07月30日 - 22:49:04</p>
+  <p><span>最后更新:</span>2019年08月01日 - 17:06:43</p>
   <p><span>原始链接:</span><a href="/计算机网络/计算机网络基础知识点总结/" title="计算机网络基础知识点总结">https://cdlwhm1217096231.github.io/计算机网络/计算机网络基础知识点总结/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/计算机网络/计算机网络基础知识点总结/" aria-label="复制成功！"></i></span>
   </p>
@@ -1177,7 +1560,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-互联网的组成"><span class="nav-number">1.</span> <span class="nav-text">0.互联网的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络中的常见硬件设备介绍："><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络中的常见硬件设备介绍：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-计算机网络体系结构"><span class="nav-number">2.</span> <span class="nav-text">1.计算机网络体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-各层的作用和支持的协议"><span class="nav-number">3.</span> <span class="nav-text">2.各层的作用和支持的协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-物理层"><span class="nav-number">4.</span> <span class="nav-text">3.物理层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-数据链路层"><span class="nav-number">5.</span> <span class="nav-text">4.数据链路层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-网络层"><span class="nav-number">6.</span> <span class="nav-text">5.网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-IP网际协议"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 IP网际协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-ICMP网际控制报文协议"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 ICMP网际控制报文协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-内部网关协议"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 内部网关协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-外部网关协议"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 外部网关协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-5-IP多播"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 IP多播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-6-VPN和NAT"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 VPN和NAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-7-路由表包含什么？"><span class="nav-number">6.7.</span> <span class="nav-text">5.7 路由表包含什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-传输层"><span class="nav-number">7.</span> <span class="nav-text">6.传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-TCP（Transmission-Control-Protocol，传输控制协议）"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 TCP（Transmission Control Protocol，传输控制协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-UDP（User-Datagram-Protocol，用户数据报协议）"><span class="nav-number">7.2.</span> <span class="nav-text">6. 2 UDP（User Datagram Protocol，用户数据报协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-TCP与UDP的区别"><span class="nav-number">7.3.</span> <span class="nav-text">6.3 TCP与UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-4-TCP的黏包问题"><span class="nav-number">7.4.</span> <span class="nav-text">6.4 TCP的黏包问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-5-TCP流量控制"><span class="nav-number">7.5.</span> <span class="nav-text">6.5 TCP流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-6-TCP拥塞控制"><span class="nav-number">7.6.</span> <span class="nav-text">6.6 TCP拥塞控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-7-TCP传输连接管理-重点"><span class="nav-number">7.7.</span> <span class="nav-text">6.7 TCP传输连接管理(重点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-8-TCP有限状态机"><span class="nav-number">7.8.</span> <span class="nav-text">6.8 TCP有限状态机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-应用层"><span class="nav-number">8.</span> <span class="nav-text">7.应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-DNS-Domain-Name-System，域名系统"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 DNS(Domain Name System，域名系统)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-FTP-File-Transfer-Protocol，文件传输协议"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 FTP(File Transfer Protocol，文件传输协议)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-TELNET"><span class="nav-number">8.3.</span> <span class="nav-text">7.3 TELNET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-4-HTTP（HyperText-Transfer-Protocol，超文本传输协议）"><span class="nav-number">8.4.</span> <span class="nav-text">7.4 HTTP（HyperText Transfer Protocol，超文本传输协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-5-SMTP（Simple-Mail-Transfer-Protocol，简单邮件传输协议）"><span class="nav-number">8.5.</span> <span class="nav-text">7.5 SMTP（Simple Mail Transfer Protocol，简单邮件传输协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-6-DHCP（Dynamic-Host-Configuration-Protocol，动态主机设置协议）"><span class="nav-number">8.6.</span> <span class="nav-text">7.6 DHCP（Dynamic Host Configuration Protocol，动态主机设置协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-7-SNMP（Simple-Network-Management-Protocol，简单网络管理协议）"><span class="nav-number">8.7.</span> <span class="nav-text">7.7 SNMP（Simple Network Management Protocol，简单网络管理协议）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-相关概念"><span class="nav-number">9.</span> <span class="nav-text">8.相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-Socket（套接字）"><span class="nav-number">9.1.</span> <span class="nav-text">8.1 Socket（套接字）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-WWW（World-Wide-Web，环球信息网，万维网）"><span class="nav-number">9.2.</span> <span class="nav-text">8.2 WWW（World Wide Web，环球信息网，万维网）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-URL（Uniform-Resource-Locator，统一资源定位符）"><span class="nav-number">9.3.</span> <span class="nav-text">8.3 URL（Uniform Resource Locator，统一资源定位符）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-HTTP详解"><span class="nav-number">10.</span> <span class="nav-text">9.HTTP详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-DNS-域名解析协议"><span class="nav-number">11.</span> <span class="nav-text">10.DNS(域名解析协议)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-互联网的组成"><span class="nav-number">1.</span> <span class="nav-text">0.互联网的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络中的常见硬件设备介绍："><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络中的常见硬件设备介绍：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-计算机网络体系结构"><span class="nav-number">2.</span> <span class="nav-text">1.计算机网络体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-各层的作用和支持的协议"><span class="nav-number">3.</span> <span class="nav-text">2.各层的作用和支持的协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-物理层"><span class="nav-number">4.</span> <span class="nav-text">3.物理层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-数据链路层"><span class="nav-number">5.</span> <span class="nav-text">4.数据链路层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-网络层"><span class="nav-number">6.</span> <span class="nav-text">5.网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-IP网际协议"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 IP网际协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-ICMP网际控制报文协议"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 ICMP网际控制报文协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-内部网关协议"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 内部网关协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-外部网关协议"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 外部网关协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-5-IP多播"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 IP多播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-6-VPN和NAT"><span class="nav-number">6.6.</span> <span class="nav-text">5.6 VPN和NAT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-7-路由表包含什么？"><span class="nav-number">6.7.</span> <span class="nav-text">5.7 路由表包含什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-传输层"><span class="nav-number">7.</span> <span class="nav-text">6.传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-TCP（Transmission-Control-Protocol，传输控制协议）"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 TCP（Transmission Control Protocol，传输控制协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-UDP（User-Datagram-Protocol，用户数据报协议）"><span class="nav-number">7.2.</span> <span class="nav-text">6. 2 UDP（User Datagram Protocol，用户数据报协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-TCP与UDP的区别"><span class="nav-number">7.3.</span> <span class="nav-text">6.3 TCP与UDP的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-4-TCP的黏包问题"><span class="nav-number">7.4.</span> <span class="nav-text">6.4 TCP的黏包问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-5-TCP流量控制"><span class="nav-number">7.5.</span> <span class="nav-text">6.5 TCP流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-6-TCP拥塞控制"><span class="nav-number">7.6.</span> <span class="nav-text">6.6 TCP拥塞控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-7-TCP传输连接管理-重点"><span class="nav-number">7.7.</span> <span class="nav-text">6.7 TCP传输连接管理(重点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-8-TCP有限状态机"><span class="nav-number">7.8.</span> <span class="nav-text">6.8 TCP有限状态机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-应用层"><span class="nav-number">8.</span> <span class="nav-text">7.应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-DNS-Domain-Name-System，域名系统"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 DNS(Domain Name System，域名系统)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-FTP-File-Transfer-Protocol，文件传输协议"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 FTP(File Transfer Protocol，文件传输协议)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-TELNET"><span class="nav-number">8.3.</span> <span class="nav-text">7.3 TELNET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-4-HTTP（HyperText-Transfer-Protocol，超文本传输协议）"><span class="nav-number">8.4.</span> <span class="nav-text">7.4 HTTP（HyperText Transfer Protocol，超文本传输协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-5-SMTP（Simple-Mail-Transfer-Protocol，简单邮件传输协议）"><span class="nav-number">8.5.</span> <span class="nav-text">7.5 SMTP（Simple Mail Transfer Protocol，简单邮件传输协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-6-DHCP（Dynamic-Host-Configuration-Protocol，动态主机设置协议）"><span class="nav-number">8.6.</span> <span class="nav-text">7.6 DHCP（Dynamic Host Configuration Protocol，动态主机设置协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-7-SNMP（Simple-Network-Management-Protocol，简单网络管理协议）"><span class="nav-number">8.7.</span> <span class="nav-text">7.7 SNMP（Simple Network Management Protocol，简单网络管理协议）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-相关概念"><span class="nav-number">9.</span> <span class="nav-text">8.相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-Socket（套接字）"><span class="nav-number">9.1.</span> <span class="nav-text">8.1 Socket（套接字）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-WWW（World-Wide-Web，环球信息网，万维网）"><span class="nav-number">9.2.</span> <span class="nav-text">8.2 WWW（World Wide Web，环球信息网，万维网）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-URL（Uniform-Resource-Locator，统一资源定位符）"><span class="nav-number">9.3.</span> <span class="nav-text">8.3 URL（Uniform Resource Locator，统一资源定位符）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-HTTP详解"><span class="nav-number">10.</span> <span class="nav-text">9.HTTP详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-DNS-域名解析协议"><span class="nav-number">11.</span> <span class="nav-text">10.DNS(域名解析协议)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Http协议格式"><span class="nav-number">12.</span> <span class="nav-text">11.Http协议格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-当你输入一个网址-点击一个链接，发生了什么？（以www-baidu-com为例）"><span class="nav-number">13.</span> <span class="nav-text">12.当你输入一个网址/点击一个链接，发生了什么？（以www.baidu.com为例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-计算机的OSI和TCP-IP网络模型"><span class="nav-number">14.</span> <span class="nav-text">13.计算机的OSI和TCP/IP网络模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-TCP-FTP-简析"><span class="nav-number">15.</span> <span class="nav-text">14.TCP/FTP 简析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-IP地址与子网掩码"><span class="nav-number">16.</span> <span class="nav-text">15.IP地址与子网掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-路由器"><span class="nav-number">17.</span> <span class="nav-text">16.路由器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-MAC地址-物理地址、硬件地址-的概念和作用"><span class="nav-number">18.</span> <span class="nav-text">17.MAC地址(物理地址、硬件地址)的概念和作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-路由表中的内容"><span class="nav-number">19.</span> <span class="nav-text">18.路由表中的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-分组转发算法流程"><span class="nav-number">20.</span> <span class="nav-text">19.分组转发算法流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-TFTP与FTP的区别"><span class="nav-number">21.</span> <span class="nav-text">20.TFTP与FTP的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-MTU的概念，什么是路径MTU？-MTU发现机制，TraceRoute"><span class="nav-number">22.</span> <span class="nav-text">21.MTU的概念，什么是路径MTU？ MTU发现机制，TraceRoute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-ICMP协议"><span class="nav-number">23.</span> <span class="nav-text">22.ICMP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-组播和广播的概念，IGMP的用途"><span class="nav-number">24.</span> <span class="nav-text">23.组播和广播的概念，IGMP的用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-DNS的概念，用途，DNS查询的实现算法"><span class="nav-number">25.</span> <span class="nav-text">24.DNS的概念，用途，DNS查询的实现算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-TCP的流量控制"><span class="nav-number">26.</span> <span class="nav-text">25.TCP的流量控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-TCP拥塞控制"><span class="nav-number">27.</span> <span class="nav-text">26.TCP拥塞控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-TIME-WAIT状态及存在原因"><span class="nav-number">28.</span> <span class="nav-text">27.TIME_WAIT状态及存在原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-Http2-0和Http1-0区别"><span class="nav-number">29.</span> <span class="nav-text">28.Http2.0和Http1.0区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-SMTP和POP3协议的区别"><span class="nav-number">30.</span> <span class="nav-text">29.SMTP和POP3协议的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考博客"><span class="nav-number">31.</span> <span class="nav-text">参考博客</span></a></li></ol></div>
             
 
           </div>
@@ -1218,7 +1601,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">49.5k</span>
+    <span title="Site words total count">62.8k</span>
   
 </div>
 
