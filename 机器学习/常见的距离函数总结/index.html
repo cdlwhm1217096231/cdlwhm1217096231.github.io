@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.距离函数总结 闵可夫斯基距离：给定样本$\overrightarrow{\mathbf{x}}{i}=\left(x{i, 1}, x{i, 2}, \cdots, x{i, n}\right)^{T}$,$\overrightarrow{\mathbf{x}}{j}=\left(x{j, 1}, x{j, 2}, \cdots, x{j, n}\right)^{T}$，则闵可夫斯基距离定义为">
+<meta name="description" content="1.距离函数总结 闵可夫斯基距离： \text { distance( }\left(\overrightarrow{\mathbf{x}}_{i}, \overrightarrow{\mathbf{x}}_{j}\right)=\left(\sum_{d=1}^{n}\left|x_{i, d}-x_{j, d}\right|^{p}\right)^{1 / p} 当p=2时，闵可夫斯基距离就是">
 <meta name="keywords" content="人工智能,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见的距离函数总结">
 <meta property="og:url" content="https://cdlwhm1217096231.github.io/机器学习/常见的距离函数总结/index.html">
 <meta property="og:site_name" content="Curry_Coder的空间">
-<meta property="og:description" content="1.距离函数总结 闵可夫斯基距离：给定样本$\overrightarrow{\mathbf{x}}{i}=\left(x{i, 1}, x{i, 2}, \cdots, x{i, n}\right)^{T}$,$\overrightarrow{\mathbf{x}}{j}=\left(x{j, 1}, x{j, 2}, \cdots, x{j, n}\right)^{T}$，则闵可夫斯基距离定义为">
+<meta property="og:description" content="1.距离函数总结 闵可夫斯基距离： \text { distance( }\left(\overrightarrow{\mathbf{x}}_{i}, \overrightarrow{\mathbf{x}}_{j}\right)=\left(\sum_{d=1}^{n}\left|x_{i, d}-x_{j, d}\right|^{p}\right)^{1 / p} 当p=2时，闵可夫斯基距离就是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-08T09:15:28.909Z">
+<meta property="og:updated_time" content="2019-08-08T09:37:55.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见的距离函数总结">
-<meta name="twitter:description" content="1.距离函数总结 闵可夫斯基距离：给定样本$\overrightarrow{\mathbf{x}}{i}=\left(x{i, 1}, x{i, 2}, \cdots, x{i, n}\right)^{T}$,$\overrightarrow{\mathbf{x}}{j}=\left(x{j, 1}, x{j, 2}, \cdots, x{j, n}\right)^{T}$，则闵可夫斯基距离定义为">
+<meta name="twitter:description" content="1.距离函数总结 闵可夫斯基距离： \text { distance( }\left(\overrightarrow{\mathbf{x}}_{i}, \overrightarrow{\mathbf{x}}_{j}\right)=\left(\sum_{d=1}^{n}\left|x_{i, d}-x_{j, d}\right|^{p}\right)^{1 / p} 当p=2时，闵可夫斯基距离就是">
 
 
 
@@ -346,7 +346,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-08T17:15:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-08T17:37:55+08:00">
                 2019-08-08
               </time>
             
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  211
+                  162
                 </span>
               
 
@@ -448,7 +448,7 @@
 
       
         <h4 id="1-距离函数总结"><a href="#1-距离函数总结" class="headerlink" title="1.距离函数总结"></a>1.距离函数总结</h4><ul>
-<li>闵可夫斯基距离：给定样本$\overrightarrow{\mathbf{x}}<em>{i}=\left(x</em>{i, 1}, x<em>{i, 2}, \cdots, x</em>{i, n}\right)^{T}$,$\overrightarrow{\mathbf{x}}<em>{j}=\left(x</em>{j, 1}, x<em>{j, 2}, \cdots, x</em>{j, n}\right)^{T}$，则闵可夫斯基距离定义为：<script type="math/tex; mode=display">
+<li><strong>闵可夫斯基距离</strong>：<script type="math/tex; mode=display">
 \text { distance( }\left(\overrightarrow{\mathbf{x}}_{i}, \overrightarrow{\mathbf{x}}_{j}\right)=\left(\sum_{d=1}^{n}\left|x_{i, d}-x_{j, d}\right|^{p}\right)^{1 / p}</script></li>
 <li>当p=2时，闵可夫斯基距离就是<strong>欧式距离</strong>：<script type="math/tex; mode=display">
 \operatorname{distance}\left(\overrightarrow{\mathbf{x}}_{i}, \overrightarrow{\mathbf{x}}_{j}\right)=\left\|\overrightarrow{\mathbf{x}}_{i}-\overrightarrow{\mathbf{x}}_{j}\right\|_{2}=\sqrt{\sum_{d=1}^{n}\left|x_{i, d}-x_{j, d}\right|^{2}}</script></li>
@@ -478,7 +478,7 @@
   <p><span>本文标题:</span>常见的距离函数总结</p>
   <p><span>文章作者:</span>Curry_Coder</p>
   <p><span>发布时间:</span>2019年08月08日 - 17:14:30</p>
-  <p><span>最后更新:</span>2019年08月08日 - 17:15:28</p>
+  <p><span>最后更新:</span>2019年08月08日 - 17:37:55</p>
   <p><span>原始链接:</span><a href="/机器学习/常见的距离函数总结/" title="常见的距离函数总结">https://cdlwhm1217096231.github.io/机器学习/常见的距离函数总结/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/机器学习/常见的距离函数总结/" aria-label="复制成功！"></i></span>
   </p>
@@ -864,7 +864,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.2k</span>
+    <span title="Site words total count">65.1k</span>
   
 </div>
 
