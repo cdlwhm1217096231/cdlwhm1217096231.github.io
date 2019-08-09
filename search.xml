@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C++中的基本变量类型介绍]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[1.cpp变量类型 变量实际上是存储空间的名称，cpp中每个变量都有指定的类型，类型决定变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可以作用在变量上。 变量名可以是字母 数字 下划线组成，必须以字母或下划线开头。区分大小写 几种基本的变量类型：2.cpp中的变量定义 变量定义就是告诉编译器在何处创建变量的存储，以及如何创建变量的存储。变量的定义指定一个数据类型，并包含该类型的一个或多个变量的列表，例如： 1格式：type variable_list; type必须是基本数据类型或用户自定义的数据类型(如 类)，variable_list可以由一个或多个标识符名称组成，多个标识符之间用逗号分隔，例如： 1234int i, j, k; // 声明并定义了变量i, j, k,指示编译器创建类型为int的名为i,j,k的变量char c, d, e;float f, ss;double d; 变量可以在声明的时候被初始化，初始化器由一个等号后跟一个常量表达式组成,例如： 12345格式: type variable_name = value;extern int d = 3, f = 6; // d 和 f 的声明int d = 3, f = 5; // 定义并初始化 d 和 fbyte z = 22;char x = 'x'; 不带初始化的定义：带有静态存储持续时间的变量会被隐式初始化为 NULL（所有字节的值都是 0），其他所有变量的初始值是未定义的 3.cpp中的变量声明 变量声明向编译器保证变量以给定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义，在程序连接时编译器需要实际的变量声明。 当使用多个文件且只在其中一个文件中定义变量时（定义变量的文件在程序连接时是可用的），变量声明就显得非常有用。可以使用extern关键字在任何地方声明一个变量。虽然可以在C++程序中多次声明一个变量，但变量只能在某个文件、函数或代码块中被定义一次。 1234567891011121314int main()&#123; // 变量的定义 int a, b; int c; float f; // 实际初始化 a = 10; b = 20; c = a + b; cout &lt;&lt; c &lt;&lt; endl; f = 70.0 / 3.0; cout &lt;&lt; f &lt;&lt; endl; return 0;&#125; 同样的，在函数声明时，提供一个函数名，而函数的实际定义则可以在任何地方进行。 1234567891011121314151617181920212223242526272829303132// 变量的声明extern int a, b;extern int c;extern float f;// 函数声明int func();int main()&#123; // 变量的定义 int a, b; int c; float f; // 实际初始化 a = 10; b = 20; c = a + b; cout &lt;&lt; c &lt;&lt; endl; f = 70.0 / 3.0; cout &lt;&lt; f &lt;&lt; endl; // 函数调用 int i = func(); return 0;&#125;// 函数定义int func()&#123; return 0;&#125; 4.cpp中的左值和右值 cpp中的两种类型的表达式： 左值：指向内存位置的表达式被称为左值（lvalue）表达式。左值可以出现在赋值号的左边或右边。 右值：存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边。 变量是左值，因此可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。12int g = 20;10 = 20; 报错！ 5.变量的类型转换 变量的类型间是可以互相转换的，转换又分为自动转换和强制转换。 自动转换规则 若参与运算量的类型不同，则先转换成同一类型，然后进行运算。 转换按数据长度增加的方向进行，以保证精度不降低。如int型和long型运算时，先把int量转成long型后再进行运算。 a、若两种类型的字节数不同，转换成字节数高的类型 b、若两种类型的字节数相同，且一种有符号，一种无符号，则转换成无符号类型 所有的浮点运算都是以双精度进行的，即使仅含float单精度量运算的表达式，也要先转换成double型，再作运算。 char型和short型参与运算时，必须先转换成int型。 在赋值运算中，赋值号两边量的数据类型不同时，赋值号右边量的类型将转换为左边量的类型。如果右边量的数据类型长度比左边长时，将丢失一部分数据，这样会降低精度:12345678 int aa = 1;double bb = 2.1;aa = bb;cout &lt;&lt; "aa = " &lt;&lt; aa &lt;&lt; endl; //输出为 2，丢失小数部分int a = 1;double b = 2.1;cout &lt;&lt; "a + b = " &lt;&lt; a + b &lt;&lt; endl; //输出为a + b = 3.1 强制转换规则 强制类型转### 1.cpp变量类型 变量实际上是存储空间的名称，cpp中每个变量都有指定的类型，类型决定变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可以作用在变量上。 变量名可以是字母 数字 下划线组成，必须以字母或下划线开头。区分大小写 几种基本的变量类型：2.cpp中的变量定义 变量定义就是告诉编译器在何处创建变量的存储，以及如何创建变量的存储。变量的定义指定一个数据类型，并包含该类型的一个或多个变量的列表，例如： 1格式：type variable_list; type必须是基本数据类型或用户自定义的数据类型(如 类)，variable_list可以由一个或多个标识符名称组成，多个标识符之间用逗号分隔，例如： 1234int i, j, k; // 声明并定义了变量i, j, k,指示编译器创建类型为int的名为i,j,k的变量char c, d, e;float f, ss;double d; 变量可以在声明的时候被初始化，初始化器由一个等号后跟一个常量表达式组成,例如： 12345格式: type variable_name = value;extern int d = 3, f = 6; // d 和 f 的声明int d = 3, f = 5; // 定义并初始化 d 和 fbyte z = 22;char x = 'x'; 不带初始化的定义：带有静态存储持续时间的变量会被隐式初始化为 NULL（所有字节的值都是 0），其他所有变量的初始值是未定义的 3.cpp中的变量声明 变量声明向编译器保证变量以给定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义，在程序连接时编译器需要实际的变量声明。 当使用多个文件且只在其中一个文件中定义变量时（定义变量的文件在程序连接时是可用的），变量声明就显得非常有用。可以使用extern关键字在任何地方声明一个变量。虽然可以在C++程序中多次声明一个变量，但变量只能在某个文件、函数或代码块中被定义一次。 1234567891011121314int main()&#123; // 变量的定义 int a, b; int c; float f; // 实际初始化 a = 10; b = 20; c = a + b; cout &lt;&lt; c &lt;&lt; endl; f = 70.0 / 3.0; cout &lt;&lt; f &lt;&lt; endl; return 0;&#125; 同样的，在函数声明时，提供一个函数名，而函数的实际定义则可以在任何地方进行。 1234567891011121314151617181920212223242526272829303132// 变量的声明extern int a, b;extern int c;extern float f;// 函数声明int func();int main()&#123; // 变量的定义 int a, b; int c; float f; // 实际初始化 a = 10; b = 20; c = a + b; cout &lt;&lt; c &lt;&lt; endl; f = 70.0 / 3.0; cout &lt;&lt; f &lt;&lt; endl; // 函数调用 int i = func(); return 0;&#125;// 函数定义int func()&#123; return 0;&#125; 4.cpp中的左值和右值 cpp中的两种类型的表达式： 左值：指向内存位置的表达式被称为左值（lvalue）表达式。左值可以出现在赋值号的左边或右边。 右值：存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边。 变量是左值，因此可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。12int g = 20;10 = 20; 报错！ 5.变量的类型转换 变量的类型间是可以互相转换的，转换又分为自动转换和强制转换。 自动转换规则 若参与运算量的类型不同，则先转换成同一类型，然后进行运算。 转换按数据长度增加的方向进行，以保证精度不降低。如int型和long型运算时，先把int型转成long型后再进行运算。 a、若两种类型的字节数不同，转换成字节数高的类型 b、若两种类型的字节数相同，且一种有符号，一种无符号，则转换成无符号类型 所有的浮点运算都是以双精度进行的，即使仅含float单精度量运算的表达式，也要先转换成double型，再作运算。 char型和short型参与运算时，必须先转换成int型。 在赋值运算中，赋值号两边量的数据类型不同时，赋值号右边量的类型将转换为左边量的类型。如果右边量的数据类型长度比左边长时，将丢失一部分数据，这样会降低精度: 12345678int aa = 1;double bb = 2.1;aa = bb;cout &lt;&lt; "aa = " &lt;&lt; aa &lt;&lt; endl; //输出为 2，丢失小数部分int a = 1;double b = 2.1;cout &lt;&lt; "a + b = " &lt;&lt; a + b &lt;&lt; endl; //输出为a + b = 3.1 强制转换规则 强制类型转换是通过类型转换运算来实现的。其一般形式为：（类型说明符）表达式其功能是把表达式的运算结果强制转换成类型说明符所表示的类型123int a = 1;double b = 2.1;cout &lt;&lt; "a + b = " &lt;&lt; a + (int)b &lt;&lt; endl; //输出为a + b = 3 6.变量定义与声明的区别 定义包含了声明，但是声明不包含定义,变量声明是不会为变量开辟内存空间的,当初始化时，初始化必须有存储空间来进行，此时开始分配内存。如： 12int a = 0; //定义并声明了变量 aextern int a; //只是声明了有一个变量 a 存在，具体 a 在哪定义的，需要编译器编译的时候去找。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的基本数据类型介绍]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[1.cpp中的基本内置数据类型（7种） bool char int float double void(无类型) wchar_t(宽字符型)：typedef wchar_t short int; 一个基本类型可以被一个或多个类型修饰符来修饰。 signed unsigned short long 下表显示了各种变量类型在内存中存储值时需要占用的内存，以及该类型的变量所能存储的最大值和最小值(变量的大小会根据编译器和所使用的电脑而有所不同)2.typedef声明 使用typedef为已有的类型取一个新的名字，语法如下： 123格式：typedef type name;例如：typedef int feet; feet是int的另一个名称 feet distance; 创建一个整型变量distance typedef 可以声明各种类型名，但不能用来定义变量。用 typedef 可以声明数组类型、字符串类型，使用比较方便。 用typedef只是对已经存在的类型增加一个类型名，而没有创造新的类型。 当在不同源文件中用到同一类型数据（尤其是像数组、指针、结构体、共用体等类型数据）时，常用 typedef 声明一些数据类型，把它们单独放在一个头文件中，然后在需要用到它们的文件中用 ＃include 命令把它们包含进来，以提高编程效率。 使用 typedef 有利于程序的通用与移植。有时程序会依赖于硬件特性，用 typedef 便于移植。 typedef 与 #define 的区别 2.1 执行时间不同 关键字 typedef 在编译阶段有效，由于是在编译阶段，因此 typedef 有类型检查的功能。 #define 则是宏定义，发生在预处理阶段，也就是编译之前，它只进行简单而机械的字符串替换，而不进行任何检查1234567891011121314typedef unsigned int UINT;void func()&#123; UINT value = "abc"; // 类型检测，将会报错 cout &lt;&lt; value &lt;&lt; endl;&#125;//--------------------------------------------------------//#define f(x) x*xint main()&#123; int a = 6, b = 2, c; c = f(a) / f(b); printf("%d\n", c); return 0;&#125; 2.2 功能上的差异 typedef 用来定义类型的别名，定义与平台无关的数据类型，与 struct 的结合使用等。 #define 不只是可以为类型取别名，还可以定义常量、变量、编译开关等。 2.3 作用域不同 #define 没有作用域的限制，只要是之前预定义过的宏，在以后的程序中都可以使用。而 typedef 有自己的作用域。1234567891011121314151617181920212223242526272829303132333435363738394041// 宏的作用域 void func1()&#123; #define HW "helloworld" &#125; void func2()&#123; string str = HW; cout &lt;&lt; str &lt;&lt; endl; &#125; // typedef的作用域 void func3()&#123; typedef unsigned int UINT; &#125; void func4()&#123; // UNIT uvalue = 5; 报错！ &#125; class A&#123; typedef unsigned int UINT; UINT uvalueA; A(): uvalueA(0)&#123;&#125; &#125;; class B&#123; // UINT uvalueB; 报错 &#125;; // 在B类中使用UINT会出错，因为UINT只在类A的作用域中。 // 此外，在类中用typedef定义的类型别名还具有相应的访问权限 class AA&#123; typedef unsigned int UINT; UINT valueA; AA(): valueA(0)&#123;&#125; &#125;; void func5()&#123; // AA::UINT i = 1;报错，在typedef前加上public权限则可以 &#125; 2.4 对指针的操作——二者修饰指针类型时，作用不同 12345678910111213141516171819202122typedef int* pint;#define PINT int*int i1 = 1, i2 = 2;const pint p1 = &amp;i1; // 等价于int * const p;指针常量:指针p是一个常量,p不可更改，p指向的内容可以更改const PINT p2 = &amp;i2; // 等价于const int *p/int const *p，p可以更改，p指向的内容不可更改，常量指针pint s1, s2; // s1 和 s2都是int类型指针PINT s3, s4; // 相当于 int * s3, s4;只有一个是指针void TestPointer()&#123; cout &lt;&lt; "p1:" &lt;&lt; p1 &lt;&lt; " *p1 = " &lt;&lt; *p1 &lt;&lt; endl; // p1 = &amp;i2; 指针常量p1不能被修改 *p1 = 5; // 但是p1指向的内容可以修改 cout &lt;&lt; "p1:" &lt;&lt; p1 &lt;&lt; " *p1 = " &lt;&lt; *p1 &lt;&lt; endl; cout &lt;&lt; "p2:" &lt;&lt; p2 &lt;&lt; " *p2 = " &lt;&lt; *p2 &lt;&lt; endl; // *p2 = 5; 常量指针p2能被修改 p2 = &amp;i1; // 但是p2指向的内容不可以修改 cout &lt;&lt; "p2:" &lt;&lt; p2 &lt;&lt; " *p2 = " &lt;&lt; *p2 &lt;&lt; endl;&#125; 3.枚举类型 枚举类型是cpp中的一种派生数据类型，是由用户定义的若干枚举常量的集合 如果一个变量只有几种可能的值，可以定义为枚举类型。“枚举”就是将变量的值一一列举出来，变量的值只能在列举出来的值的范围内。 创建枚举，需要用到关键字enum，枚举类型的一般形式为: 123456enum 枚举名&#123; 标识符[=整型常量]; 标识符[=整型常量]; .... 标识符[=整型常量];&#125; 枚举变量; 如果枚举没有初始化，即省略掉’=整型常数’时,则从第一个标识开始，如下面的例子，变量c的类型是color,最后被赋值为blue。 1234enum color&#123; red, green, blue&#125; c;c = blue; 默认情况下，第一个名称的值是0，第二个名称的值是1，第三个名称的值是2，依次类推。可以在定义枚举类型时，对枚举元素赋值。此时，赋值的枚举值为所赋的值，而其他没有赋值的枚举值在为前一个枚举值加1，例如下面： 1234enum color&#123; red, greed = 5, blue&#125;;blue = 6,默认情况下，每个名称都会比前一个名称大，但red的值仍然是0. 4.相关代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143#include "iostream"#include "string"#include "limits"#include "stdio.h"using namespace std;#define f(x) x*x // 宏定义// 1 typedef执行时间不同typedef unsigned int UINT;void func()&#123; // UINT value = "abc"; 类型检测，将出错 // cout &lt;&lt; value &lt;&lt; endl;&#125;// 2 作用域不同// 宏的作用域void func1()&#123; #define HW "helloworld"&#125;void func2()&#123; string str = HW; cout &lt;&lt; str &lt;&lt; endl;&#125;// typedef的作用域void func3()&#123; typedef unsigned int UINT;&#125;void func4()&#123; // UNIT uvalue = 5; 报错！&#125;class A&#123; typedef unsigned int UINT; UINT uvalueA; A(): uvalueA(0)&#123;&#125;&#125;;class B&#123; // UINT uvalueB; 报错&#125;;// 在B类中使用UINT会出错，因为UINT只在类A的作用域中。// 此外，在类中用typedef定义的类型别名还具有相应的访问权限class AA&#123; typedef unsigned int UINT; UINT valueA; AA(): valueA(0)&#123;&#125;&#125;;void func5()&#123; // AA::UINT i = 1;报错，在typedef前加上public权限则可以&#125;// 3 对指针的操作---二者修饰指针类型时，作用不同typedef int* pint;#define PINT int*int i1 = 1, i2 = 2;const pint p1 = &amp;i1; // 等价于int * const p;指针常量:指针p是一个常量,p不可更改，p指向的内容可以更改const PINT p2 = &amp;i2; // 等价于const int *p/int const *p，p可以更改，p指向的内容不可更改，常量指针pint s1, s2; // s1 和 s2都是int类型指针PINT s3, s4; // 相当于 int * s3, s4;只有一个是指针void TestPointer()&#123; cout &lt;&lt; "p1:" &lt;&lt; p1 &lt;&lt; " *p1 = " &lt;&lt; *p1 &lt;&lt; endl; // p1 = &amp;i2; 指针常量p1不能被修改 *p1 = 5; // 但是p1指向的内容可以修改 cout &lt;&lt; "p1:" &lt;&lt; p1 &lt;&lt; " *p1 = " &lt;&lt; *p1 &lt;&lt; endl; cout &lt;&lt; "p2:" &lt;&lt; p2 &lt;&lt; " *p2 = " &lt;&lt; *p2 &lt;&lt; endl; // *p2 = 5; 常量指针p2能被修改 p2 = &amp;i1; // 但是p2指向的内容不可以修改 cout &lt;&lt; "p2:" &lt;&lt; p2 &lt;&lt; " *p2 = " &lt;&lt; *p2 &lt;&lt; endl;&#125;// 定义一个枚举类型enum color&#123; red, green, blue=5, yellow&#125;;int main()&#123; cout &lt;&lt; "bool: " &lt;&lt; "所占字节数：" &lt;&lt; sizeof(bool) &lt;&lt; endl; cout &lt;&lt; "char: " &lt;&lt; "所占字节数：" &lt;&lt; sizeof(char) &lt;&lt; endl; cout &lt;&lt; "signed char: " &lt;&lt; "所占字节数：" &lt;&lt; sizeof(signed char) &lt;&lt; endl; cout &lt;&lt; "int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(int) &lt;&lt; endl; cout &lt;&lt; "unsigned int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(unsigned int) &lt;&lt; endl; cout &lt;&lt; "signed int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(signed int) &lt;&lt; endl; cout &lt;&lt; "short int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(short int) &lt;&lt; endl; cout &lt;&lt; "unsigned short int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(unsigned short int) &lt;&lt; endl; cout &lt;&lt; "signed short int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(signed short int) &lt;&lt; endl; cout &lt;&lt; "long int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(long int) &lt;&lt; endl; cout &lt;&lt; "signed long int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(signed long int) &lt;&lt; endl; cout &lt;&lt; "unsigned long int: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(unsigned long int) &lt;&lt; endl; cout &lt;&lt; "float: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(float) &lt;&lt; endl; cout &lt;&lt; "double: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(double) &lt;&lt; endl; cout &lt;&lt; "long double: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(long double) &lt;&lt; endl; cout &lt;&lt; "wchar_t: " &lt;&lt; "所占的字节数: " &lt;&lt; sizeof(wchar_t) &lt;&lt; endl; typedef int feet; // typedef声明,但typedef int feet = 100;错误！ feet distance; // 1 宏定义执行时间不同 int a = 6, b = 6, c; c = f(a) / f(b); printf("%d\n", c); TestPointer(); cout &lt;&lt; "red = " &lt;&lt; red &lt;&lt; " yellow = " &lt;&lt; yellow &lt;&lt; endl; // 枚举类型举例 enum days&#123; one, two, three &#125;day; day = one; switch(day)&#123; case one: cout &lt;&lt; "one" &lt;&lt; endl; break; case two: cout &lt;&lt; "two" &lt;&lt; endl; break; default: cout &lt;&lt; "默认输出" &lt;&lt; endl; break; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的参数传递方式：传值、传地址、传引用总结]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%EF%BC%9A%E4%BC%A0%E5%80%BC%E3%80%81%E4%BC%A0%E5%9C%B0%E5%9D%80%E3%80%81%E4%BC%A0%E5%BC%95%E7%94%A8%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[指针：指针是一个变量，只不过这个变量中存储的是一个地址，指向内存中的一个单元。 引用：引用和原变量是同一个东西，只不过是原变量的一个别名。 123int a = 10; 定义一个整型变量aint *p = &amp;a; 定义一个指向整型变量的指针变量p，该指针指向a的存储单元，即p的值是a存储单元的地址int &amp;b = a; 定义一个整型变量a的引用，a和b是同一个东西，在内存中占用同一个存储单元 一、引用的特性： 引用在定义时必须初始化 一个变量可以有多个引用 引用一旦绑定某个实体，就不能再是其他变量的引用。 二、引用和指针的区别与联系： 1.相同点： 底层的实现方式相同，都是按照指针的方式实现的 2.不同点： 引用定义的时候必须初始化，指针可以不用初始化； 引用一旦初始化为指向一个对象，就不能再指向其他对象，而指针可以在任何时候指向任何一个同类型的对象； 没有空引用，但是有空指针； 在sizeof中的含义不同：引用结果为引用类型的大小，但指针始终是地址空间所占字节的个数(在32为平台下，指针求sizeof永远是4)； 引用++改变的是变量的内容，指针++改变的是指针的指向； 有多级指针，没有多级引用； 引用使用起来比指针安全； 如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄漏；三、传值、传地址、传引用的区别，哪个更高效？ 1.传值 这种传递方式中，实参和形参是两个不同的地址空间，参数传递的实质是将原函数中变量的值，复制到被调用函数形参所在的存储空间中，这个形参的地址空间在函数执行完毕后，会被回收掉。整个被调用函数对形参的操作，只影响形参对应的地址空间，不影响原函数中变量的值，因为这两个不是同一个存储空间。即使形参的值在函数中发生了变化，实参的值也完全不会受到影响，仍为调用前的值。 2.传地址 这种传递方式中，实参是变量的地址，形参是指针类型的变量，在函数中对指针变量的操作，就是对实参（变量地址）所对应的变量的操作，函数调用结束后，原函数中的变量的值将会发生改变。被调用函数中对形参指针所指向的地址中内容的任何改变都会影响到实参。 3.传引用 这种传递方式中，形参是引用类型变量，其实就是实参的一个别名，在被调用函数中，对引用变量的所有操作等价于对实参的操作。这样，整个函数执行完毕后，原先的实参的值将会发生改变。被调函数对形参做的任何操作都影响了主调函数中的实参变量。 4.哪种更高效？ 在内置类型当中三种传递方式的效率上都差不多； 在自定义类型当中，传引用方式效率的更高效一些，因为它没有对形参进行一次拷贝四、常引用123int a = 10;int &amp;b = a; 等价于 int *const b = a;即引用是一个指针常量（又称常指针，即一个常量，其类型是指针）常引用：const int &amp;a=b;等价于const int * const a=b;不仅仅是a这个地址不可修改，而且其指向的内存空间也不可修改。 五、引用的使用场景 1.给变量起别名 12int a;int &amp;b = a; 2.将引用作为函数的参数 使用引用类型就不必在swap中声明形参是指针变量，指针变量要另外开辟内存单元，其内容是地址。而引用变量不是一个独立的变量，不单独占内存单元。而且在调用swap函数时，只需要传值即可，将引用作为函数的形参更加简单、直观、方便。 1234567void swap(int &amp;a, int &amp;b)&#123; int temp; temp = a; a = b; b = temp;&#125; 3.返回值 1234567891011// 值返回int Add(int _iLeft, int _iRight)&#123;return _iLeft + _iRight;&#125;// 引用返回int&amp; Add(int &amp; _iLeft, int&amp; _iRight)&#123;int iResult = _iLeft + _iRight;return iResult;&#125; 六、代码实例123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107#include "iostream"using namespace std;void swap_by_value(int x, int y);void swap_by_pointer(int *p1, int *p2);void swap_by_reference(int &amp;x, int &amp;y);/*C++的函数参数传递方式，可以是传值方式，也可以是传引用方式。传值的本质是：形参是实参的一份复制。传引用的本质是：形参和实参是同一个东西。传值和传引用，对大多数常见类型都是适用的。指针、数组，它们都是数据类型的一种，没啥特殊的因此,指针作为函数参数传递时，也区分为传值和传引用两种方式。void fun_1(int a); int类型，传值(复制产生新的变量)void fun_2(int &amp;a); int类型，传引用(形参和实参是同一个东西)void fun_3(int *pi); 指针类型，传值(复制产生新的变量)void fun_4(int *&amp;pi); 指针类型，传引用(形参和实参是同一个东西)如果希望通过将参数传递到函数中，从而来改变变量的值（比如变量是T a，T表示类型)，则可以有这2种方式选择： 1.传a的引用： void my_fun(T &amp;a); 2.传a的地址： void my_fun(T *a);*/// (1) 值传递/*形参意思是被调用函数的参数/变量，实参意思是主调函数中放到括号中的参数/变量。传值方式下，形参是实参的拷贝：重新建立了变量，变量取值和实参一样。即实参a和b的值为20和10,形参x和y的值都是20和10；而a与x的地址、b与y的地址并不相同表明形参x和y是新建的变量，也即实参a, b是从形参复制了一份*/int main()&#123; int a = 20, b = 10; cout &lt;&lt; "交换前: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; swap_by_value(a, b); // 值传递 cout &lt;&lt; "交换后: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; /*-------------------------分界线1------------------*/ cout &lt;&lt; "交换前: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; swap_by_pointer(&amp;a, &amp;b); // 值传递 cout &lt;&lt; "交换后: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; /*-------------------------分界线2------------------*/ cout &lt;&lt; "交换前: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; swap_by_reference(a, b); // 引用传递 cout &lt;&lt; "交换后: " &lt;&lt; endl; cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; " ,b = " &lt;&lt; b &lt;&lt; endl; return 0;&#125;void swap_by_value(int x, int y)&#123; int temp; temp = x; x = y; y = temp;&#125;// (2) 传指针(地址),实质还是传值void swap_by_pointer(int *p1, int *p2)&#123; int t; t = *p1; *p1 = *p2; *p2 = t;&#125;// (3) 传引用/*传引用，传递的是实参本身，而不是实参的一个拷贝，形参的修改就是实参的修改,即值相同，地址也相同相比于传值，传引用的好处是省去了复制，节约了空间和时间。假如不希望修改变量的值，那么请选择传值而不是传引用。*/void swap_by_reference(int &amp;x, int &amp;y)&#123; int temp; temp = x; x = y; y = temp;&#125;// (4) 总结/*“引用”类型变量的声明方式：变量类型 &amp;变量名; int &amp;b;“指针”类型的声明方式：基类型 *变量名; int *pi;“指针的引用类型”应当这样声明：基类型 *&amp;变量名 int *&amp;pi;指针类型，也是有传值、传引用两种函数传参方式的： 1.指针的传值方式 void my_fun(int *a, int n); 2.指针的传引用方式 void my_fun(int *&amp;pi, int n);// 普通类型，以int a为例void myfun(int a) //传值，产生复制void myfun(int &amp;a) //传引用，不产生复制void myfun(int *a) //传地址，产生复制，本质上是一种传值，这个值是地址// 指针类型，以int *a为例void myfun(int *a) //传值，产生复制void myfun(int *&amp;a) //传引用，不产生复制void myfun(int **a) //传地址，产生复制，本质上是一种传值，这个值是指针的地址// 数组类型，以int a[10]为例void myfun(int a[], int n) //传值，产生复制void myfun(int* a, int n) //传值，产生复制，传递的数组首地址void myfun(int (&amp;arr)[10]) //传引用，不产生复制。需要硬编码数组长度template&lt;size_t size&gt; void myfun(int (&amp;arr)[size]) //传引用，不产生复制。不需要硬编码数组长度*/ 七、参考博客1.Chris的技术博客]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常引用、常量指针、指针常量、指向常量的常指针、空指针与野指针解释]]></title>
+    <url>%2FC%2F%E5%B8%B8%E5%BC%95%E7%94%A8%E3%80%81%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E3%80%81%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E3%80%81%E6%8C%87%E5%90%91%E5%B8%B8%E9%87%8F%E7%9A%84%E5%B8%B8%E6%8C%87%E9%92%88%E3%80%81%E7%A9%BA%E6%8C%87%E9%92%88%E4%B8%8E%E9%87%8E%E6%8C%87%E9%92%88%E8%A7%A3%E9%87%8A%2F</url>
+    <content type="text"><![CDATA[1、一.基础知识 引用并非对象 引用必须初始化 引用只能绑定在对象上，而不能与字面值或某个表达式的计算结果绑定在一起 类型要严格匹配 1234int &amp;a = 10; //错误：引用类型的初始值必须是一个对象double a = 3.14;int &amp;b = a; //错误：此处引用类型的初始值必须是int型对象 指针本身就是对象 指针的类型要和它指向的对象严格匹配123456double dval;double *pd = &amp;dval; //正确double *pd2 = pd; //正确int *pi = pd; //错误：指针pi的类型和pd的类型不匹配pi = &amp;dval; //错误：试图把double型对象的地址赋给int型指针 二.常量引用 初始化常量引用时允许用任意表达式作为初始值1234567891011121314151617int i = 42;const int &amp;r1 = i; //正确：允许将const int &amp; 绑定到一个普通int对象上const int &amp;r2 = 42; //正确const int &amp;r3 = r1 * 2; //正确int &amp;r4 = r1 * 2; //错误double dval = 3.14;const int &amp;ri = dval; //正确//等价于const int temp = dval;const int &amp;ri = temp;int i = 42;int &amp;r1 = i;const int &amp;r2 = i;r1 = 0; //正确r2 = 0; //错误 三.常量指针 定义： 又叫常指针，可以理解为常量的指针，也即这个是指针，但指向的是个常量，这个常量是指针的值（地址），而不是地址指向的值。 关键点： 1.常量指针指向的对象不能通过这个指针来修改，可是仍然可以通过原来的声明修改； 2.常量指针可以被赋值为变量的地址，之所以叫常量指针，是限制了通过这个指针修改变量的值；指针指向的地址可以改变，但指针指向的地址所对应的内容不可以改变 3.指针还可以指向别处，因为指针本身只是个变量，可以指向任意地址； 代码形式： 1int const* p; const int* p; 四.指针常量 定义：本质是一个常量，而用指针修饰它。指针常量的值是指针，这个值因为是常量，所以不能被赋值。 关键点： 1.指针常量的值是指针，这个值是常量，不能被修改；指向的地址不可以改变，但指向的地址所对应的内容可以改变 2.指针本身是常量，指针指向的地址不可以变化,但是指针指向的地址所对应的内容可以变化； 代码形式: 1int* const p; 五.指向常量的常指针 定义：指向常量的指针常量就是一个常量，且它指向的对象也是一个常量。 关键点： 1.一个指针常量，指向的是一个指针对象； 2.它指向的指针对象且是一个常量，即它指向的对象不能变化； 代码形式： 1const int* const p; 六.那如何区分这几类呢? 带两个const的肯定是指向常量的常指针，很容易理解，主要是如何区分常量指针和指针常量. 一种方式是看 * 和 const 的排列顺序，比如 123int const* p; //const * 即常量指针const int* p; //const * 即常量指针int* const p; //* const 即指针常量 还一种方式是看const离谁近，即从右往左看，比如 123int const* p; //const修饰的是*p，即*p的内容不可通过p改变，但p不是const，p可以修改，*p不可修改；const int* p; //同上int* const p; //const修饰的是p，p是指针，p指向的地址不能修改，p不能修改，但*p可以修改； 实例 1234567891011121314151617//-------常量指针-------const int *p1 = &amp;a;a = 300; //OK,仍然可以通过原来的声明修改值，//*p1 = 56; //Error,*p1是const int的，不可修改，即常量指针不可修改其指向地址p1 = &amp;b; //OK,指针还可以指向别处，因为指针只是个变量，可以随意指向；//-------指针常量-------//int* const p2 = &amp;a;a = 500; //OK,仍然可以通过原来的声明修改值，*p2 = 400; //OK,指针是常量，指向的地址不可以变化,但是指向的地址所对应的内容可以变化//p2 = &amp;b; //Error,因为p2是const 指针，因此不能改变p2指向的内容//-------指向常量的常量指针-------//const int* const p3 = &amp;a;//*p3 = 1; //Error//p3 = &amp;b; //Errora = 5000; //OK,仍然可以通过原来的声明修改值 在实际应用中，常量指针要比指针常量用的多，比如常量指针经常用在函数传参中，以避免函数内部修改内容。 123456size_t strlen(const char* src); //常量指针，src的值不可改变；char a[] = "hello";char b[] = "world";size_t a1 = strlen(a);size_t b1 = strlen(b);虽然a、b是可以修改的，但是可以保证在strlen函数内部不会修改a、b的内容。 七.空指针与野指针 空指针就是保存地址为空的指针，使用指针时必须先判断是否空指针，很多问题都是这一步导致的。 野指针是在delete掉指针之后，没有置0，导致指针随意指向了一个内存地址，如果继续使用，会造成不可预知的内存错误。另外指针的误用很容易造成BUG或者内存泄漏。12345678910111213//-------空指针-------//int *p4 = NULL;//printf("%d",*p4); //运行Error，使用指针时必须先判断是否空指针//-------野指针（悬浮、迷途指针）-------//int *p5 = new int(5);delete p5;p5 = NULL; //一定要有这一步printf("%d",*p5); //隐藏bug，delete掉指针后一定要置0，不然指针指向位置不可控，运行中可导致系统挂掉//-------指针的内存泄漏-------//int *p6 = new int(6);p6 = new int(7); //p6原本指向的那块内存尚未释放，结果p6又指向了别处，原来new的内存无法访问，也无法delete了，造成memory leak 八.参考资料 1.菜鸟教程 2.C++中指针常量和常量指针的区别]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++实现斐波那契数列]]></title>
+    <url>%2FC%2FC-%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;iostream&gt;using namespace std;// 递归方法和循环方法的对比/*递归方法代码实现比较简洁，但是性能不如循环方法，还会出现栈溢出的问题，优先采用递归的方法！搜索路径的题目：一般使用回溯法，回溯法很适合使用递归方法的代码来实现！当要求不能使用递归实现的时候，考虑使用栈模拟递归的过程求某个问题的最优解时，并且该问题可以拆分为多个子问题时：可以尝试使用动态规划的方法！在使用自上而下的递归思路去分析动态规划问题时，会发现子问题之间存在重叠的更小的子问题。为了避免不必要的重复计算，使用自下而上的循环代码来实现，即把子问题的最优解先计算出来并用数组保存下来，然后基于子问题的解计算大问题的解。特殊情况：在分解子问题的时候存在某个特殊的选择，采用这个特殊的选择将一定那个得到最优解，则此题目可能适用于贪心算法！*/class Solution&#123;public: // 递归方法实现 int FibByRecursive(int n)&#123; if(n &lt;= 0)&#123; return 0; &#125; if(n == 1)&#123; return 1; &#125; return FibByRecursive(n-1) + FibByRecursive(n-2); &#125; // 循环方法实现 int Fib(int n)&#123; if(n &lt;= 0)&#123; return 0; &#125; if(n == 1)&#123; return 1; &#125; int first=0, second=1, third = 0; for(int i=2; i &lt;= n; i++)&#123; third = first + second; second = first; third = second; &#125; return third; &#125;&#125;;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的文件读写操作(4)]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C-4%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324#include "iostream"#include "string"#include "sstream" // 使用istringstream所需要的头文件using namespace std;/*string头文件定义了三个类型来支持内存IO: istringstream向string读取数据 ostringstrream向string写入数据 stringstream既可以从string读数据也可以向string写数据，就像string是一个IO流一样*/// istringstream的用法如下int main()&#123; string str = "hello world! I am Lee."; istringstream is(str); string s; while(is &gt;&gt; s)&#123; cout &lt;&lt; s &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的文件读写操作(3)]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C-3%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445#include "string"#include "vector"#include "fstream"#include "iostream"using namespace std;int cost[10][10];// 如果源文件中的每行数据数量不一样，demo2中的方法就不行了int main()&#123; int Num_3, Num_2; int v, w, weight; ifstream infile; // 读操作,输入流 ofstream outfile; // 写操作，输出流 infile.open("E:\\C++\\cpp_Code\\data1.txt", ios::in); if (!infile.is_open()) cout &lt;&lt; "打开文件操作失败...\n"; infile &gt;&gt; Num_3 &gt;&gt; Num_2; // 先读取第一行 while(0!=Num_3)&#123; // 读取第3个数据 infile &gt;&gt; v &gt;&gt; w &gt;&gt; weight; cost[v][w] = weight; cost[w][v] = weight; Num_3--; &#125; while(0!=Num_2)&#123; // 读取第2个数据 infile &gt;&gt; v &gt;&gt; w; cost[v][w] = 100; cost[w][v] = 100; Num_2--; &#125; infile.close(); outfile.open("E:\\C++\\cpp_Code\\result1.txt", ios::out); if(!outfile.is_open()) cout &lt;&lt; "打开文件失败\n"; for(int i=0;i&lt;=9;i++)&#123; for(int j=0;j&lt;=10;j++)&#123; outfile &lt;&lt; i &lt;&lt; "\t" &lt;&lt; j &lt;&lt; "\t" &lt;&lt; cost[i][j] &lt;&lt; endl; &#125; &#125; outfile.close(); return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的文件读写操作(2)]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C-2%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829303132333435#include "iostream"#include "fstream"#include "vector"#include "string"using namespace std;// demo1中是向文件中写入string类型，下面是向文件中写入int类型int cost[10][10];int main()&#123; int v, w, weight; ifstream infile; // 读操作 ofstream outfile; // 写操作 infile.open("E:\\C++\\cpp_Code\\data.txt", ios::in); if (! infile.is_open()) cout &lt;&lt; "打开文件失败...." &lt;&lt; endl; while(!infile.eof())&#123; infile &gt;&gt; v &gt;&gt; w &gt;&gt; weight; cost[v][w] = weight; cost[w][v] = weight; &#125; infile.close(); outfile.open("E:\\C++\\cpp_Code\\result.txt", ios::app); if(!outfile.is_open()) cout &lt;&lt; "打开文件失败...." &lt;&lt; endl; for(int i=0;i!=10;++i)&#123; for(int j=0;j!=10;++j)&#123; outfile &lt;&lt; i &lt;&lt; "\t" &lt;&lt; j &lt;&lt; "\t" &lt;&lt; cost[i][j] &lt;&lt; endl; &#125; &#125; outfile.close(); return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++中的文件读写操作(1)]]></title>
+    <url>%2FC%2FC-%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C-1%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include "iostream"#include "fstream"#include "vector"#include "string"using namespace std;/* ofstream 文件写操作，内存写入存储设备ifstream 文件读操作，存储设备读取到内存中fstream 读写操作，对打开的文件可进行读写操作文件打开模式： ios::in 只读 ios::out 只写 ios::app 从文件末尾开始写，防止丢失文本中原有的内容，追加模式 ios::binary 二进制模式 ios::nocreate 打开一个文件时，如果文件不存在，不创建 ios::noreplace 打开一个文件时，如果文件不存在，创建该文件 ios::trunc 打开一个文件时，然后清空内容 ios::ate 打开一个文件时，将位置移动到文件末尾文件指针位置的C++中的用法： ios::beg 文件开头 ios::end 文件末尾 ios::cur 文件当前位置 举个例子： file.seekg(0, ios::beg) 让文件指针定位到文件开头 file.seekg(0, ios::end) 让文件指针定位到文件末尾 file.seekg(10, ios::cur) 让文件指针从当前位置向文件末尾方向移动10个字节 file.seekg(-10, ios::cur) 让文件指针从当前位置向文件开始方向移动10个字节 file.seekg(10,ios::beg) 让文件指针定位到离文件开头10个字节的位置常用的错误判断方法: good() 如果文件打开成功 bad() 打开文件时发生错误 eof() 到达文件尾 */// 读取hello.txt文件中的字符串，写入out.txt中int main()&#123; ifstream infile("E:\\C++\\cpp_Code\\hello.txt"); // 读操作 ofstream outfile("E:\\C++\\cpp_Code\\out.txt"); // 写操作 string temp; if(! infile.is_open())&#123; cout &lt;&lt; "打开文件失败" &lt;&lt; endl; &#125; while(getline(infile, temp))&#123; outfile &lt;&lt; temp; outfile &lt;&lt; endl; &#125; infile.close(); outfile.close(); return 0;&#125;/*getline()函数的作用：从输入字节流中读入字符，存到string变量中直到遇到下面的情况停止： 读入了文件结束标志 读到一个新行 达到字符串的最大穿长度 如果getline没有读入字符，将返回false，用于判断文件是否结束*/]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[复习07统计学习方法(支持向量机SVM)---图片版]]></title>
     <url>%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2F%E5%A4%8D%E4%B9%A007%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM-%E5%9B%BE%E7%89%87%E7%89%88%2F</url>
     <content type="text"><![CDATA[]]></content>
@@ -206,8 +305,8 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>编程语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -218,8 +317,8 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>编程语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -230,8 +329,8 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>编程语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -242,8 +341,8 @@
         <category>常用资料</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>编程语言</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
