@@ -558,8 +558,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -614,7 +613,7 @@
   }
   siteTime();
 </script>
-
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
   本站访客数:<span id="busuanzi_value_site_uv"></span>
@@ -626,7 +625,7 @@
 </span>
 
 <span id="busuanzi_container_site_uv">
-  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
 </span>
 
         
@@ -963,8 +962,8 @@ $(function() {
     });
     new Valine({
         el: '#comments' ,
-        verify: true,
-        notify: true,
+        verify: false,
+        notify: false,
         appId: 'q8qeb6W0A1TKruNAGBeHCyCY-gzGzoHsz',
         appKey: 'B8xUzdVCBezIqnzLnsEVjReh',
         placeholder: '来都来了，留下你的脚印吧~',
