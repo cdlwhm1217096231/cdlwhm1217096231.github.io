@@ -1208,8 +1208,8 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2633,8 +2633,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -2652,8 +2652,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3235,8 +3235,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3251,8 +3251,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>常用资料</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3289,10 +3289,10 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>人工智能</tag>
         <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
