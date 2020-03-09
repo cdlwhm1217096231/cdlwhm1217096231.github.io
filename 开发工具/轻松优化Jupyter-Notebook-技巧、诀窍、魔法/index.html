@@ -878,7 +878,10 @@ var jiathis_config={
               </ul>
             </div>
           
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+  <div class="widget" id="CloudCalendar"></div>
+</div>
           <div id="music163player">
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
 </div>
@@ -990,6 +993,21 @@ var jiathis_config={
         本站访问量<span id="busuanzi_value_site_pv"></span>
     </span>
 </div>
+
+window.onload = function() {
+var show = document.getElementById("show");
+setInterval(function() {
+    var time = new Date();
+    // 程序计时的月从0开始取值后+1
+    var m = time.getMonth() + 1;
+    //根据自己博客的创建时间更改数值
+    var t = "提示内容"+(time.getFullYear()-2019) + "年" + (m-7) + "月"
+    + time.getDate() + "天 " + time.getHours() + "时"
+    + time.getMinutes() + "分" + time.getSeconds() + "秒";
+    show.innerHTML = t;
+  }, 1000);
+};
+
         
 <div class="busuanzi-count">
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -1798,6 +1816,26 @@ $(function() {
   
   
   
+<!-- calendar widget -->
+
+
+    <script src="/lib/CloudCalendar/CloudCalendar.js"></script>
+    <script src="/lib/CloudCalendar/languages.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN', 
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
 
