@@ -155,7 +155,10 @@
 <h4 id="12-资料下载"><a href="#12-资料下载" class="headerlink" title="12.资料下载"></a>12.资料下载</h4><ul>
 <li><a href="https://github.com/cdlwhm1217096231/HTML_CSS_JavaScript/tree/master/CSS3/01%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80" target="_blank" rel="noopener">笔记及代码，欢迎star,follow,fork……</a></li>
 </ul>
-]]></content>
+<!-- <span id="inline-blue"> 站点配置文件 </span>
+<span id="inline-purple"> 主题配置文件 </span>
+<span id="inline-yellow"> 站点配置文件 </span>
+<span id="inline-green"> 主题配置文件 </span> -->]]></content>
       <categories>
         <category>移动端</category>
       </categories>
@@ -1208,8 +1211,8 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2633,8 +2636,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -2652,8 +2655,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3235,8 +3238,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>C++</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3251,8 +3254,8 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>常用资料</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
         <tag>C++</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -3289,10 +3292,10 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>人工智能</tag>
         <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>

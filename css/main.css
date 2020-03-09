@@ -2020,7 +2020,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e7febf;
+  background: #ff38ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3542,14 +3542,6 @@ a#download:hover {
 .site-meta {
   background: $blank;
 }
-@font-face {
-  font-family: Zitiming;
-  src: url("/fonts/Zitiming.ttf");
-}
-.site-title {
-  font-size: 20px !important;
-  font-family: 'Zitiming' !important;
-}
 body {
   background: url("/images/bt.jpg");
   background-size: cover;
@@ -3564,4 +3556,10 @@ body {
   height: 3px;
   background: #ccc;
   text-align: center;
+}
+body {
+  background: url("https://source.unsplash.com/random/1600x900");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
