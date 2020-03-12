@@ -182,7 +182,7 @@
         <category>shell脚本编程</category>
       </categories>
       <tags>
-        <tag>shell</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -194,7 +194,7 @@
         <category>生活感悟</category>
       </categories>
       <tags>
-        <tag>随便</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1460,8 +1460,8 @@ K(x, z)=\exp \left(-\frac{\|x-z\|^{2}}{2 \sigma^{2}}\right)</script></li>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3541,10 +3541,10 @@ H=V \operatorname{softmax}\left(\frac{K^{\mathrm{T}} Q}{\sqrt{d_{3}}}\right)</sc
         <category>深度学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>人工智能</tag>
         <tag>机器学习</tag>
         <tag>算法</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
