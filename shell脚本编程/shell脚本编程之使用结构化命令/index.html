@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Curry_Coder的空间" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="技术交流QQ群:1027579432，欢迎你的加入！本教程使用Linux发行版Centos7.0系统，请您注意~ 结构化命令：许多程序要求对shell脚本中的命令添加一些逻辑流程控制，有一类命令会根据条件使脚本跳过某些命令。这样的一类命令就称为结构化命令。  1.使用if-then语句 最简单的结构化语句是if-then语句，其语法格式如下：   1234if 命令then    命令fi  if">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell脚本编程之使用结构化命令">
+<meta property="og:url" content="https://cdlwhm1217096231.github.io/shell脚本编程/shell脚本编程之使用结构化命令/index.html">
+<meta property="og:site_name" content="Curry_Coder的空间">
+<meta property="og:description" content="技术交流QQ群:1027579432，欢迎你的加入！本教程使用Linux发行版Centos7.0系统，请您注意~ 结构化命令：许多程序要求对shell脚本中的命令添加一些逻辑流程控制，有一类命令会根据条件使脚本跳过某些命令。这样的一类命令就称为结构化命令。  1.使用if-then语句 最简单的结构化语句是if-then语句，其语法格式如下：   1234if 命令then    命令fi  if">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-18T05:39:58.999Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell脚本编程之使用结构化命令">
+<meta name="twitter:description" content="技术交流QQ群:1027579432，欢迎你的加入！本教程使用Linux发行版Centos7.0系统，请您注意~ 结构化命令：许多程序要求对shell脚本中的命令添加一些逻辑流程控制，有一类命令会根据条件使脚本跳过某些命令。这样的一类命令就称为结构化命令。  1.使用if-then语句 最简单的结构化语句是if-then语句，其语法格式如下：   1234if 命令then    命令fi  if">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cdlwhm1217096231.github.io/shell脚本编程/shell脚本编程之使用结构化命令/">
+
+
+
+
+
+  <title>shell脚本编程之使用结构化命令 | Curry_Coder的空间</title>
+  
+
+
+
+
+
+
+
+
+</head>
+<script type="text/javascript" src="/lib/clipboard/clipboard.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/cdlwhm1217096231" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Curry_Coder的空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好好学习，天天向上！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-相册">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cdlwhm1217096231.github.io/shell脚本编程/shell脚本编程之使用结构化命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Curry_Coder">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/curry.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Curry_Coder的空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">shell脚本编程之使用结构化命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T13:38:44+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-18T13:39:58+08:00">
+                2020-03-18
+              </time>
+            
+          </span>
+
+          
+            <span id="busuanzi_container_page_pv">  |  阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+          
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell脚本编程/" itemprop="url" rel="index">
+                    <span itemprop="name">shell脚本编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/shell脚本编程/shell脚本编程之使用结构化命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/shell脚本编程/shell脚本编程之使用结构化命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/shell脚本编程/shell脚本编程之使用结构化命令/" class="leancloud_visitors" data-flag-title="shell脚本编程之使用结构化命令">
+               <span class="post-meta-divider">|</span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="技术交流QQ群-1027579432，欢迎你的加入！"><a href="#技术交流QQ群-1027579432，欢迎你的加入！" class="headerlink" title="技术交流QQ群:1027579432，欢迎你的加入！"></a>技术交流QQ群:1027579432，欢迎你的加入！</h3><h3 id="本教程使用Linux发行版Centos7-0系统，请您注意"><a href="#本教程使用Linux发行版Centos7-0系统，请您注意" class="headerlink" title="本教程使用Linux发行版Centos7.0系统，请您注意~"></a>本教程使用Linux发行版Centos7.0系统，请您注意~</h3><ul>
+<li><strong>结构化命令</strong>：许多程序要求对shell脚本中的命令添加一些逻辑流程控制，有一类命令会根据条件使脚本跳过某些命令。这样的一类命令就称为结构化命令。</li>
+</ul>
+<h4 id="1-使用if-then语句"><a href="#1-使用if-then语句" class="headerlink" title="1.使用if-then语句"></a>1.使用if-then语句</h4><ul>
+<li><p>最简单的结构化语句是if-then语句，其语法格式如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 命令</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    命令</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>if-then语句另一种的写法:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 命令; <span class="keyword">then</span></span><br><span class="line">命令</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行流程：</p>
+<ul>
+<li>如果if后面那个命令的退出状态码为0，则then之后命令会被执行；</li>
+<li>如果if后面那个命令的退出状态码是其他值，则then之后命令不会被执行，bash shell会继续执行脚本中的下一个命令；</li>
+<li>fi语句用来表示if-then语句到此结束；</li>
+</ul>
+</li>
+<li><p>实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># testing the if statement</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">pwd</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"It Worked"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./curry.sh </span><br><span class="line">/home/njust/tutorials</span><br><span class="line">It Worked</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>反例如下：[注意]<strong>bash shell会跳过then部分的echo语句，同时运行if语句中的那个错误命令所生成的错误消息依然会显示在脚本的输出中</strong>。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> notCommand</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="built_in">echo</span> <span class="string">"It worked"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"skipped 'then' statement"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./durant.sh </span><br><span class="line">./durant.sh:行3: notCommand: 未找到命令</span><br><span class="line">skipped <span class="string">'then'</span> statement</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在then部分，可以使用不止一条命令。bash shell会将这些命令当成一个语句块。实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">testuser=njust</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> grep <span class="variable">$testuser</span> /etc/passwd  <span class="comment"># grep命令在/etc/passwd文件中查找某个用户当前是否在系统上使用</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> This is my first <span class="built_in">command</span></span><br><span class="line"><span class="built_in">echo</span> This is my second <span class="built_in">command</span></span><br><span class="line"><span class="built_in">echo</span> I can even put <span class="keyword">in</span> other commands besides <span class="built_in">echo</span>:</span><br><span class="line">ls -l /home/<span class="variable">$testuser</span>/.b*  <span class="comment"># 显示一些文本信息并列出该用户HOME目录的bash文件</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">This is my first <span class="built_in">command</span></span><br><span class="line">This is my second <span class="built_in">command</span></span><br><span class="line">I can even put <span class="keyword">in</span> other commands besides <span class="built_in">echo</span>:</span><br><span class="line">-rw-------. 1 njust njust 6013 3月  12 10:50 /home/njust/.bash_history</span><br><span class="line">-rw-r--r--. 1 njust njust   18 8月   8 2019 /home/njust/.bash_logout</span><br><span class="line">-rw-r--r--. 1 njust njust  193 8月   8 2019 /home/njust/.bash_profile</span><br><span class="line">-rw-r--r--. 1 njust njust  231 8月   8 2019 /home/njust/.bashrc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-if-then-else语句"><a href="#2-if-then-else语句" class="headerlink" title="2.if-then-else语句"></a>2.if-then-else语句</h4><ul>
+<li><p>if-then语句中，不管命令是否成功执行，都只有一种选择。如果if后面的命令返回一个非零退出状态码，bash shell就会继续执行脚本中的下一条命令。if-then-else语句就是解决返回非零退出状态码的情况。语法格式：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 命令</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    命令</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    命令</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行流程：</p>
+<ul>
+<li>当if语句中的命令返回状态码为0时，then部分的命令会被执行；</li>
+<li>当if语句中的命令返回状态码非0时，else部分的命令会被执行；</li>
+</ul>
+</li>
+<li>实例如下：  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">testuser</span>=njuster</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> grep <span class="variable">$testuser</span> /etc/passwd</span><br><span class="line">then</span><br><span class="line">echo This is my first command</span><br><span class="line">echo This is my second command</span><br><span class="line">echo I can even put <span class="keyword">in</span> other commands besides echo:</span><br><span class="line">ls -l /home/<span class="variable">$testuser</span>/.b*</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">echo The<span class="built_in"> user </span><span class="variable">$testuser</span> does <span class="keyword">not</span> exist on this system.</span><br><span class="line">echo</span><br><span class="line">fi</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./harden.sh </span><br><span class="line">The<span class="built_in"> user </span>njuster does <span class="keyword">not</span> exist on this system.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3-嵌套if-then"><a href="#3-嵌套if-then" class="headerlink" title="3.嵌套if-then"></a>3.嵌套if-then</h4><ul>
+<li><p>可以使用elif代替多个if-then语句。具体范例如下：</p>
+  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">testuser</span>=njuster</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> grep <span class="variable">$testuser</span> /etc/passwd</span><br><span class="line">then</span><br><span class="line">echo The<span class="built_in"> user </span><span class="variable">$testuser</span> exists on this system.</span><br><span class="line">elif ls -d /home/<span class="variable">$testuser</span></span><br><span class="line">then</span><br><span class="line">echo The<span class="built_in"> user </span><span class="variable">$testuser</span> does <span class="keyword">not</span> exist on this system.</span><br><span class="line">echo However, <span class="variable">$testuser</span> has a directory.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">echo The<span class="built_in"> user </span><span class="variable">$testuser</span> does <span class="keyword">not</span> exist on this system.</span><br><span class="line">echo <span class="keyword">And</span>,<span class="variable">$testuser</span> does <span class="keyword">not</span> have a directory.</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./harden.sh </span><br><span class="line">ls: 无法访问/home/njuster: 没有那个文件或目录</span><br><span class="line">The<span class="built_in"> user </span>njuster does <span class="keyword">not</span> exist on this system.</span><br><span class="line"><span class="keyword">And</span>,njuster does <span class="keyword">not</span> have a directory.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以继续将多个elif命令串起来，形成一个大的if-then-elif嵌套组合。具体形式如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 命令</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">命令</span><br><span class="line"><span class="keyword">elif</span> 命令</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">命令</span><br><span class="line"><span class="keyword">elif</span> 命令</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">命令</span><br><span class="line">......</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>尽管elif语句的代码看起来很清晰，但脚本的逻辑不好。后面会使用case命令代替if-then语句的大量嵌套</strong>。</p>
+</li>
+</ul>
+<h4 id="4-test命令"><a href="#4-test命令" class="headerlink" title="4.test命令"></a>4.test命令</h4><ul>
+<li>目前为止，if语句中看到的都是普通的shell命令。由于if-then语句不能测试命令退出状态码之外的条件。因此，bash shell中有个工具可以帮你通过if-then语句测试其他条件。</li>
+<li><p>test命令提供了在if-then语句中测试不同条件的路径。<strong>如果test命令中列出的条件成立，test命令就会退出并返回退出状态码；如果条件不成立，test命令就会退出并返回非零的退出状态码</strong>。于是，if-then语句就不会被执行。语法格式如下：</p>
+  <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>测试条件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试条件是test命令要测试的一系列参数和值。当用在if-then语句中是，形式如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> 测试条件</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">命令</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果不写test语句中的测试条件，它会以非零的退出状态码退出，并执行else语句块，实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Testing the test command</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> No expression returns a ture</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> No expression returns a <span class="literal">false</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./james.sh </span><br><span class="line">No expression returns a <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当加入一个条件时，test命令会测试该条件。例如，可以使用test命令确定变量中是否有内容，如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">my_variable=<span class="string">"Curry"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$my_variable</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> The <span class="variable">$my_variable</span> expression returns a <span class="literal">true</span>.</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line"><span class="built_in">echo</span> The <span class="variable">$my_variable</span> expression returns a <span class="literal">false</span>.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./tlu.sh </span><br><span class="line">The Curry expression returns a <span class="literal">true</span>.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bash shell 提供了另一种条件测试方法。无需在if-then语句中声明test命令。语法格式如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 测试条件 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">命令</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方括号定义了测试条件。注意：<strong>测试条件的左右两侧都要留一个空格，否则会出错</strong>。test命令可以判断三类条件：</p>
+<ul>
+<li>数值比较</li>
+<li>字符串比较</li>
+<li>文件比较</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-1-数值比较"><a href="#4-1-数值比较" class="headerlink" title="4.1 数值比较"></a>4.1 数值比较</h5><ul>
+<li><p>test命令最常见于对两个数值进行比较。测试两个值时可以使用的条件参数如下所示：</p>
+  <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">比较                            描述</span><br><span class="line">num1 -<span class="keyword">eq</span> num2                   等于</span><br><span class="line">num1 -<span class="keyword">ge</span> num2                   大于或等于</span><br><span class="line">num1 -<span class="keyword">gt</span> num2                   大于</span><br><span class="line">num1 -<span class="keyword">le</span> num2                   小于或等于</span><br><span class="line">num1 -<span class="keyword">lt</span> num2                   小于</span><br><span class="line">num1 -<span class="keyword">ne</span> num2                   不等于</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数值比较测试案例：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># using numeric test evaluations</span></span><br><span class="line"></span><br><span class="line">value1=10</span><br><span class="line">value2=20</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> -gt 5 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> The <span class="built_in">test</span> value <span class="variable">$value1</span> is greater than 5.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> -eq <span class="variable">$value2</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> The values are equal.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> The values are different.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./num.sh </span><br><span class="line">The <span class="built_in">test</span> value 10 is greater than 5.</span><br><span class="line">The values are different.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但是，涉及浮动值时，数值条件测试会有一个限制。原因：<strong>bash shell只能处理整数，如果你只是要通过echo语句来显示这个结果，那没问题</strong>。实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">value=3.1415926</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> The <span class="built_in">test</span> value is <span class="variable">$value</span>.</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> -gt 5 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> The <span class="built_in">test</span> value <span class="variable">$value</span> is greater than 5.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./num2.sh </span><br><span class="line">The <span class="built_in">test</span> value is 3.1415926.</span><br><span class="line">./num2.sh: 第 7 行:[: -gt: 期待一元表达式</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-2-字符串比较"><a href="#4-2-字符串比较" class="headerlink" title="4.2 字符串比较"></a>4.2 字符串比较</h5><ul>
+<li><p>条件测试还允许比较字符串的值。测试两个字符串之间的比较语法如下：</p>
+  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">比较                             描述</span><br><span class="line"><span class="keyword">str1 </span>= <span class="keyword">str2 </span>                   检查两者是否相同</span><br><span class="line"><span class="keyword">str1 </span>!= <span class="keyword">str2 </span>                  检查两者是否不同</span><br><span class="line"><span class="keyword">str1 </span>&lt; <span class="keyword">str2 </span>                   检查<span class="keyword">str1是否小于str2</span></span><br><span class="line"><span class="keyword">str1 </span>&gt; <span class="keyword">str2 </span>                   检查<span class="keyword">str1是否大于str2</span></span><br><span class="line"><span class="keyword">-n </span><span class="keyword">str1 </span>                       检查<span class="keyword">str1的长度是否非0</span></span><br><span class="line"><span class="keyword">-z </span><span class="keyword">str1 </span>                       检查<span class="keyword">str1的长度是否为0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>比较字符串的相等性时，比较测试会将所有的标点和大小写情况都考虑在内</strong>。字符串的相等性案例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">testuser=njust</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$USER</span> = <span class="variable">$testuser</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> welcome <span class="variable">$testuser</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str1.sh </span><br><span class="line">welcome njust</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串的不等条件判断案例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">testuser=baduser</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$USER</span> != <span class="variable">$testuser</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> This is not <span class="variable">$testuser</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> welcome <span class="variable">$testuser</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str1.sh </span><br><span class="line">This is not baduser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>字符串顺序</strong>：要测试一个字符串是否比另一个字符串大或小时，经常要考虑下面两个问题：</p>
+<ul>
+<li>大于号或小于号必须转义，否则shell会把它们当作重定向符号，把字符串值当作文件名；</li>
+<li>大于和小于顺序和sort命令所采用的不同；</li>
+</ul>
+</li>
+<li><p>字符串比较是常出现的错误案例及解决方法：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">value1=baseball</span><br><span class="line">value2=football</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> &gt; <span class="variable">$value2</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is greater than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is less than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str2.sh </span><br><span class="line">baseball is greater than football.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解决方法：对大于号进行转义</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">value1=baseball</span><br><span class="line">value2=football</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> \&gt;  <span class="variable">$value2</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is greater than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is less than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str2.sh </span><br><span class="line">baseball is less than football.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原因分析：脚本中的大于号被解释成了输出重定向，因此创建了一个名为football的文件。由于重定向的顺利执行，test命令返回了退出状态码0，if语句误以为所有命令都已经执行完成了。</p>
+  <figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[njust@njust tutorials]$ ls -l football </span><br><span class="line">-rw-rw-r--.<span class="number"> 1 </span>njust njust<span class="number"> 0 </span>3月 <span class="number"> 17 </span>14:33 football</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二个问题一般出现在经常处理大小写的场合。sort命令处理大写字母的方法刚好和test命令相反。具体原因：<strong>比较测试中使用的是标准的ASCII顺序，根据每个字符的ASCII数值来决定排序结果。sort命令使用的是系统的本地化语言设置中定义的排序顺序</strong>。具体案例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">value1=Curry</span><br><span class="line">value2=curry</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$value1</span> \&gt;  <span class="variable">$value2</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is greater than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value1</span> is less than <span class="variable">$value2</span>.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str2.sh </span><br><span class="line">Curry is less than curry.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">########  sort命令  #########</span></span><br><span class="line">[njust@njust tutorials]$ cat testfile </span><br><span class="line">Curry</span><br><span class="line">curry</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ sort testfile </span><br><span class="line">curry</span><br><span class="line">Curry</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>字符串大小</strong>：-n和-z可以检查一个变量中是否为空。具体案例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">val1=testing</span><br><span class="line">val2=<span class="string">""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="variable">$val1</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val1</span>' is not empty."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val1</span>' is empty."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="variable">$val2</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val2</span>' is empty."</span></span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val2</span>' is not empty."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="variable">$val3</span> ]</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val3</span>' is empty."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The string '<span class="variable">$val3</span>' is not empty."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./str3.sh </span><br><span class="line">The string <span class="string">'testing'</span> is not empty.</span><br><span class="line">The string <span class="string">''</span> is empty.</span><br><span class="line">The string <span class="string">''</span> is empty.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-3-文件比较"><a href="#4-3-文件比较" class="headerlink" title="4.3 文件比较"></a>4.3 文件比较</h5><ul>
+<li><p>文件比较可能是shell编程中最强大、用的最多的比较形式。它允许你测试Linux文件系统上文件和目录的状态。文件比较功能语法如下：</p>
+  <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">比较                               描述</span><br><span class="line">-d  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并是一个目录</span><br><span class="line">-e  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在</span><br><span class="line">-f  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并是一个文件</span><br><span class="line">-r  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并可读</span><br><span class="line">-s  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并非空</span><br><span class="line">-w  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并可写</span><br><span class="line">-x  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并可执行</span><br><span class="line">-O  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并属于当前用户所有</span><br><span class="line">-G  <span class="built_in">file</span>                       检查<span class="built_in">file</span>是否存在并且默认组与当前组相同</span><br><span class="line">file1  -nt file2               检查file1是否比file2新</span><br><span class="line">file1  -ot file2               检查file1是否比file2旧</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查目录</strong>：-d测试会检查指定的目录是否存在于系统中。一般用于将文件写入目录或准备切换到某个目录中。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">dst_dir=/home/curry</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="variable">$dst_dir</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The <span class="variable">$dst_dir</span> directory exists"</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$dst_dir</span></span><br><span class="line">ls</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The <span class="variable">$dst_dir</span> directory does not exists"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file1.sh </span><br><span class="line">The /home/curry directory does not exists</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查对象是否存在</strong>：-e允许你的脚本代码在使用文件或目录前先检查它们是否存在。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">location=<span class="variable">$HOME</span></span><br><span class="line"></span><br><span class="line">file_name=<span class="string">"sentinel"</span></span><br><span class="line">mid_path=<span class="string">"tutorials"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="variable">$location</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"OK on the <span class="variable">$location</span> directory."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Now checking on the file, <span class="variable">$file_name</span>."</span></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="variable">$location</span>/<span class="variable">$mid_path</span>/<span class="variable">$file_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"OK on the filename"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Updating Current Date..."</span></span><br><span class="line">    date &gt;&gt; <span class="variable">$location</span>/<span class="variable">$mid_path</span>/<span class="variable">$file_name</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"File does not exist"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Nothing to update"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The <span class="variable">$location</span> directory does not exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Nothing to update"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file2.sh </span><br><span class="line">OK on the /home/njust directory.</span><br><span class="line">Now checking on the file, sentinel.</span><br><span class="line">File does not exist</span><br><span class="line">Nothing to update</span><br><span class="line"></span><br><span class="line">[njust@njust tutorials]$ ./file2.sh </span><br><span class="line">OK on the /home/njust directory.</span><br><span class="line">Now checking on the file, sentinel.</span><br><span class="line">OK on the filename</span><br><span class="line">Updating Current Date...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查文件</strong>：-e可用于文件和目录。要确定指定对象为文件，必须用-f。实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">item_name=<span class="variable">$HOME</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item being checked: <span class="variable">$item_name</span>"</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item, <span class="variable">$item_name</span>, does exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"But is it a file?"</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Yes, <span class="variable">$item_name</span> is a file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"No, <span class="variable">$item_name</span> is not a file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item, <span class="variable">$item_name</span>, does not exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Nothing to update"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file3.sh </span><br><span class="line"></span><br><span class="line">The item being checked: /home/njust</span><br><span class="line"></span><br><span class="line">The item, /home/njust, does exist.</span><br><span class="line">But is it a file?</span><br><span class="line"></span><br><span class="line">No, /home/njust is not a file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对上述程序进行小修改，可以观察出结果的不同：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">item_name=<span class="variable">$HOME</span>/tutorials/sentinel   <span class="comment"># 注意此句！！！</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item being checked: <span class="variable">$item_name</span>"</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item, <span class="variable">$item_name</span>, does exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"But is it a file?"</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Yes, <span class="variable">$item_name</span> is a file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"No, <span class="variable">$item_name</span> is not a file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item, <span class="variable">$item_name</span>, does not exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Nothing to update"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file3.sh </span><br><span class="line"></span><br><span class="line">The item being checked: /home/njust/tutorials/sentinel</span><br><span class="line"></span><br><span class="line">The item, /home/njust/tutorials/sentinel, does exist.</span><br><span class="line">But is it a file?</span><br><span class="line"></span><br><span class="line">Yes, /home/njust/tutorials/sentinel is a file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查是否可读</strong>：在尝试从文件中读取数据之前，最好先测试一下文件是否可读。可以使用-r比较测试。实例如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pwfile=/etc/shadow</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$pwfile</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="keyword">if</span> [ -r <span class="variable">$pwfile</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    tail <span class="variable">$pwfile</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Sorry,I am unable to read the <span class="variable">$pwfile</span> file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="string">"Sorry, the file <span class="variable">$pwfile</span> does not exist"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">njust@njust tutorials]$ ./file4.sh </span><br><span class="line">Sorry,I am unable to <span class="built_in">read</span> the /etc/shadow file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查空文件</strong>：用-s比较来检查文件是否为空，尤其是在不想删除非空文件的时候。注意：<strong>当-s比较成功时，说明文件中有数据</strong>。实例如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">file_name=<span class="variable">$HOME</span>/tutorials/sentinel</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$file_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="keyword">if</span> [ -s <span class="variable">$file_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"The <span class="variable">$file_name</span> file exists and has data in it."</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Will not remove this file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"The <span class="variable">$file_name</span> file exists, but is empty."</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Deleting empty file."</span></span><br><span class="line">    rm <span class="variable">$file_name</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"File,<span class="variable">$file_name</span>, does not exist."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file5.sh </span><br><span class="line">The /home/njust/tutorials/sentinel file exists and has data <span class="keyword">in</span> it.</span><br><span class="line">Will not remove this file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查文件是否可写</strong>：-w比较会判断你对文件是否有写的权限。具体实例如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">item_name=<span class="variable">$HOME</span>/tutorials/sentinel</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item being checked: <span class="variable">$item_name</span>."</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -e <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item, <span class="variable">$item_name</span>, does exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"But is it a file?"</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$item_name</span> ]</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Yes, <span class="variable">$item_name</span> is a file."</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"But is it writable?"</span></span><br><span class="line">    <span class="keyword">if</span> [ -w <span class="variable">$item_name</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Writing current time to <span class="variable">$item_name</span>."</span></span><br><span class="line">    date +%H%M &gt;&gt; <span class="variable">$item_name</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Unable to write to <span class="variable">$item_name</span>."</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"No, <span class="variable">$item_name</span> is not a file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The item,<span class="variable">$item_name</span>, does not exist."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Nothing to update."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file6.sh </span><br><span class="line"></span><br><span class="line">The item being checked: /home/njust/tutorials/sentinel.</span><br><span class="line"></span><br><span class="line">The item, /home/njust/tutorials/sentinel, does exist.</span><br><span class="line">But is it a file?</span><br><span class="line"></span><br><span class="line">Yes, /home/njust/tutorials/sentinel is a file.</span><br><span class="line">But is it writable?</span><br><span class="line">Writing current time to /home/njust/tutorials/sentinel.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查文件是否可执行</strong>：-x比较是判断特定文件是否有执行权限的一个简单方法。如果你需要在shell脚本中运行大量脚本，它就能发挥作用。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -x file5.sh ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"You can run the script: "</span></span><br><span class="line">./file5.sh</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Sorry, you are unable to execute the script"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file7.sh </span><br><span class="line">You can run the script: </span><br><span class="line">The /home/njust/tutorials/sentinel file exists and has data <span class="keyword">in</span> it.</span><br><span class="line">Will not remove this file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查所属关系</strong>：-O可以测试你是否是文件的拥有者。实例如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -O /etc/passwd ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"You are the owner of the /etc/passwd file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Sorry,you are not the owner of the /etc/passwd file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file8.sh </span><br><span class="line">Sorry,you are not the owner of the /etc/passwd file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查默认属组关系</strong>：-G比较会检查文件的默认组。如果它匹配了用户的默认组，则测试成功。-G比较只会检查默认组而非用户所属的所有组。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -G <span class="variable">$HOME</span>/tutorials/sentinel ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"You are in the same group as the file."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file is not owned by your group."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file9.sh </span><br><span class="line">You are <span class="keyword">in</span> the same group as the file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查文件日期</strong>：主要用于对两个文件的创建日期进行比较。通常用于编写软件安装脚本时非常有用。-nt比较会判定一个文件是否比另一个文件新；如果文件较新，则它的文件创建日期更近。-ot比较会判断一个文件是否比另一文件旧。如果文件较旧，意味着它的创建日期更早。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ file9.sh -nt file1.sh ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file9 file is newer than file1."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file1 file is newer than file9."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ file7.sh -ot file9.sh ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file7 file is older than the file9 file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file10.sh </span><br><span class="line">The file9 file is newer than file1.</span><br><span class="line">The file7 file is older than the file9 file.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：<strong>使用-nt或-ot比较文件之前，必须先确认文件是存在的</strong>。因为-nt或-ot都不会先检查文件是否存在！</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ file9.sh -nt file1.sh ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file9 file is newer than file1."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file1 file is newer than file9."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ file7.sh -ot file9.sh ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file7 file is older than the file9 file."</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误的结果，因为badfile1和badfile2文件根本就不存在！</span></span><br><span class="line">[njust@njust tutorials]$ ./error.sh </span><br><span class="line">The badfile2 file is newer than badfile1.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-复合条件测试"><a href="#5-复合条件测试" class="headerlink" title="5.复合条件测试"></a>5.复合条件测试</h4><ul>
+<li>if-then语句允许你使用布尔逻辑进行组合测试。有两种布尔运算符可以使用：<ul>
+<li>[ 条件1 ] &amp;&amp; [ 条件2 ]</li>
+<li>[ 条件1 ] || [ 条件2 ]</li>
+</ul>
+</li>
+<li>复合条件测试案例如下所示：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="variable">$HOME</span> ] &amp;&amp; [ -w <span class="variable">$HOME</span>/tutorials/sentinel ]</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The file exists and you can write to it"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"I cannot write to the file"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file11.sh </span><br><span class="line">The file exists and you can write to it</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="6-if-then的高级特性"><a href="#6-if-then的高级特性" class="headerlink" title="6.if-then的高级特性"></a>6.if-then的高级特性</h4><ul>
+<li>bash shell提供了两种可在if-then语句中使用的高级特性：<ul>
+<li>用于数学表达式的双括号；</li>
+<li>用于高级字符串处理功能的双方括号；</li>
+</ul>
+</li>
+</ul>
+<h5 id="6-1-使用双括号"><a href="#6-1-使用双括号" class="headerlink" title="6.1 使用双括号"></a>6.1 使用双括号</h5><ul>
+<li><p>双括号命令允许你在比较的过程中使用高级数学表达式。test命令只能在比较的过程中使用简单的算术操作。双括号提供了更多的数学符号，双括号命令的格式如下：</p>
+  <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(( 表达式 ))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，表达式可以是任意的数学赋值或比较表达式。双括号命令符号如下所示：</p>
+  <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">符号</span>                                  <span class="comment">说明</span></span><br><span class="line"><span class="comment">val</span><span class="literal">+</span><span class="literal">+</span>                                <span class="comment">后置加加</span></span><br><span class="line"><span class="comment">val</span><span class="literal">-</span><span class="literal">-</span>                                <span class="comment">后置减减</span></span><br><span class="line"><span class="comment"></span><span class="literal">+</span><span class="literal">+</span><span class="comment">val</span>                                <span class="comment">前置加加</span></span><br><span class="line"><span class="comment"></span><span class="literal">-</span><span class="literal">-</span><span class="comment">val</span>                                <span class="comment">前置减减</span></span><br><span class="line"><span class="comment">!</span>                                     <span class="comment">取反</span></span><br><span class="line"><span class="comment">~</span>                                    <span class="comment">按位取反</span></span><br><span class="line"><span class="comment">**</span>                                    <span class="comment">幂运算</span></span><br><span class="line"><span class="comment"></span>&lt;&lt;                                   <span class="comment">左移</span></span><br><span class="line"><span class="comment"></span>&gt;&gt;                                   <span class="comment">右移</span></span><br><span class="line"><span class="comment">&amp;</span>                                    <span class="comment">按位与</span></span><br><span class="line"><span class="comment">|</span>                                    <span class="comment">按位或</span></span><br><span class="line"><span class="comment">&amp;&amp;</span>                                   <span class="comment">逻辑与</span></span><br><span class="line"><span class="comment">||</span>                                   <span class="comment">逻辑或</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以在if语句中使用双括号命令，也可以在脚本中的普通命令里使用来赋值。实例如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">val1=10</span><br><span class="line"><span class="keyword">if</span> (( <span class="variable">$val1</span> ** 2 &gt; 90 ))</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">(( val2 = <span class="variable">$val1</span> ** 2 ))</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The square of <span class="variable">$val1</span> is <span class="variable">$val2</span>"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file12.sh</span><br><span class="line">The square of 10 is 100</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="6-2-使用双方括号"><a href="#6-2-使用双方括号" class="headerlink" title="6.2 使用双方括号"></a>6.2 使用双方括号</h5><ul>
+<li><p>双方括号命令提供了<strong>针对字符串比较</strong>的高级特性。双方括号的语法格式如下：</p>
+  <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[[ 表达式 ]]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：双方括号中的表达式使用了test命令中采用的标准字符串比较，但它额外还提供了test命令不具有的特性即<strong>模式匹配</strong>。同时，值得注意的是并不是所有的shell等支持方双括号。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$USER</span> == n* ]]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello <span class="variable">$USER</span>"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Sorry, I do not know you"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./file13.sh </span><br><span class="line">Hello njust</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="7-case命令"><a href="#7-case命令" class="headerlink" title="7.case命令"></a>7.case命令</h4><ul>
+<li><p>使用case命令可以有效的减少使用if-then-else语句的出现次数，简化代码结构。case命令的语法结构如下所示：</p>
+  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">case 变量 <span class="keyword">in</span></span><br><span class="line">变量可能取值1 | 变量可能取值2) 命令1;;</span><br><span class="line">变量可能取值3) 命令2;;</span><br><span class="line">*)<span class="built_in"> default </span>命令3;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>case命令的具体实例如下所示：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$USER</span> <span class="keyword">in</span></span><br><span class="line">njust | bar)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Welcome, <span class="variable">$USER</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Please enjoy your visit"</span>;;</span><br><span class="line">testing)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Special testing account"</span>;;</span><br><span class="line">jessica)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Do not forget to log off when you're done."</span>;;</span><br><span class="line">*)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Sorry,you are not allowed here"</span>;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">[njust@njust tutorials]$ ./case.sh </span><br><span class="line">Welcome, njust</span><br><span class="line">Please enjoy your visit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="8-资料下载"><a href="#8-资料下载" class="headerlink" title="8.资料下载"></a>8.资料下载</h4><ul>
+<li><a href="https://github.com/cdlwhm1217096231/Linux/tree/master/Shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener">笔记，欢迎star,follow,fork……</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>shell脚本编程之使用结构化命令</p>
+  <p><span>文章作者:</span>Curry_Coder</p>
+  <p><span>发布时间:</span>2020年03月18日 - 13:38:44</p>
+  <p><span>最后更新:</span>2020年03月18日 - 13:39:58</p>
+  <p><span>原始链接:</span><a href="/shell脚本编程/shell脚本编程之使用结构化命令/" title="shell脚本编程之使用结构化命令">https://cdlwhm1217096231.github.io/shell脚本编程/shell脚本编程之使用结构化命令/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://cdlwhm1217096231.github.io/shell脚本编程/shell脚本编程之使用结构化命令/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>觉得对您有所帮助，请我喝杯可乐吧!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Curry_Coder 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Curry_Coder 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/shell脚本编程/shell脚本编程基础/" rel="next" title="shell脚本编程基础">
+                <i class="fa fa-chevron-left"></i> shell脚本编程基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/curry.jpg" alt="Curry_Coder">
+            
+              <p class="site-author-name" itemprop="name">Curry_Coder</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤荒于嬉，行成于思毁于随。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/cdlwhm1217096231" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/4645adadefec" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/2677530011/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1217096231cdl@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.liujiangblog.com/course/python/4" title="Python" target="_blank">Python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.mozilla.org/zh-CN/" title="MDN" target="_blank">MDN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode-cn.com/problemset/all/" title="LeetCode" target="_blank">LeetCode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/224349141" title="牛客网" target="_blank">牛客网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huaxiaozhuan.com/" title="AI算法工程师手册" target="_blank">AI算法工程师手册</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://c.biancheng.net/stl/" title="STL手册" target="_blank">STL手册</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+  <div class="widget" id="CloudCalendar"></div>
+</div>
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+</div>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术交流QQ群-1027579432，欢迎你的加入！"><span class="nav-number">1.</span> <span class="nav-text">技术交流QQ群:1027579432，欢迎你的加入！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本教程使用Linux发行版Centos7-0系统，请您注意"><span class="nav-number">2.</span> <span class="nav-text">本教程使用Linux发行版Centos7.0系统，请您注意~</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用if-then语句"><span class="nav-number">2.1.</span> <span class="nav-text">1.使用if-then语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-if-then-else语句"><span class="nav-number">2.2.</span> <span class="nav-text">2.if-then-else语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-嵌套if-then"><span class="nav-number">2.3.</span> <span class="nav-text">3.嵌套if-then</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-test命令"><span class="nav-number">2.4.</span> <span class="nav-text">4.test命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-数值比较"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1 数值比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-字符串比较"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2 字符串比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-文件比较"><span class="nav-number">2.4.3.</span> <span class="nav-text">4.3 文件比较</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-复合条件测试"><span class="nav-number">2.5.</span> <span class="nav-text">5.复合条件测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-if-then的高级特性"><span class="nav-number">2.6.</span> <span class="nav-text">6.if-then的高级特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-使用双括号"><span class="nav-number">2.6.1.</span> <span class="nav-text">6.1 使用双括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2-使用双方括号"><span class="nav-number">2.6.2.</span> <span class="nav-text">6.2 使用双方括号</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-case命令"><span class="nav-number">2.7.</span> <span class="nav-text">7.case命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-资料下载"><span class="nav-number">2.8.</span> <span class="nav-text">8.资料下载</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Curry_Coder</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">107.4k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var t1 = Date.UTC(2018,06,07,12,00,00); // 设置建立网站的时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }
+  siteTime();
+</script>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+    
+    
+      <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("q8qeb6W0A1TKruNAGBeHCyCY-gzGzoHsz", "B8xUzdVCBezIqnzLnsEVjReh");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = '0 ' + $(document.getElementById(url)).text();
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+}); 
+</script>
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+<script src="/js/src/photoswipe.min.js?v=5.1.4"></script>
+<script src="/js/src/photoswipe-ui-default.min.js?v=5.1.4"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'q8qeb6W0A1TKruNAGBeHCyCY-gzGzoHsz',
+        appKey: 'B8xUzdVCBezIqnzLnsEVjReh',
+        placeholder: '来都来了，请留下你的脚印吧~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  <!-- 小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
+  <!--卖萌-->
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+  
+  	 <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("q8qeb6W0A1TKruNAGBeHCyCY-gzGzoHsz", "B8xUzdVCBezIqnzLnsEVjReh");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = '0 ' + $(document.getElementById(url)).text();
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+}); 
+</script>
+  
+  
+  
+<!-- calendar widget -->
+
+
+    <script src="/lib/CloudCalendar/CloudCalendar.js"></script>
+    <script src="/lib/CloudCalendar/languages.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN', 
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
+
